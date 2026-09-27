@@ -1,0 +1,79 @@
+[
+  {
+    "file": "01-home.png",
+    "source": "https://borabridge.com/",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "7991851693def80cc59db11055e4b416d2258467d926c9d734a10ec1482f67d3"
+  },
+  {
+    "file": "02-information.png",
+    "source": "https://borabridge.com/information",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "59387976cacd6af41ae0e3e68824e57e5f026a37ebe209337731c339d3d68bcd"
+  },
+  {
+    "file": "03-youth-map.png",
+    "source": "https://borabridge.com/information/youth",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "754bf9fcd65133b4e11b51491524e7c19fb5ef0a5e3a7890e12cc0ec955dd050"
+  },
+  {
+    "file": "04-exchange.png",
+    "source": "https://borabridge.com/exchange",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "dcf8a6da7e75b73ecdf6e78c2409e2f9931034354154cddfc525962e5a16ba6d"
+  },
+  {
+    "file": "05-finance.png",
+    "source": "https://borabridge.com/information/finance",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "bb45da5922e208fd48ed53f20492fe10ae5c5df33283cef6b05c1e1886c178a8"
+  },
+  {
+    "file": "06-startup.png",
+    "source": "https://borabridge.com/information/startup",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "e0e1400cdc16630c204f4313d715e52cf795d1fac16e690fe1940a124d9ddd23"
+  },
+  {
+    "file": "07-assets-demo.png",
+    "source": "https://borabridge.com/assets",
+    "captured_date": "2026-09-27",
+    "context": "guest; synthetic financial input",
+    "sha256": "809df5135c7e12166c8f37e1cdc2acf654d350c2e3b00b9e736842d55aaeb80a"
+  },
+  {
+    "file": "08-safety.png",
+    "source": "https://borabridge.com/safety",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "3995ef799b67778b6828ab88256e1cd8b7498700e25d2a25bbde72d116579216"
+  },
+  {
+    "file": "09-triage.png",
+    "source": "https://borabridge.com/safety",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "a7803b65eaeac9c01e3024e590e465f65b8853a7c45a76aa43d2dce54a140bd1"
+  },
+  {
+    "file": "10-settlement.png",
+    "source": "https://borabridge.com/information/settlement",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "8082d20e104e3a26955c25c6a47129c5bf325d25fd77e4dbfb024a6d8d86f1da"
+  },
+  {
+    "file": "11-ai-guide.png",
+    "source": "https://borabridge.com/ai-guide",
+    "captured_date": "2026-09-27",
+    "context": "guest",
+    "sha256": "c0588b9fef142367f54b083dbafaa4714a9abe35cd981f4c7e6db4ae459085fb"
+  }
+]

@@ -1,0 +1,17 @@
+[Unit]
+Description=BORA Bridge local readiness check
+After=bora-bridge.service
+OnFailure=bora-bridge-recover.service
+
+[Service]
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Type=oneshot
+TimeoutStartSec=30
+ExecStart=/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/check-bora-bridge-health.sh
+# Record bounded startup/readiness observations. Failure is intentionally not a
+# restart trigger: this broader canary can report tunnel or LLM drift while the
+# web application remains healthy.
+ExecStartPost=-/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/check-runtime-autostart.sh
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bora-health

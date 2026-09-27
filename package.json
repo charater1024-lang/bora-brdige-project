@@ -1,0 +1,73 @@
+{
+  "name": "bora-bridge",
+  "version": "0.8.11",
+  "private": true,
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "check:public-source": "node scripts/check-public-source.mjs --staged",
+    "check:public-source:head": "node scripts/check-public-source.mjs --ref HEAD",
+    "check:public-source:history": "node scripts/check-public-source.mjs --history --all",
+    "test:public-source": "node --test tests/public-source-safety.test.mjs",
+    "test:parity": "node --test --test-concurrency=1 tests/deployment-readiness.test.mjs tests/judge-session-history.test.mjs tests/public-source-safety.test.mjs tests/request-body-security.test.mjs tests/oauth-start-rate-limit.test.mjs tests/public-catalog-performance.test.mjs tests/public-overview-request-lifecycle.test.mjs tests/public-dashboard-consistency.test.mjs",
+    "hooks:install": "node scripts/install-git-hooks.mjs",
+    "export:public-source": "node scripts/export-public-source.mjs",
+    "dev": "node scripts/run-vinext.mjs dev",
+    "dev:lan": "vinext dev --hostname 0.0.0.0 --port 3000",
+    "build": "node scripts/run-vinext.mjs build",
+    "start": "node scripts/run-vinext.mjs start",
+    "test": "npm run build && node --test --test-concurrency=1 tests/request-security.test.mjs tests/health-privacy.test.mjs tests/worker-fetch-compat.test.mjs tests/bizinfo-adapter.test.mjs tests/bizinfo-backfill.test.mjs tests/local-greeting.test.mjs tests/local-runtime-config.test.mjs tests/start-local-worker.test.mjs tests/stop-local-worker.test.mjs tests/local-sqlite-migrations.test.mjs tests/daily-finance-guide.test.mjs tests/financial-law.test.mjs tests/financial-law-cache.test.mjs tests/financial-law-summary.test.mjs tests/kosaf-adapter.test.mjs tests/kosis-employment-adapter.test.mjs tests/employment-statistics-view.test.mjs tests/startup-adapters.test.mjs tests/dart-backfill.test.mjs tests/startup-recommendations.test.mjs tests/startup-region-view.test.mjs tests/rendered-html.test.mjs tests/safe-browsing-v5.test.mjs tests/phishing-reputation-quota.test.mjs tests/public-api-proxy.test.mjs tests/public-data-intelligence.test.mjs tests/public-data-completeness.test.mjs tests/product-recommendation-route.test.mjs tests/product-recommendation-ui.test.mjs tests/public-data-requeue.test.mjs tests/public-snapshot-preview.test.mjs tests/public-statistics-rag.test.mjs tests/auth-ai-memory.test.mjs tests/account-lifecycle.test.mjs tests/legal-public-pages.test.mjs tests/ai-context-privacy.test.mjs tests/ai-transparency-consent.test.mjs tests/public-dashboard-access.test.mjs tests/ai-rate-limit.test.mjs tests/runtime-settings-credential-truth.test.mjs tests/scheduler-secret-rotation.test.mjs tests/youth-policy-matching.test.mjs tests/youth-policy-sections.test.mjs tests/consumer-price.test.mjs tests/commercial-area-insights.test.mjs tests/commercial-store-search.test.mjs tests/youth-adapters.test.mjs tests/seoul-commercial-boundaries.test.mjs tests/seoul-commercial-boundary-client.test.mjs tests/seoul-commercial-adapter.test.mjs tests/seoul-commercial-import.test.mjs tests/manual-finance.test.mjs tests/manual-finance-persistence.test.mjs tests/manual-finance-ai-intent.test.mjs tests/money-input.test.mjs tests/exchange-backfill.test.mjs tests/chart-percentage.test.mjs tests/action-first-home.test.mjs tests/navigation-shell.test.mjs tests/foreign-settlement.test.mjs tests/financial-missions.test.mjs tests/security-triage.test.mjs tests/judge-evaluation.test.mjs tests/mobile-readability.test.mjs tests/challenge-accessibility-ui.test.mjs tests/public-discovery.test.mjs tests/memory-watchdog.test.mjs tests/runtime-stability-deploy.test.mjs && npm run test:rag",
+    "test:rag": "node --test --test-concurrency=1 tests/ai-product-capabilities.test.mjs tests/rag-query.test.mjs tests/knowledge-rag.test.mjs tests/rag-intent-regression.test.mjs tests/public-rag-index.test.mjs tests/financial-law-retrieval.test.mjs tests/rag-grounding.test.mjs tests/rag-evaluation.test.mjs tests/rag-route.test.mjs tests/rag-evidence-ui.test.mjs tests/rag-indicators.test.mjs tests/rag-release-deploy.test.mjs tests/public-rag-worker.test.mjs && npm run test:reliability",
+    "test:reliability": "node --test --test-concurrency=1 tests/public-application-dates.test.mjs tests/public-application-period-ui.test.mjs tests/youth-date-repair.test.mjs tests/public-rag-refresh.test.mjs tests/bora-floating-guide.test.mjs tests/product-recommendation-ui.test.mjs tests/catalog-ux-migration-check.test.mjs && npm run test:production-fixes",
+    "test:production-fixes": "node --test --test-concurrency=1 tests/commercial-search-quota.test.mjs tests/public-dashboard-consistency.test.mjs tests/public-source-dates.test.mjs tests/financial-law-summary-quality.test.mjs tests/financial-law-summary-ui.test.mjs tests/startup-catalog-pagination.test.mjs tests/login-feature-boundaries.test.mjs tests/public-catalog-capacity.test.mjs tests/public-catalog-generation.test.mjs tests/frontend-reliability.test.mjs tests/runtime-autostart-contract.test.mjs tests/auth-session-sql.test.mjs tests/final-ui-polish.test.mjs tests/item-analysis-client-lifecycle.test.mjs tests/final-browser-ux-regressions.test.mjs",
+    "eval:rag": "node scripts/evaluate-rag.mjs",
+    "eval:judge": "node scripts/replay-judge-dataset.mjs",
+    "eval:judge:coverage": "node scripts/replay-judge-coverage-corpus-v17.mjs --require-sealed",
+    "eval:judge:coverage:draft": "node scripts/replay-judge-coverage-corpus-v17.mjs",
+    "eval:judge:validate-coverage": "node scripts/validate-judge-coverage-corpus-v17.mjs --require-sealed",
+    "eval:judge:validate-coverage:draft": "node scripts/validate-judge-coverage-corpus-v17.mjs",
+    "test:followup-fixes": "node --test --test-concurrency=1 tests/public-collection-health.test.mjs tests/public-catalog-performance.test.mjs tests/public-information-ux.test.mjs tests/public-overview-request-lifecycle.test.mjs tests/ai-provider-deadline.test.mjs tests/auth-storage-readiness.test.mjs tests/start-local-worker.test.mjs tests/ops-sandbox.test.mjs tests/public-query-indexes.test.mjs tests/auth-callback-recovery.test.mjs tests/auth-client-lifecycle.test.mjs tests/mypage-principal-lifecycle.test.mjs",
+    "test:ops": "node --test --test-concurrency=1 tests/memory-watchdog.test.mjs tests/runtime-stability-deploy.test.mjs tests/runtime-autostart-contract.test.mjs tests/start-local-worker.test.mjs tests/stop-local-worker.test.mjs",
+    "test:ops:integration": "bash tests/memory-watchdog-integration.test.sh && bash tests/stop-local-worker-integration.test.sh",
+    "test:ux": "node --test tests/action-first-home.test.mjs tests/navigation-shell.test.mjs tests/chart-percentage.test.mjs tests/money-input.test.mjs tests/mobile-readability.test.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .deploy-backups --ignore-pattern local-llm-server/.venv",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "node --experimental-sqlite scripts/apply-local-sqlite-migrations.mjs"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.45.2",
+    "lucide-react": "^1.25.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "recharts": "^3.9.2"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.41.0",
+    "@cloudflare/workers-types": "^4.20260702.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.12",
+    "react-server-dom-webpack": "19.2.8",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.2.2",
+    "wrangler": "4.101.0"
+  },
+  "overrides": {
+    "nanoid": "3.3.18",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3",
+    "undici": "7.29.0",
+    "ws": "8.21.3"
+  },
+  "type": "module"
+}

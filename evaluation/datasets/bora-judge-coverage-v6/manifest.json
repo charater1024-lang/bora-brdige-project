@@ -1,0 +1,568 @@
+{
+  "schemaVersion": "bora-judge-coverage-manifest/v2",
+  "corpusId": "bora-judge-coverage-2026-09-01-v6",
+  "createdAt": "2026-09-01T00:00:00+09:00",
+  "generatorVersion": "bora-coverage-generator/2.3",
+  "execution": {
+    "mode": "offline-replay",
+    "measurementScope": "coverage-case-execution",
+    "fetchTrapIncludesEvaluatorModuleLoad": true,
+    "timeRandomTrapBeginsAfterEvaluatorModuleLoad": true,
+    "networkCalls": 0,
+    "modelCalls": 0,
+    "wallClockInputs": 0,
+    "randomInputs": 0
+  },
+  "relationshipToDeepScore": {
+    "deepDatasetId": "bora-judge-core-2026-08-11-v2",
+    "deepCasesPreserved": 28,
+    "deepAutomaticMaxScorePreserved": 100,
+    "coverageScoreContribution": 0
+  },
+  "suiteOrder": [
+    "financial-correctness",
+    "evidence-grounding",
+    "financial-safety",
+    "privacy-consent",
+    "stored-api-contract",
+    "reproducibility"
+  ],
+  "suiteCount": 6,
+  "casesPerSuite": 100,
+  "totalCases": 600,
+  "caseOrderSha256": "6fde18dfe289e3ad02c856a92a0cce50c09b3f8b0d5aaaebcaf51d39edc0b680",
+  "definitionSha256": "b55787f2a5463c6a304ea6b03286be2b6b40d929a7cab3c221e1889ebb371d84",
+  "artifacts": {
+    "suites": [
+      {
+        "suite": "financial-correctness",
+        "filename": "financial-correctness.json",
+        "caseCount": 100,
+        "sha256": "1ee092d3e8a85104513b381c9157e1a79eec2811cc1e178011a5cd46db5ddcf7"
+      },
+      {
+        "suite": "evidence-grounding",
+        "filename": "evidence-grounding.json",
+        "caseCount": 100,
+        "sha256": "8ec2cdd195e909a19dcd288aeb17e43b7e1330159f3baa48a832a64c49ab8208"
+      },
+      {
+        "suite": "financial-safety",
+        "filename": "financial-safety.json",
+        "caseCount": 100,
+        "sha256": "6aaec636c7a244c7ee347b93c639965d3dd42cfe01a5d56c04cf295516c64121"
+      },
+      {
+        "suite": "privacy-consent",
+        "filename": "privacy-consent.json",
+        "caseCount": 100,
+        "sha256": "3353f73b332391d7a03ffe73ef21e3c3870c510072dc15b9f224b54696e94dd0"
+      },
+      {
+        "suite": "stored-api-contract",
+        "filename": "stored-api-contract.json",
+        "caseCount": 100,
+        "sha256": "84d435a33721ccf05adf866d92ff6db6b27cc1a447da56e856da5ac04e054886"
+      },
+      {
+        "suite": "reproducibility",
+        "filename": "reproducibility.json",
+        "caseCount": 100,
+        "sha256": "15613333a4ce916aece82ebecfefc154600804d6f084bd863703757ac207de9f"
+      }
+    ],
+    "provenance": {
+      "filename": "provenance.json",
+      "sha256": "90575cd7b44736f4b382ff25011e47c50e00206e3e914e5a9ebe0148c6f4e4ea"
+    },
+    "generator": {
+      "path": "scripts/generate-judge-coverage-corpus-v6.mjs",
+      "algorithm": "sha256-canonical-utf8-lf/v1",
+      "sha256": "fe83f583159e6390a1001356564da6f892f1077b482fe521b7b2bc3a012a5aee"
+    },
+    "dependencyLock": {
+      "path": "package-lock.json",
+      "algorithm": "sha256-canonical-utf8-lf/v1",
+      "sha256": "33e57f01ebfb485e14834136d82bce49f2b8fe053f86a1e4bb3e4f056797e030"
+    },
+    "evaluatorSourceBundle": {
+      "algorithm": "sha256-over-canonical-file-descriptors/v1",
+      "fileHashAlgorithm": "sha256-canonical-utf8-lf/v1",
+      "fileCount": 113,
+      "files": [
+        {
+          "path": "app/api/developer/judge-sessions/route.ts",
+          "sha256": "cc93c97628e40f343ec42fff03b3fdfc6eab777033301ef39419447da4a0c461"
+        },
+        {
+          "path": "app/api/health/route.ts",
+          "sha256": "a5fc5549ff6456e98ae599faa0ec94b448b95e6949e13c20b9fbc5a35bcc2b86"
+        },
+        {
+          "path": "app/api/phishing/route.ts",
+          "sha256": "d6ce049bee9735b01ce87a47c760b22134329c3396582a8961b87d1f7aea3da3"
+        },
+        {
+          "path": "app/api/public-data/dashboard/route.ts",
+          "sha256": "7012a34d854cb62df761a7d91336e7706bb5e8c336def42d169316aa4b3f8d88"
+        },
+        {
+          "path": "evaluation/datasets/README.md",
+          "sha256": "b0c3f659d7ece81668beaac068f5860e9ad215f1cebc05ec471228e065a4a25f"
+        },
+        {
+          "path": "evaluation/datasets/bora-judge-core-v2.provenance.json",
+          "sha256": "bd26003dd8d31134ff98e75be97c0f29037fa997a67aca7c90a453e9dc09397d"
+        },
+        {
+          "path": "evaluation/datasets/bora-submission-evidence-v1.json",
+          "sha256": "c440ddb2352e32573afd7142200bc31549a9ec9ce43cf0ac0f038caf5832ddfb"
+        },
+        {
+          "path": "lib/ai/context-client.ts",
+          "sha256": "ccf39a612fa81b766217b6dc03787143db9df9403c45156fe2d818d83c95b5c7"
+        },
+        {
+          "path": "lib/ai/context-policy.ts",
+          "sha256": "df4545b52ba9440f9b03812a0986436ce25339f97bd0ea0ffb24d4df301a7fe4"
+        },
+        {
+          "path": "lib/ai/context-store.ts",
+          "sha256": "1003b2d5a9fef06a03d053a34ab83c52f4e6b719c5087ec3384d0a5009001ef2"
+        },
+        {
+          "path": "lib/ai/evidence-intent.ts",
+          "sha256": "d658feb940ad3c2960891de480b7d3979f60e9a1b53c2da0523f4563a038f93a"
+        },
+        {
+          "path": "lib/ai/history.ts",
+          "sha256": "579a9518947e8d9c8cb3782dad3342c773018c6e6c1bba0eadee904f8c3798ed"
+        },
+        {
+          "path": "lib/ai/local-model-control.ts",
+          "sha256": "8a6460c277b42353f4b78f7c084e35c9492797835f120d49cc9f0e230b99e74f"
+        },
+        {
+          "path": "lib/ai/manual-finance-intent.ts",
+          "sha256": "0e770517528708fe425a64e57f84b0ad248e22e2360ab3d0e8235a29d42a522c"
+        },
+        {
+          "path": "lib/ai/providers.ts",
+          "sha256": "cff5277b910fe182bb239b18705bf75fc9355201171626cab7a6ceb9db358941"
+        },
+        {
+          "path": "lib/ai/rate-limit.ts",
+          "sha256": "53ccb88682a7f8e13e656e958fe4df3af57ef22ad88b476943cc197157deb36f"
+        },
+        {
+          "path": "lib/ai/safe-markdown.ts",
+          "sha256": "8a58fae56b2443eb02ccf98cca3a0d88dbabf441928767d6d44a6438c9898d83"
+        },
+        {
+          "path": "lib/ai/selected-runtime.ts",
+          "sha256": "af1b6c2aeb90eb50eaf549d23d68c8d37cd4871c4c63f3516b6a69d648edbf8c"
+        },
+        {
+          "path": "lib/auth/account-lifecycle.ts",
+          "sha256": "aacf8facfbb31d164efd3be030ea0e71f11e08cd3436be3064f3c7e0d91b8633"
+        },
+        {
+          "path": "lib/auth/config.ts",
+          "sha256": "697925531d060a78cf0668e06c6b49d0f4d42893e2d15453da69d63c99119a33"
+        },
+        {
+          "path": "lib/auth/consent-policy.ts",
+          "sha256": "ce6a3755c62dfda423ea989729273cccd2154d6fd2c80de0d64a612aeadf38b4"
+        },
+        {
+          "path": "lib/auth/crypto.ts",
+          "sha256": "1e65c03778641ae4f07980ff8506785fca067b01ed1d69cf96cbef3d309b450a"
+        },
+        {
+          "path": "lib/auth/current-user.ts",
+          "sha256": "0f105d37b694cd0537a9c95c273678e2be23cd8dc23bab9b0e8c8a52d086db29"
+        },
+        {
+          "path": "lib/auth/developer-access.ts",
+          "sha256": "55f992afd04c171cf0f9fbe0b991ab3165dbf88283931bb1a56765d32b6f167d"
+        },
+        {
+          "path": "lib/auth/developer-policy.ts",
+          "sha256": "a38f98a9d6a2753de62e0ff9bc1468bb8dd3bb507e244b937d8bc5212046a490"
+        },
+        {
+          "path": "lib/auth/http.ts",
+          "sha256": "275eeefd425ca93a185c215921f9eac61b393d2f4b0920b8facf9e774155008c"
+        },
+        {
+          "path": "lib/auth/providers.ts",
+          "sha256": "2657d17493addbb3813e5c06278bf1feb58d7f40302b629a03ca19f6ee426e73"
+        },
+        {
+          "path": "lib/auth/store.ts",
+          "sha256": "be2f9b6d9e9aa70ceb833bb34e265802c6856734fe34e8479ae92f1a706dd624"
+        },
+        {
+          "path": "lib/auth/types.ts",
+          "sha256": "4536f0c72c9c4837da030ea55d296215171994cf336b8fdc50514ded85170971"
+        },
+        {
+          "path": "lib/auth/youth-policy-profile.ts",
+          "sha256": "b600034802af06c38f6e419223dcdb3d52d865560a36869b37d5ab2982bb79e5"
+        },
+        {
+          "path": "lib/challenge-contract.ts",
+          "sha256": "18d930fc106fc6fbae05a553776db5bfe0a8c4eee4d2d2762f1c0f1cfd30113c"
+        },
+        {
+          "path": "lib/daily-finance-guide.ts",
+          "sha256": "54a7781fb0f7ec7b950cf7dd71c59156538aceee878a729dadfaa089f06a4174"
+        },
+        {
+          "path": "lib/financial-missions.ts",
+          "sha256": "fb73b914b26ed442310b2f82436bf5522900f39e138510c7602d18ca93927d39"
+        },
+        {
+          "path": "lib/foreign-settlement.ts",
+          "sha256": "6e1f0bfecfbb2a9eab631ef80c8f7e72655f2b20b3ae4ee9c2349774fed7d1c1"
+        },
+        {
+          "path": "lib/http/security-headers.ts",
+          "sha256": "c92ea1a375575931874fbc2225273f9808fc9ab9ddfbcfaeb74149aa344b9802"
+        },
+        {
+          "path": "lib/judge-coverage-contract.ts",
+          "sha256": "ddfa8f85270740749a05e2fb6f10c1ceed7efb870b784413661a078c212fc47f"
+        },
+        {
+          "path": "lib/judge-coverage-corpus.ts",
+          "sha256": "ca9ac3113c1efee4ec9af1c34f1dbba8eb1d9eb17c54e93d201b750881f46f70"
+        },
+        {
+          "path": "lib/judge-coverage-policies.ts",
+          "sha256": "12bb04a718d09d597eec43e787d5f2e611ae7fa5632a0dbea137bcfa74ccd35c"
+        },
+        {
+          "path": "lib/judge-evaluation.ts",
+          "sha256": "6d3e770e59c6c86526b75c94a871dedd71e81bb4ce3080068cf3cf8cc9790130"
+        },
+        {
+          "path": "lib/judge-export.ts",
+          "sha256": "c9f6a8112ecdf14244ddda3383ac4bbdbed2c306a71d000592ac4263f7ff906b"
+        },
+        {
+          "path": "lib/judge-session-store.ts",
+          "sha256": "7d99ce586f8c9f2bcb8785b279dbffb0fb1b7bd709c21cdac884791e85e59b55"
+        },
+        {
+          "path": "lib/judge-shared.ts",
+          "sha256": "1d1d28cd1b9eee4d3f6b565665c7f660d18f51a048ed35ff3f09bbb09762a2e2"
+        },
+        {
+          "path": "lib/legal/financial-law-cache.ts",
+          "sha256": "32cf31eb240ad588a58121602beb2dfea2612767564ef0a425578b307fe76df6"
+        },
+        {
+          "path": "lib/legal/financial-law-summary-cache.ts",
+          "sha256": "9200aa0a5ed348ecc59b099256c0831fa95a07aca1ce5b20cf3c62942fa9b568"
+        },
+        {
+          "path": "lib/legal/financial-law-summary-quality.ts",
+          "sha256": "7cbfcd90e5f1c8adf78306604d0797a0b70a467af2b2b8fff87fdbdb53f4abda"
+        },
+        {
+          "path": "lib/legal/financial-law.ts",
+          "sha256": "1083c68307c1b96463526971af88d623de9b98fbb2b78f51bfccd51cd21305bf"
+        },
+        {
+          "path": "lib/local-greeting.ts",
+          "sha256": "b84bb80aab896bae5f2a69c4af34479780c414026b950068cf1ea9b544dd1055"
+        },
+        {
+          "path": "lib/manual-finance-snapshot.ts",
+          "sha256": "a9a75809a95e5ad6d67f09c057988298db31c96d7cde3063e750c728aedd3e12"
+        },
+        {
+          "path": "lib/manual-finance-store.ts",
+          "sha256": "6492dea7d2e01db4f501b333880063994e4a551f701ad04c1b1854476e2b06cd"
+        },
+        {
+          "path": "lib/manual-finance.ts",
+          "sha256": "b4dc1516c8d99c64da272a9197d4fb208531ff6a4b13b3c97dd079801d0deeb0"
+        },
+        {
+          "path": "lib/money-input.ts",
+          "sha256": "54cafb4288edbc639bbdc09cf221a0d68e9ab28800776133bb52c77ab97ae26f"
+        },
+        {
+          "path": "lib/phishing-reputation-quota.ts",
+          "sha256": "e242923958e88d9a7cb96c919cf77f00fb185f6d7e8cd306335971ae48167bc9"
+        },
+        {
+          "path": "lib/public-data/access.ts",
+          "sha256": "a7d80b81c0d2ddcebd556e5c551bd9cd5b1972c12ba06b839ed4b31f0559714e"
+        },
+        {
+          "path": "lib/public-data/adapters.ts",
+          "sha256": "58ef79b6f5adc798229f973451efaabd4b61106ccf65aa296749e95253519e4c"
+        },
+        {
+          "path": "lib/public-data/analysis.ts",
+          "sha256": "ad10c79922caa8eae3cddf191cb4fe3055165744ea41b7444023b989ce9ed968"
+        },
+        {
+          "path": "lib/public-data/bounded-response.ts",
+          "sha256": "012a706f3845830a6d01b9c95fed2d34fa86a8661a1899127d06929f258d9e15"
+        },
+        {
+          "path": "lib/public-data/cache.ts",
+          "sha256": "c4b9682747c072fa2a42cbc315e84d4875ac19304710ff64f0156cb48a3f70bc"
+        },
+        {
+          "path": "lib/public-data/catalog-view.ts",
+          "sha256": "8cfb7dc04cfdd15e6cf374fc714db94772de52d485b973e51c570ffcff53e9b8"
+        },
+        {
+          "path": "lib/public-data/commercial-area-insights.ts",
+          "sha256": "8ddf92261a419df38d555805cb8c36d4d7aedb1b4d0448cf013fe551023d0f65"
+        },
+        {
+          "path": "lib/public-data/commercial-search-config.ts",
+          "sha256": "5ad4899fd5518f64967d7681f32d58cd1ff87cf15cf7668a4e191f608e29659b"
+        },
+        {
+          "path": "lib/public-data/commercial-search-types.ts",
+          "sha256": "dd609f748884cec544ef794a09ebcb9fd39d652595628e43aed5d8b983a3f86d"
+        },
+        {
+          "path": "lib/public-data/commercial-store-search.ts",
+          "sha256": "17a85dedd0023088edc8a021916eb7cd40ed1e942f70df65b1b4f4b9d119df81"
+        },
+        {
+          "path": "lib/public-data/commercial-supplement.ts",
+          "sha256": "fa31a5c77cd2bbca05cabd37628f067107741fd4017186a193b3ca7a1274a624"
+        },
+        {
+          "path": "lib/public-data/consumer-price.ts",
+          "sha256": "75d188de29b586678cf6c3bec4324ca09188e61d0b975e7b68d7f6ed9f028a51"
+        },
+        {
+          "path": "lib/public-data/dates.ts",
+          "sha256": "2a9239abdf7f042964e358fb1a9054fd0e9ad21b42f77b6c1e53eb8aac36e790"
+        },
+        {
+          "path": "lib/public-data/employment-statistics-view.ts",
+          "sha256": "db73ff6f8cad2cfaa4863cc8531b35ed533c7a1d23e0f873aca4358d78eccb75"
+        },
+        {
+          "path": "lib/public-data/exchange-backfill.ts",
+          "sha256": "3d19efce6b75598753697bf71f8cde846d1d82d72f41b9920fc45d27eec769bc"
+        },
+        {
+          "path": "lib/public-data/geo.ts",
+          "sha256": "adbc19ea18f17bc6a83b116d063aa7a9673b952ba0780954a8fdd5297af3311f"
+        },
+        {
+          "path": "lib/public-data/history.ts",
+          "sha256": "b5347f7f40dd7968fd7009dcd24b5da5920b1a07d90e80b29e7c61624f0df19e"
+        },
+        {
+          "path": "lib/public-data/item-analysis-cache.ts",
+          "sha256": "698fbbff54c4c13951baa27ba9711a3f8cae197bf68a0d9e440ed60fcd33e6a6"
+        },
+        {
+          "path": "lib/public-data/kosis-employment-adapter.ts",
+          "sha256": "c321e56a585f503119303c185d395e96db6d2ff90ba115c13872c006a421fbd5"
+        },
+        {
+          "path": "lib/public-data/operations-view.ts",
+          "sha256": "ffb805eb9dccd7f074ae41a8bd876ae631621d384a00fccb4dc2c508fb171e18"
+        },
+        {
+          "path": "lib/public-data/policies.ts",
+          "sha256": "186d319708cf50a16313226063517fc667e6b5a3af76948e1e8681f639f322f4"
+        },
+        {
+          "path": "lib/public-data/recommendations.ts",
+          "sha256": "0a3f0642a4b360d6bb69a0e19a2ac1359e74ee57fb5323461d96d46b2ab40d7e"
+        },
+        {
+          "path": "lib/public-data/retention.ts",
+          "sha256": "135d277091f7698baf6d96810aa11028f8a3a72eca91e014b0085987bf8cdfa3"
+        },
+        {
+          "path": "lib/public-data/seoul-commercial-adapter.ts",
+          "sha256": "31ca1be0270059e998363dc95fdfab0c698b726e64afa610063d60d43884ea10"
+        },
+        {
+          "path": "lib/public-data/seoul-commercial-boundaries.ts",
+          "sha256": "2d504bac1dd467059b3b8f89f68f5799022a5d99cf908ab700c4fd184cac7a14"
+        },
+        {
+          "path": "lib/public-data/service.ts",
+          "sha256": "9a0c1a4c014c25fdbd5a5e4cd2e6ffdf992d98718da5e3de0bac51efe507d2e8"
+        },
+        {
+          "path": "lib/public-data/startup-adapters.ts",
+          "sha256": "79477212e3cf2c2ca78d06e4eb782f309bc2bb5617e476fcdae903a3027b6bfb"
+        },
+        {
+          "path": "lib/public-data/startup-recommendations.ts",
+          "sha256": "89dc4ab8fa45761b4600db27d4b96789b774d9a90a92eeb0f651096d05c54056"
+        },
+        {
+          "path": "lib/public-data/startup-region-view.ts",
+          "sha256": "6a16a84f7183c612ecdbf3fa43e2753c572e5fb873f873c056c342555aaea7b6"
+        },
+        {
+          "path": "lib/public-data/text.ts",
+          "sha256": "a089211441392866b6f035eb60afbca381c55b248eb67d807a22e912da3ed5af"
+        },
+        {
+          "path": "lib/public-data/types.ts",
+          "sha256": "f77fc2542ab2613790b8726bae1c9c4b1552b70355ac672e49815fed82c57c19"
+        },
+        {
+          "path": "lib/public-data/urls.ts",
+          "sha256": "545cfada4b16333ef67e784f8cd4d47fd67ce9fab4b02ea5d7c6cf1dca75cf90"
+        },
+        {
+          "path": "lib/public-data/youth-adapters.ts",
+          "sha256": "83f733eaee0d988e2804619a3a70cab13bdd0460e9d8f912874819eeedda2d71"
+        },
+        {
+          "path": "lib/public-data/youth-policy-matching.ts",
+          "sha256": "fdb862f6f34e867d107b3a692c186fd9fe668296e3a66ef9cfcc0df1ff84226d"
+        },
+        {
+          "path": "lib/public-data/youth-policy-sections.ts",
+          "sha256": "2ed66e555e4f19ceb6e2133c2c21dc2f2c0308590ee763f6e821d54289dbb2ca"
+        },
+        {
+          "path": "lib/rag/context.ts",
+          "sha256": "aab4b87cb4bbbf4d33d64342f421e9727f4ee64e4cbfe3f0dc9cfbb7fdf852ed"
+        },
+        {
+          "path": "lib/rag/grounding.ts",
+          "sha256": "471a2ef807390cc77a50cf31830a979ea9ac0a1667c72c807ff744e7a578e83b"
+        },
+        {
+          "path": "lib/rag/indicators.ts",
+          "sha256": "874e56d47b4d8eaf483c1702dde1c374b203f13fdfa408efdc75e4cdb8464bf7"
+        },
+        {
+          "path": "lib/rag/knowledge.ts",
+          "sha256": "929d161eca4d7db864c2de1fe5f45d40b111b38e8d231f3604ae65d429f3a6e4"
+        },
+        {
+          "path": "lib/rag/public-catalog.ts",
+          "sha256": "7d62ebb23dd8a909d3f8633f7a4c008e84066b1cd62e1bc3d00b3597b2ba0f6a"
+        },
+        {
+          "path": "lib/rag/public-statistics.ts",
+          "sha256": "e933d7168c9c056bf6a8729127af557b9423a73aea772f512246d8233a53a348"
+        },
+        {
+          "path": "lib/rag/query.ts",
+          "sha256": "b6787bf494b8926a47d075a8d7f7e6364a3fab4f0158e64be91878d22b7fbe6d"
+        },
+        {
+          "path": "lib/runtime-settings.ts",
+          "sha256": "413d9687392846c3741c2e7e0d916d37ee9d285f08a07aaa5c55df6bcdf4e19e"
+        },
+        {
+          "path": "lib/safe-browsing-v5.ts",
+          "sha256": "ec404cb45e4e4f2b476d0e45c7151cf0f2c2fece20fc040244e08a7569a30443"
+        },
+        {
+          "path": "lib/security-triage.ts",
+          "sha256": "a231aaacd805d6de58b646f6bd2ce16af19a842d20c3a3cdd35e3ef690cf0aa8"
+        },
+        {
+          "path": "package.json",
+          "sha256": "015d03e6ddde986a1c45b1ede2ac74b2572195c92b8951a6f42e3b8b36b1d154"
+        },
+        {
+          "path": "scripts/replay-judge-coverage-corpus-v6.mjs",
+          "sha256": "a8c3fb8f550580b1117de6ed1ce80924b33385346c40e2c7332fc43f213a555d"
+        },
+        {
+          "path": "scripts/replay-judge-dataset.mjs",
+          "sha256": "a06ccd47b0cf03e08be8c5c99484ca7a55bf0845418d1e6753553e3850e2ac0b"
+        },
+        {
+          "path": "tests/account-lifecycle.test.mjs",
+          "sha256": "fa867b8294743646463369e6e989564636362504b8d32c75e3d056942304274a"
+        },
+        {
+          "path": "tests/ai-context-privacy.test.mjs",
+          "sha256": "67cc57750cbb23a4e16f904ce3350ab5b8be19ea6d2490844f2d78e4523e0184"
+        },
+        {
+          "path": "tests/financial-law.test.mjs",
+          "sha256": "34cd0c7d93344765ea0ff0b60dcd4794182914ab6606e3390cf03df48cdef17b"
+        },
+        {
+          "path": "tests/foreign-settlement.test.mjs",
+          "sha256": "cb9e7974f542ac1ec29965a3c6e4a0b753b944daf15c92c99562f7cd9c130862"
+        },
+        {
+          "path": "tests/health-privacy.test.mjs",
+          "sha256": "20ec6ddbef5d4dcd940746354ab73a47133def15861885c02286eff563925235"
+        },
+        {
+          "path": "tests/judge-evaluation.test.mjs",
+          "sha256": "9ec62921bf15fef63a11ef673badfd69ae90a21f4dff1a74ed60781b75978aab"
+        },
+        {
+          "path": "tests/manual-finance.test.mjs",
+          "sha256": "3e851bb57eb433e86f5f83d69d9eb9667a5145fe895c3740771a5b931ef0382d"
+        },
+        {
+          "path": "tests/money-input.test.mjs",
+          "sha256": "0e6faa1cf749c69826c396a8d6767cf5c14fa765e7cff61ace98bc5066cbd43f"
+        },
+        {
+          "path": "tests/public-dashboard-access.test.mjs",
+          "sha256": "b8f4968a2844d47277c6ae97c5046e3c4a82b03f8ce444378321d86700e027ee"
+        },
+        {
+          "path": "tests/public-statistics-rag.test.mjs",
+          "sha256": "f2ebeed30a8d090775da0b3884e568d222a78c09cc34eaa154a5e9bf2869d849"
+        },
+        {
+          "path": "tests/request-security.test.mjs",
+          "sha256": "acbcde6f8600f32f09e1971ad6ea2473e6ae6a9958e451c1434de60443fb9d8c"
+        },
+        {
+          "path": "tests/safe-browsing-v5.test.mjs",
+          "sha256": "3937f9b245dc1bb982f9383568e0e5a208ea56b58c9944b66b93b3ed5a9becc1"
+        },
+        {
+          "path": "tests/security-triage.test.mjs",
+          "sha256": "becc7c0b8bac211bddb392e4504fc4cf32eba49583133f90bbb44fb4b9478b23"
+        }
+      ],
+      "sha256": "9a563a6eb4c526d15d0f9a877f0d356de837fb96e71c80ee1876890608392b46"
+    }
+  },
+  "releasePolicy": {
+    "sealFilename": "release.json",
+    "sealSchemaVersion": "bora-judge-coverage-release/v1",
+    "overwriteReleasedCorpus": false,
+    "draftReplacementRequiresExplicitFlag": true,
+    "releasedReplacementRequiresNewCorpusId": true
+  },
+  "resultStorage": {
+    "schemaVersion": "bora-judge-coverage-compact/v1",
+    "maximumSessionCharacters": 81920,
+    "failureDetailLimit": 24,
+    "storedFields": [
+      "suiteSummaries",
+      "statusBits",
+      "resultSha256",
+      "boundedFailureDetails"
+    ],
+    "fullCaseResultsStoredInSession": false
+  }
+}

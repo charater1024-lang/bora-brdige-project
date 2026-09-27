@@ -1,0 +1,137 @@
+.card {
+  min-width: 0;
+  border: 1px solid #e1daef;
+  border-radius: 17px;
+  background: #fbfafe;
+  overflow: hidden;
+}
+
+.summary {
+  min-height: 132px;
+  padding: 1.05em;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .72em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker { display: none; }
+
+.summary:focus-visible {
+  outline: 3px solid rgba(109, 91, 208, .24);
+  outline-offset: -3px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #6855c1;
+  background: #eee8ff;
+}
+
+.metric {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric small {
+  color: #776f82;
+  font-size: .8em;
+  font-weight: 850;
+}
+
+.metric strong {
+  margin: .32em 0 .18em;
+  color: #30244d;
+  font-size: clamp(1.28em, 2.3vw, 1.78em);
+  overflow-wrap: anywhere;
+}
+
+.metric em {
+  color: #928a9d;
+  font-size: .75em;
+  font-style: normal;
+}
+
+.chevron {
+  color: #7666b7;
+  transition: transform .18s ease;
+}
+
+.card[open] .chevron { transform: rotate(180deg); }
+
+.body {
+  padding: .9em 1em 1em;
+  border-top: 1px solid #e8e2f1;
+  background: #fff;
+}
+
+.headline {
+  margin: 0;
+  padding: .78em .9em;
+  border-radius: 12px;
+  color: #3d3157;
+  background: #f2edff;
+  font-size: .92em;
+  font-weight: 780;
+  line-height: 1.65;
+}
+
+.explanations {
+  margin: .9em 0 0;
+  display: grid;
+  gap: .78em;
+}
+
+.explanations div {
+  display: grid;
+  gap: .24em;
+}
+
+.explanations dt {
+  color: #56487d;
+  font-size: .78em;
+  font-weight: 900;
+}
+
+.explanations dd {
+  margin: 0;
+  color: #6f6879;
+  font-size: .86em;
+  line-height: 1.65;
+}
+
+.caution {
+  padding-top: .72em;
+  border-top: 1px dashed #e8e2f1;
+}
+
+.source {
+  min-height: 38px;
+  margin-top: .9em;
+  padding: 0 .8em;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: .42em;
+  color: #604ead;
+  background: #f4f0ff;
+  font-size: .8em;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .summary { min-height: 116px; }
+  .metric strong { font-size: 1.3em; }
+  .metric small, .metric em { font-size: 12px; }
+  .headline, .explanations dd { font-size: 14px; }
+  .explanations dt { font-size: 13px; }
+  .source { min-height: 44px; font-size: 13px; }
+}

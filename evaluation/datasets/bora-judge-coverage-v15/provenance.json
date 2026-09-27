@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "bora-judge-coverage-provenance/v2",
+  "corpusId": "bora-judge-coverage-2026-09-23-v15",
+  "createdAt": "2026-09-23T00:00:00+09:00",
+  "authorship": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-sol",
+    "officialModelReference": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+    "environment": "Codex desktop agent",
+    "role": "synthetic-coverage-authoring-and-code-grounded-review",
+    "codexSessionAuthorshipUsedModel": true,
+    "runtimeModelUse": false,
+    "independentExpertReview": "not_performed",
+    "confidence": "self-declared-codex-session-record"
+  },
+  "generation": {
+    "generatorPath": "scripts/generate-judge-coverage-corpus-v15.mjs",
+    "generatorVersion": "bora-coverage-generator/2.7",
+    "generatorSha256": "d741ecf31a1ff76f9d6432addb29136d07c98c02a19ec8d2bb54f36200564c26",
+    "deterministicSeed": "bora-coverage-v15-inherit-v14-frozen-definitions",
+    "dependencyLock": {
+      "path": "package-lock.json",
+      "algorithm": "sha256-canonical-utf8-lf/v1",
+      "sha256": "707006c9fd1330338fcd04641f9fa0a440b5fd1d8a147caab7230726a7fea886"
+    },
+    "evaluatorSourceBundle": {
+      "algorithm": "sha256-over-canonical-file-descriptors/v1",
+      "fileHashAlgorithm": "sha256-canonical-utf8-lf/v1",
+      "fileCount": 125,
+      "sha256": "5324f0879ed66eecac61765dbda30a4cec2de854edbfc52046650b7b33e367a4"
+    },
+    "releaseSeal": {
+      "filename": "release.json",
+      "generationRefusesSealedDirectory": true,
+      "replacementRequiresNewCorpusId": true
+    },
+    "runtimeGeneratorReplayCalls": {
+      "networkCalls": 0,
+      "modelCalls": 0,
+      "wallClockInputs": 0,
+      "randomInputs": 0
+    },
+    "measurementBoundary": {
+      "fetchTrapScope": "evaluator-module-load-and-case-execution",
+      "timeRandomTrapScope": "case-execution-after-module-load",
+      "trappedTimeApis": [
+        "Date-constructor-no-args",
+        "Date.now",
+        "performance.now"
+      ],
+      "trappedRandomApis": [
+        "Math.random",
+        "crypto.getRandomValues",
+        "crypto.randomUUID"
+      ],
+      "moduleInitializationTimeRandomInstrumented": false,
+      "nativeHttpClientInstrumentation": false
+    },
+    "methodology": [
+      "Page-performance source revision: all 600 frozen v14 case objects, IDs, source references and expected outcomes are inherited byte-identically.",
+      "The authorship record describes the original synthetic case authorship, not new case authoring in this revision.",
+      "No expected result is recomputed or relabeled by this generator; original v14 artifacts and their release seal remain unchanged.",
+      "Dependency and evaluator-source pins are refreshed for the cache-only dashboard reads, category-scoped counts and race-safe overview lifecycle source with historical-session compatibility; new validator and replay receipts are produced by actual offline acceptance runs.",
+      "Coverage semantics, six suite gates and zero contribution to the 28-case deep score are unchanged.",
+      "Replay blocks fetch from evaluator module load through execution and traps the declared time/random APIs during case execution; it does not claim instrumentation of module-initialization time/randomness or native HTTP clients."
+    ],
+    "inheritedCaseDefinitions": {
+      "corpusId": "bora-judge-coverage-2026-09-23-v14",
+      "directory": "evaluation/datasets/bora-judge-coverage-v14",
+      "releaseSha256": "11454c0ea01a3e4cd919053f2fb12d902982f7b76845a1c0aa2897fc69a48e7d",
+      "definitionSha256": "b55787f2a5463c6a304ea6b03286be2b6b40d929a7cab3c221e1889ebb371d84",
+      "caseOrderSha256": "6fde18dfe289e3ad02c856a92a0cce50c09b3f8b0d5aaaebcaf51d39edc0b680",
+      "caseCount": 600,
+      "caseObjectsByteIdentical": true,
+      "expectedValuesRecomputed": false
+    }
+  },
+  "privacy": {
+    "syntheticOnly": true,
+    "containsRealPersonalData": false,
+    "containsLiveMaliciousUrls": false,
+    "reservedSyntheticDomainsOnly": true
+  },
+  "claimBoundary": {
+    "qualityClaim": "coverage-regression-only",
+    "officialHackathonScore": false,
+    "deepScoreContribution": 0,
+    "disclosure": "This 600-case corpus extends deterministic implementation coverage. It does not replace the v2 28-case deep score, certify financial correctness, or constitute independent expert validation."
+  },
+  "limitations": [
+    "Code-grounded labels can share assumptions with the implementation under test.",
+    "No independent finance, legal, privacy, or security expert has reviewed every label.",
+    "Stored API contract cases do not prove public deployment availability or current upstream data quality.",
+    "Subjective innovation, business value, and presentation quality remain outside this automatic corpus."
+  ]
+}

@@ -1,0 +1,78 @@
+name: Public main source validation
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-main-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate the 600-case corpus
+        run: npm run eval:judge:validate-coverage
+
+      - name: Replay the deterministic corpus
+        run: npm run eval:judge:coverage
+
+      - name: Replay the canonical 28 plus 600 evaluation
+        run: npm run eval:judge
+
+      - name: Type-check
+        run: npx tsc --noEmit --pretty false
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate runtime safety scripts
+        run: |
+          bash tests/memory-watchdog-integration.test.sh
+          bash tests/stop-local-worker-integration.test.sh
+
+      - name: Verify production parity and rollback safeguards
+        run: |
+          npm run test:parity
+          python3 -m unittest discover -s tests -p test_public_runtime_preflight.py
+
+      - name: Verify gateway lifecycle without model or network calls
+        env:
+          BORA_REQUIRE_GATEWAY_TESTS: "1"
+        run: |
+          python3 -m venv "${RUNNER_TEMP}/bora-gateway-tests"
+          "${RUNNER_TEMP}/bora-gateway-tests/bin/python" -m pip install --disable-pip-version-check -r local-llm-server/requirements.txt
+          "${RUNNER_TEMP}/bora-gateway-tests/bin/python" -m unittest discover -s tests -p 'test_local_llm*.py'
+
+      - name: Build and run the full regression suite
+        run: npm test
+
+      - name: Verify collection, runtime and availability follow-up fixes
+        run: npm run test:followup-fixes
+
+      - name: Verify encrypted backup and independent restore contracts
+        run: |
+          python3 -m venv "${RUNNER_TEMP}/bora-backup-tests"
+          "${RUNNER_TEMP}/bora-backup-tests/bin/python" -m pip install --disable-pip-version-check -r deploy/requirements-ops.txt
+          "${RUNNER_TEMP}/bora-backup-tests/bin/python" -m unittest discover -s tests -p 'test_ops_*.py'
+          "${RUNNER_TEMP}/bora-backup-tests/bin/python" -m unittest discover -s tests -p test_windows_backup_client.py

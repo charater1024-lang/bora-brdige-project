@@ -1,0 +1,31 @@
+[Unit]
+Description=BORA Bridge Cloudflare Tunnel
+After=network-online.target bora-bridge.service
+Wants=network-online.target bora-bridge.service
+
+[Service]
+Type=simple
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+KeyringMode=private
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictRealtime=true
+SystemCallArchitectures=native
+ProtectSystem=strict
+ProtectHome=read-only
+InaccessiblePaths=-%h/.ssh
+InaccessiblePaths=-%h/.gnupg
+InaccessiblePaths=-%h/.git-credentials
+InaccessiblePaths=-%h/.netrc
+InaccessiblePaths=-%h/.npmrc
+InaccessiblePaths=-%h/.config/gh
+InaccessiblePaths=-%h/Project
+InaccessiblePaths=-%h/Project/BORA-Bridge-Finance-AI
+ExecStart=%h/.local/bin/cloudflared --no-autoupdate --config %h/.cloudflared/config.yml tunnel run
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

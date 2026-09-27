@@ -1,0 +1,14 @@
+[Unit]
+Description=Recover an unavailable BORA Bridge service
+After=bora-bridge-healthcheck.service
+StartLimitIntervalSec=600
+StartLimitBurst=2
+
+[Service]
+Type=oneshot
+EnvironmentFile=-%h/.config/bora-bridge/restart.env
+ExecStart=/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/restart-bora-bridge.sh --reason health
+TimeoutStartSec=180
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bora-recover

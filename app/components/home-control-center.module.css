@@ -1,0 +1,865 @@
+.controlCenter {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 20px;
+  color: #221a3b;
+}
+
+.dialogOnly {
+  height: 0;
+  margin: 0;
+}
+
+.easyBanner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 20px;
+  border: 2px solid #bcaef0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f2edff, #fff 76%);
+  box-shadow: 0 9px 28px rgba(70, 49, 130, 0.09);
+}
+
+.easyIcon,
+.accountIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #6d5bd0;
+  color: #fff;
+}
+
+.easyCopy strong {
+  display: block;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.easyCopy p {
+  margin: 5px 0 12px;
+  color: #5c5568;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.easyCopy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.easyCopy li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid #d8cff7;
+  border-radius: 999px;
+  background: #fff;
+  color: #513da6;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.controlButton,
+.accountButton,
+.iconButton,
+.resetButton,
+.tabs button,
+.orderButtons button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.controlButton,
+.accountButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid #ded7f3;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.controlButton {
+  background: #fff;
+  color: #5b46b2;
+}
+
+.accountButton {
+  background: #5b46b2;
+  color: #fff;
+  box-shadow: 0 7px 15px rgba(91, 70, 178, 0.18);
+}
+
+.controlButton:hover {
+  background: #f7f4ff;
+}
+
+.accountButton:hover {
+  background: #4f3ba4;
+}
+
+.controlButton:focus-visible,
+.accountButton:focus-visible,
+.iconButton:focus-visible,
+.resetButton:focus-visible,
+.tabs button:focus-visible,
+.visibilityToggle:focus-within,
+.orderButtons button:focus-visible,
+.providerButton:focus-visible {
+  outline: 3px solid rgba(109, 91, 208, 0.35);
+  outline-offset: 3px;
+}
+
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(760px, calc(100dvh - 40px));
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #ded7f3;
+  border-radius: 22px;
+  background: #fff;
+  color: #221a3b;
+  box-shadow: 0 28px 80px rgba(34, 26, 59, 0.26);
+}
+
+.dialog::backdrop {
+  background: rgba(27, 18, 51, 0.46);
+  backdrop-filter: blur(4px);
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 23px 23px 17px;
+  border-bottom: 1px solid #e5dff2;
+}
+
+.dialogEyebrow {
+  color: #6d5bd0;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.dialogHeader h2 {
+  margin: 5px 0 0;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.iconButton {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5dff2;
+  border-radius: 12px;
+  background: #fff;
+  color: #665f72;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 23px 0;
+  background: #fbfaff;
+}
+
+.tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 47px;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #777084;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.tabs button.activeTab {
+  border-bottom-color: #6d5bd0;
+  color: #5b46b2;
+}
+
+.tabPanel {
+  max-height: calc(100dvh - 220px);
+  padding: 22px 23px 25px;
+  overflow-y: auto;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.sectionHeading h3,
+.accountIntro h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.sectionHeading p,
+.accountIntro p {
+  margin: 0;
+  color: #665f72;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.resetButton {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid #e5dff2;
+  border-radius: 10px;
+  background: #fff;
+  color: #5b46b2;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.widgetList {
+  display: grid;
+  gap: 9px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.widgetList li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 62px;
+  padding: 9px 10px 9px 13px;
+  border: 1px solid #e5dff2;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.widgetList li.hiddenWidget {
+  border-style: dashed;
+  background: #faf9fc;
+}
+
+.visibilityToggle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.visibilityToggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.checkbox {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #cfc7df;
+  border-radius: 7px;
+  background: #fff;
+  color: #fff;
+}
+
+.visibilityToggle input:checked + .checkbox {
+  border-color: #6d5bd0;
+  background: #6d5bd0;
+}
+
+.widgetName {
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.visibilityState {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #777084;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.orderButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.orderButtons button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #e5dff2;
+  border-radius: 10px;
+  background: #fbfaff;
+  color: #5b46b2;
+}
+
+.orderButtons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.accountIntro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #ddd4fa;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #f7f4ff, #fff);
+}
+
+.accountIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+}
+
+.providerList {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.sessionCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid #bee8da;
+  border-radius: 14px;
+  background: #f1fbf7;
+}
+
+.sessionAvatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #147d64;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.sessionCard > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.sessionCard small {
+  color: #147d64;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.sessionCard strong {
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sessionCard div > span {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #4f6f64;
+  font-size: 10px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+}
+
+.sessionCard > a,
+.sessionCard > button {
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid #a9daca;
+  border-radius: 9px;
+  background: #fff;
+  color: #14634f;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 34px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sessionCard > button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.demoSession {
+  border-color: #c6b9f3;
+  background: #f7f4ff;
+}
+
+.demoSession .sessionAvatar {
+  background: #6d5bd0;
+}
+
+.demoSession small,
+.demoSession > a,
+.demoSession > button {
+  color: #5b46b2;
+}
+
+.demoSession > a,
+.demoSession > button {
+  border-color: #c6b9f3;
+}
+
+.sessionLoading {
+  margin: 14px 0 0;
+  padding: 12px;
+  border-radius: 11px;
+  background: #f7f4ff;
+  color: #665f72;
+  font-size: 11px;
+}
+
+.authError {
+  margin: 10px 0 0;
+  padding: 11px 12px;
+  border: 1px solid #f2b8bc;
+  border-radius: 11px;
+  background: #fff4f4;
+  color: #9d2530;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.accountLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.accountLinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 1px solid #d8cff7;
+  border-radius: 11px;
+  background: #f7f4ff;
+  color: #513da6;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.accountLinks a:hover {
+  background: #eee9ff;
+}
+
+.providerButton {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 55px;
+  padding: 8px 13px;
+  border: 1px solid #ded7f3;
+  border-radius: 13px;
+  background: #fff;
+  color: #221a3b;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.providerButton {
+  width: 100%;
+}
+
+button.providerButton:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.providerButton:not(.providerUnavailable):hover {
+  border-color: #a99ae2;
+  box-shadow: 0 6px 16px rgba(66, 48, 126, 0.08);
+}
+
+.providerButton > small,
+.providerButton > strong {
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.providerMark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #eee9ff;
+  color: #5b46b2;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.google {
+  border-color: #d9dce3;
+  background: #fff;
+}
+
+.google .providerMark {
+  border: 1px solid #d9dce3;
+  background: #fff;
+  color: #1a73e8;
+}
+
+.google > small {
+  background: #e8f0fe;
+  color: #1558b0;
+}
+
+.naver {
+  background: #f5fcf8;
+}
+
+.naver .providerMark {
+  background: #03c75a;
+  color: #fff;
+}
+
+.naver > small {
+  background: #e2f5ea;
+  color: #26704a;
+}
+
+.kakao {
+  background: #fffdf0;
+}
+
+.kakao .providerMark {
+  background: #fee500;
+  color: #241f00;
+}
+
+.kakao > small {
+  background: #fff4ad;
+  color: #655b00;
+}
+
+.chatgpt {
+  background: #201a2e;
+  color: #fff;
+}
+
+.chatgpt:hover {
+  background: #342a47;
+}
+
+.chatgpt .providerMark {
+  background: #fff;
+  color: #201a2e;
+}
+
+.chatgpt > small {
+  background: #e8f7f1;
+  color: #147d64;
+}
+
+.providerUnavailable {
+  border-color: #e4e1e9;
+  background: #f8f7fa;
+  color: #716b79;
+  filter: saturate(0.35);
+}
+
+.providerUnavailable .providerMark {
+  opacity: 0.7;
+}
+
+.providerUnavailable > small {
+  background: #ebe9ee;
+  color: #625c69;
+}
+
+.demo {
+  border-color: #c6b9f3;
+  background: #f7f4ff;
+  color: #4e399f;
+}
+
+.demo:hover {
+  background: #eee9ff;
+}
+
+.demo > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.demoDescription {
+  color: #665f72;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.demo > strong {
+  background: #6d5bd0;
+  color: #fff;
+}
+
+.privacyNote {
+  margin: 16px 0 0;
+  padding: 11px 12px;
+  border-radius: 11px;
+  background: #e8f7f1;
+  color: #14634f;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.controlCenter[data-easy-mode="true"] .controlButton,
+.controlCenter[data-easy-mode="true"] .accountButton {
+  min-height: 54px;
+  padding-inline: 19px;
+  font-size: 15px;
+}
+
+.controlCenter[data-easy-mode="true"] .dialogHeader h2 {
+  font-size: 25px;
+}
+
+.controlCenter[data-easy-mode="true"] .tabs button,
+.controlCenter[data-easy-mode="true"] .resetButton,
+.controlCenter[data-easy-mode="true"] .sessionCard > a,
+.controlCenter[data-easy-mode="true"] .sessionCard > button {
+  min-height: 52px;
+  font-size: 14px;
+}
+
+.controlCenter[data-easy-mode="true"] .providerButton {
+  min-height: 68px;
+  font-size: 15px;
+}
+
+.controlCenter[data-easy-mode="true"] .providerButton > small,
+.controlCenter[data-easy-mode="true"] .providerButton > strong,
+.controlCenter[data-easy-mode="true"] .sessionCard small,
+.controlCenter[data-easy-mode="true"] .sessionCard div > span,
+.controlCenter[data-easy-mode="true"] .privacyNote,
+.controlCenter[data-easy-mode="true"] .authError {
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .controlCenter {
+    margin-bottom: 16px;
+  }
+
+  .easyBanner {
+    grid-template-columns: 1fr;
+    padding: 17px;
+  }
+
+  .easyIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .easyCopy strong {
+    font-size: 18px;
+  }
+
+  .easyCopy p {
+    font-size: 14px;
+  }
+
+  .easyCopy ul {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .easyCopy li {
+    min-height: 44px;
+    border-radius: 11px;
+    font-size: 13px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .controlButton,
+  .accountButton {
+    min-height: 48px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .dialog {
+    width: 100vw;
+    max-width: none;
+    max-height: calc(100dvh - 18px);
+    margin: auto 0 0;
+    border-width: 1px 0 0;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .dialogHeader {
+    padding: 19px 16px 14px;
+  }
+
+  .dialogHeader h2 {
+    font-size: 20px;
+  }
+
+  .tabs {
+    padding: 8px 16px 0;
+  }
+
+  .tabs button {
+    min-height: 50px;
+    font-size: 13px;
+  }
+
+  .tabPanel {
+    max-height: calc(100dvh - 185px);
+    padding: 19px 16px max(25px, env(safe-area-inset-bottom));
+  }
+
+  .sectionHeading {
+    display: grid;
+  }
+
+  .resetButton {
+    min-height: 44px;
+    justify-self: start;
+    font-size: 13px;
+  }
+
+  .widgetList li {
+    grid-template-columns: 1fr;
+    min-height: 106px;
+  }
+
+  .visibilityToggle {
+    min-height: 48px;
+  }
+
+  .sectionHeading p,
+  .accountIntro p,
+  .sessionCard small,
+  .sessionCard div > span,
+  .privacyNote,
+  .authError,
+  .demoDescription {
+    font-size: 13px;
+  }
+
+  .visibilityState,
+  .providerButton > small,
+  .providerButton > strong {
+    font-size: 12px;
+  }
+
+  .orderButtons {
+    justify-content: flex-end;
+  }
+
+  .orderButtons button {
+    width: 46px;
+    height: 44px;
+  }
+
+  .providerButton {
+    min-height: 62px;
+  }
+
+  .accountLinks a {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .sessionCard {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .sessionCard > a,
+  .sessionCard > button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+    line-height: 42px;
+  }
+
+  .providerButton > small {
+    white-space: normal;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .widgetList li {
+    transition: none;
+  }
+}

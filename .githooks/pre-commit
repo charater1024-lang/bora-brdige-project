@@ -1,0 +1,4 @@
+#!/bin/sh
+# Git runs this at the repository root. Read blobs from the index, never from
+# working files: partially staged changes must not hide staged credentials.
+exec node scripts/check-public-source.mjs --staged

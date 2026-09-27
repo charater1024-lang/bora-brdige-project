@@ -1,0 +1,36 @@
+[Unit]
+Description=BORA Bridge loopback public API compatibility proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Project/BORA-Bridge-Finance-AI
+EnvironmentFile=%h/Project/BORA-Bridge-Finance-AI/.env.public-api-proxy
+ExecStart=/usr/bin/env node deploy/public-api-proxy.mjs
+Restart=on-failure
+RestartSec=3s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+KeyringMode=private
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictRealtime=true
+SystemCallArchitectures=native
+ProtectSystem=strict
+ProtectHome=read-only
+InaccessiblePaths=-%h/.ssh
+InaccessiblePaths=-%h/.gnupg
+InaccessiblePaths=-%h/.cloudflared
+InaccessiblePaths=-%h/.git-credentials
+InaccessiblePaths=-%h/.netrc
+InaccessiblePaths=-%h/.npmrc
+InaccessiblePaths=-%h/.config/gh
+InaccessiblePaths=-%h/Project/BORA-Bridge-Finance-AI/.git
+InaccessiblePaths=-%h/Project/BORA-Bridge-Finance-AI/.deploy-backups
+InaccessiblePaths=-%h/Project/BORA-Bridge-Finance-AI/.env.local
+InaccessiblePaths=-%h/Project/BORA-Bridge-Finance-AI/.env.public-api-proxy
+
+[Install]
+WantedBy=default.target

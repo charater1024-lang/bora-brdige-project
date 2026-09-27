@@ -1,0 +1,16 @@
+[Unit]
+Description=Guard BORA Bridge against sustained memory growth
+After=bora-bridge.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-%h/.config/bora-bridge/memory-watchdog.env
+ExecStart=/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/check-bora-bridge-memory.sh
+TimeoutStartSec=180
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bora-memory-watchdog
+
+# This checker only reads cgroup telemetry and controls the existing user unit.
+# Its state directory and lock prevent concurrent or repeated restart attempts.
+NoNewPrivileges=true

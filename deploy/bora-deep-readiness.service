@@ -1,0 +1,15 @@
+[Unit]
+Description=BORA dependency and recovery observations (never restart the web)
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/bora-bridge/ops.env
+ExecStart=/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/run-bora-ops-sandbox.sh readiness
+TimeoutStartSec=30
+UMask=0077
+MemoryMax=128M
+# Direct Bubblewrap provides isolation without unsupported nested user-unit
+# namespaces. Networking remains available for bounded loopback/HTTPS probes.
+TasksMax=32
+StandardOutput=journal
+StandardError=journal

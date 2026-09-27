@@ -1,0 +1,138 @@
+.shell { min-height: 100vh; min-height: 100dvh; padding: 28px clamp(18px, 5vw, 72px) 60px; background: radial-gradient(circle at 90% 0, #e7deff 0, transparent 28%), #f8f6ff; color: #221a3b; }
+.header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; max-width: 1180px; margin: 0 auto 42px; }
+.header span { color: #7665c7; font-size: 11px; font-weight: 900; letter-spacing: .13em; }
+.header a { display: inline-flex; align-items: center; gap: 7px; color: #5743ae; font-size: 13px; font-weight: 850; text-decoration: none; }
+.header a:last-child { justify-self: end; }
+.hero { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; max-width: 1180px; margin: 0 auto 28px; }
+.avatar { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 24px; background: linear-gradient(145deg, #7059d0, #a28fe9); color: #fff; font-size: 28px; font-weight: 900; box-shadow: 0 16px 35px rgba(77, 56, 159, .2); }
+.hero span, .cardTitle span { color: #715bd0; font-size: 10px; font-weight: 950; letter-spacing: .13em; }
+.hero h1 { margin: 5px 0 6px; font-size: clamp(26px, 4vw, 42px); letter-spacing: -.045em; }
+.hero p { margin: 0; color: #6a6376; line-height: 1.65; }
+.grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 18px; max-width: 1180px; margin: 0 auto; }
+.card, .loginCard, .loading { border: 1px solid #ded7f3; border-radius: 22px; background: rgba(255,255,255,.92); box-shadow: 0 16px 48px rgba(58, 41, 112, .08); }
+.card { padding: 25px; }
+.cardTitle { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
+.cardTitle h2 { margin: 4px 0 0; font-size: 21px; }
+.cardTitle em { padding: 6px 9px; border-radius: 999px; background: #eee9ff; color: #5845ad; font-size: 10px; font-style: normal; font-weight: 900; }
+.details { display: grid; gap: 0; margin: 0; }
+.details div { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 14px; padding: 13px 0; border-bottom: 1px solid #eeeaf7; }
+.details dt { color: #777084; font-size: 12px; }
+.details dd { margin: 0; overflow-wrap: anywhere; font-size: 13px; font-weight: 800; }
+.dataNote { display: flex; gap: 7px; margin: 18px 0 0; padding: 12px; border-radius: 12px; background: #eef9f5; color: #216a57; font-size: 11px; line-height: 1.55; }
+.options { display: grid; gap: 9px; }
+.options label { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 12px; padding: 14px; border: 1px solid #ded7f3; border-radius: 14px; cursor: pointer; }
+.options label:has(input:checked) { border-color: #8d79de; background: #f5f1ff; }
+.options input { accent-color: #6d5bd0; }
+.options span { display: flex; flex-direction: column; gap: 3px; }
+.options strong { font-size: 13px; }
+.options small { color: #777084; font-size: 11px; }
+.options .disabled { opacity: .48; cursor: not-allowed; }
+.aliasField { position: relative; display: grid; gap: 7px; margin-top: 17px; color: #514a5e; font-size: 12px; font-weight: 850; }
+.aliasField input { min-height: 48px; padding: 0 54px 0 13px; border: 1px solid #d6cef0; border-radius: 12px; background: #fff; color: #221a3b; font: inherit; }
+.aliasField input:disabled { background: #f4f2f7; color: #8d8795; }
+.aliasField small { position: absolute; right: 13px; bottom: 16px; color: #8b8396; font-size: 10px; }
+.actions { display: flex; gap: 9px; margin-top: 18px; }
+.actions button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; padding: 0 16px; border: 0; border-radius: 12px; background: #5b46b2; color: #fff; font: inherit; font-size: 12px; font-weight: 900; cursor: pointer; }
+.actions button:disabled { opacity: .5; cursor: not-allowed; }
+.actions .logout { border: 1px solid #ded7f3; background: #fff; color: #675f73; }
+.actions .clearPolicy { border: 1px solid #e5d5dd; background: #fff; color: #85455f; }
+.notice { margin: 12px 0 0; color: #4f3ba4; font-size: 12px; font-weight: 800; }
+.policyCard { grid-column: 1 / -1; }
+.accountCard, .dangerCard { grid-column: 1 / -1; }
+.onboardingRequired { border-color: #8d74df; box-shadow: 0 0 0 4px rgba(141,116,223,.12), 0 20px 50px rgba(69,48,129,.12); }
+.onboardingRequired:focus { outline: 3px solid #5b46b2; outline-offset: 4px; }
+.onboardingNotice { margin: 0 0 16px; padding: 13px 15px; border: 1px solid #c9baf2; border-radius: 14px; background: #f4f0ff; color: #3f2b87; font-size: 13px; font-weight: 800; line-height: 1.55; }
+.accountLoading { margin: 0; color: #746c81; font-size: 13px; }
+.accountColumns { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: 18px; }
+.consentPanel, .inventoryPanel { padding: 18px; border: 1px solid #e0daf2; border-radius: 16px; background: #fbfaff; }
+.consentHeading { display: flex; align-items: flex-start; gap: 10px; color: #5b46b2; }
+.consentHeading > svg { flex: 0 0 auto; margin-top: 1px; }
+.consentHeading > div { display: grid; gap: 3px; }
+.consentHeading strong { color: #2d2545; font-size: 14px; }
+.consentHeading small { color: #766f82; font-size: 11px; line-height: 1.5; }
+.policyDisclosure { margin-top: 12px; border: 1px solid #e5dff3; border-radius: 12px; background: #fff; }
+.policyDisclosure summary { padding: 12px 14px; color: #5143a0; font-size: 12px; font-weight: 850; cursor: pointer; }
+.policyDisclosure ul { display: grid; gap: 7px; margin: 0; padding: 0 30px 14px 34px; color: #665f72; font-size: 11px; line-height: 1.6; }
+.consentChecks { display: grid; gap: 8px; margin-top: 14px; }
+.consentChecks label { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: flex-start; gap: 10px; padding: 12px; border-radius: 12px; background: #f2eefc; cursor: pointer; }
+.consentChecks input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: #5b46b2; }
+.consentChecks label:has(input:disabled) { cursor: default; }
+.consentChecks span { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 12px; }
+.consentChecks strong { color: #302849; font-size: 12px; }
+.consentChecks small { color: #756b91; font-size: 10px; }
+.consentButton, .deleteButton { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; margin-top: 14px; padding: 0 16px; border: 0; border-radius: 12px; background: #5b46b2; color: #fff; font: inherit; font-size: 12px; font-weight: 900; cursor: pointer; }
+.consentButton:disabled, .deleteButton:disabled { opacity: .5; cursor: not-allowed; }
+.acceptedAt { display: flex; align-items: center; gap: 7px; margin: 14px 0 0; color: #21715a; font-size: 12px; font-weight: 850; }
+.inventoryList { display: grid; gap: 0; margin: 12px 0 0; }
+.inventoryList div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid #ece8f4; }
+.inventoryList div:last-child { border-bottom: 0; }
+.inventoryList dt { color: #696273; font-size: 12px; }
+.inventoryList dd { margin: 0; color: #3f326e; font-size: 12px; font-weight: 900; }
+.dangerCard { border-color: #ead4dc; background: #fffafb; }
+.dangerHeading { display: flex; align-items: flex-start; gap: 10px; color: #a83c5c; }
+.dangerHeading > svg { flex: 0 0 auto; margin-top: 2px; }
+.dangerHeading span { color: #a83c5c; font-size: 10px; font-weight: 950; letter-spacing: .13em; }
+.dangerHeading h2 { margin: 4px 0 0; color: #532437; font-size: 21px; }
+.dangerCard > p { max-width: 820px; margin: 14px 0; color: #745b65; font-size: 12px; line-height: 1.65; }
+.deleteAcknowledge { display: flex; align-items: flex-start; gap: 9px; max-width: 700px; color: #664852; font-size: 12px; cursor: pointer; }
+.deleteAcknowledge input { width: 18px; height: 18px; margin: 0; accent-color: #a83c5c; }
+.deleteField { display: grid; gap: 7px; max-width: 560px; margin-top: 14px; color: #664852; font-size: 12px; }
+.deleteField input { min-height: 46px; padding: 0 12px; border: 1px solid #ddbfc9; border-radius: 12px; background: #fff; color: #432131; font: inherit; font-size: 16px; }
+.deleteField input:focus-visible { outline: 2px solid #a83c5c; outline-offset: 2px; }
+.deleteField small { color: #88727a; font-size: 10px; }
+.deleteButton { background: #a83c5c; }
+.policyToggle { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; padding: 15px; border: 1px solid #dcd4f3; border-radius: 14px; background: #f8f5ff; cursor: pointer; }
+.policyToggle input { width: 19px; height: 19px; accent-color: #6d5bd0; }
+.policyToggle span { display: flex; flex-direction: column; gap: 4px; }
+.policyToggle strong { font-size: 13px; }
+.policyToggle small, .policyFields small, .interests small { color: #777084; font-size: 10px; font-weight: 650; }
+.policyFields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.policyFields > label { display: grid; gap: 7px; color: #514a5e; font-size: 12px; font-weight: 850; }
+.policyFields > label > span { display: flex; flex-direction: column; gap: 3px; }
+.policyFields input, .policyFields select { width: 100%; min-height: 46px; padding: 0 12px; border: 1px solid #d6cef0; border-radius: 12px; background: #fff; color: #221a3b; font: inherit; }
+.policyFields input:disabled, .policyFields select:disabled { background: #f4f2f7; color: #8d8795; }
+.interests { margin: 16px 0 0; padding: 0; border: 0; }
+.interests legend { margin-bottom: 9px; color: #514a5e; font-size: 12px; font-weight: 850; }
+.interests > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.interests label { position: relative; cursor: pointer; }
+.interests input { position: absolute; opacity: 0; pointer-events: none; }
+.interests span { display: inline-flex; align-items: center; min-height: 35px; padding: 0 12px; border: 1px solid #ded7f3; border-radius: 999px; background: #fff; color: #6a6376; font-size: 11px; font-weight: 850; }
+.interests input:checked + span { border-color: #8d79de; background: #eee9ff; color: #4f3ba4; }
+.interests input:focus-visible + span { outline: 2px solid #5b46b2; outline-offset: 2px; }
+.interests:disabled { opacity: .52; }
+.loginCard, .loading { max-width: 760px; margin: 0 auto; padding: 34px; text-align: center; }
+.loginCard h2 { margin: 12px 0 7px; }
+.loginCard p { color: #6a6376; }
+.loginConsentNotice { max-width: 520px; margin: 14px auto 0; color: #8b3328 !important; font-weight: 800; }
+.loginConsent { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: flex-start; max-width: 520px; margin: 20px auto 0; padding: 14px; border: 1px solid #ded7f3; border-radius: 13px; background: #f8f5ff; text-align: left; cursor: pointer; }
+.loginConsent input { width: 19px; height: 19px; margin: 1px 0 0; accent-color: #5b46b2; }
+.loginConsent span { display: grid; gap: 5px; }
+.loginConsent strong { color: #302849; font-size: 13px; line-height: 1.5; }
+.loginConsent small { color: #6a6376; font-size: 11px; }
+.loginConsent small a { display: inline; min-height: 0; color: #5b46b2; text-decoration: underline; }
+.loginCard > div { display: grid; gap: 9px; max-width: 420px; margin: 22px auto 0; }
+.loginCard a { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 13px; color: #241f00; font-weight: 900; text-decoration: none; }
+.loginCard a[aria-disabled="true"] { opacity: .48; cursor: not-allowed; }
+.loginCard .kakao { background: #fee500; }
+.loginCard .naver { background: #03c75a; color: #fff; }
+.loading { color: #6b6377; }
+@media (max-width: 760px) { .header { grid-template-columns: 1fr auto; margin-bottom: 28px; } .header > span { display: none; } .hero { grid-template-columns: 1fr; } .avatar { width: 62px; height: 62px; border-radius: 19px; } .grid { grid-template-columns: 1fr; } .card { padding: 19px; } .cardTitle { display: grid; } .cardTitle em { justify-self: start; } .details div { grid-template-columns: 88px minmax(0,1fr); } .policyFields, .accountColumns { grid-template-columns: 1fr; } .actions { flex-direction: column; } .consentButton, .deleteButton { width: 100%; } }
+@media (max-width: 760px) {
+  .shell { padding: 20px 14px 46px; }
+  .header { gap: 8px; }
+  .header a { min-height: 44px; font-size: 14px; }
+  .hero { gap: 14px; }
+  .hero p, .dataNote, .options small, .policyToggle small, .policyFields small, .interests small { font-size: 13px; line-height: 1.55; }
+  .cardTitle h2 { font-size: 22px; }
+  .details div { grid-template-columns: 78px minmax(0, 1fr); gap: 10px; }
+  .details dt, .details dd, .options strong, .policyToggle strong { font-size: 14px; }
+  .options label, .policyToggle { min-height: 56px; }
+  .aliasField, .policyFields > label, .interests legend { font-size: 14px; }
+  .aliasField input, .policyFields input, .policyFields select { min-height: 48px; font-size: 16px; }
+  .actions button { width: 100%; min-height: 48px; font-size: 14px; }
+  .interests span { min-height: 44px; font-size: 13px; }
+  .consentHeading strong, .consentChecks strong, .inventoryList dt, .inventoryList dd, .dangerCard > p, .deleteAcknowledge, .deleteField { font-size: 14px; }
+  .consentHeading small, .policyDisclosure ul, .consentChecks small, .deleteField small { font-size: 12px; }
+  .policyDisclosure summary { min-height: 44px; font-size: 14px; }
+  .consentButton, .deleteButton { min-height: 48px; font-size: 14px; }
+}

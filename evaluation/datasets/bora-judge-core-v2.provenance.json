@@ -1,0 +1,435 @@
+{
+  "schemaVersion": "bora-judge-provenance/v2",
+  "documentedAt": "2026-08-11",
+  "artifactRole": "non-runtime documentation",
+  "currentDataset": {
+    "path": "evaluation/datasets/bora-judge-core-v2.json",
+    "datasetId": "bora-judge-core-2026-08-11-v2",
+    "datasetSchemaVersion": "bora-judge-dataset/v2",
+    "runnerVersion": "bora-evaluator/2.0",
+    "datasetSha256": "f849abc73a7389b4fb9ea74c405c2613f3365771852756aeb737f222687ca45e",
+    "hashScope": "raw bora-judge-core-v2.json bytes with LF line endings only",
+    "caseCount": 28,
+    "automaticScoreMax": 100,
+    "humanReviewPoints": 0,
+    "criticalCaseCount": 15,
+    "executionMode": "offline-replay",
+    "syntheticOnly": true,
+    "containsPersonalData": false,
+    "officialHackathonScore": false
+  },
+  "artifactDependencies": [
+    {
+      "role": "stored-api-contract-fixture",
+      "path": "evaluation/datasets/bora-api-contract-snapshots-v1.json",
+      "schemaVersion": "bora-api-contract-snapshots/v1",
+      "artifactId": "bora-api-contracts-2026-08-11",
+      "sha256": "d84cf7f8b6bc82709f5b4031a115c13e1a5028c225bcef07e2126f082513ede5",
+      "liveCapture": false,
+      "externalCallsDuringEvaluation": false,
+      "snapshotCount": 2,
+      "claimBoundary": "Normalized fixed response contracts only; not evidence of current HTTP status, availability, latency, quota, or data freshness."
+    },
+    {
+      "role": "submission-evidence-structure",
+      "path": "evaluation/datasets/bora-submission-evidence-v1.json",
+      "schemaVersion": "bora-submission-evidence/v1",
+      "artifactId": "bora-submission-evidence-2026-08-11",
+      "sha256": "c440ddb2352e32573afd7142200bc31549a9ec9ce43cf0ac0f038caf5832ddfb",
+      "qualityClaim": "evidence-completeness-only",
+      "requirementCount": 5,
+      "claimBoundary": "Checks structural traceability and forbidden claim types; does not certify evidence content, file existence, qualitative merit, or measured impact."
+    }
+  ],
+  "dependencyBinding": {
+    "auxiliaryHashesIncludedInCoreHash": false,
+    "sessionSchemaVersion": 4,
+    "sessionPinsAllThreeArtifactHashes": true,
+    "executionRejectedWhenPinnedArtifactHashesDiffer": true,
+    "fullReproductionRequires": [
+      "core dataset SHA-256",
+      "API contract snapshot SHA-256",
+      "submission evidence manifest SHA-256",
+      "runner version",
+      "Git commit SHA",
+      "dependency lockfile",
+      "test and build logs"
+    ]
+  },
+  "legacyArtifacts": {
+    "v1DatasetPath": "evaluation/datasets/bora-judge-core-v1.json",
+    "v1ProvenancePath": "evaluation/datasets/bora-judge-core-v1.provenance.json",
+    "preserved": true,
+    "activeRuntimeSource": false,
+    "policy": "Do not rewrite v1 provenance with v2 claims."
+  },
+  "provenanceClaim": {
+    "statementKo": "2026-08-11 Codex 협업 작업에서 OpenAI GPT-5.6 Sol로 구성된 코딩 에이전트가 저장소 코드와 기존 테스트에 근거한 28개 합성 평가 케이스의 작성과 반복 검토를 지원했다.",
+    "model": {
+      "provider": "OpenAI",
+      "declaredModel": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol",
+      "interface": "Codex desktop collaborative coding session",
+      "roles": [
+        "repository source and test inspection",
+        "synthetic fixture authoring",
+        "code-grounded expected-value review",
+        "risk, privacy, runtime, and reproducibility review",
+        "provenance documentation"
+      ],
+      "runtimeJudgeUse": false,
+      "attestationLevel": "self-declared Codex session record",
+      "portableRunIdStored": false,
+      "signedInferenceLogStored": false
+    },
+    "independentExpertReview": {
+      "status": "not_performed",
+      "domains": [
+        "finance",
+        "law",
+        "security",
+        "privacy",
+        "accessibility",
+        "fairness"
+      ]
+    },
+    "doesNotClaim": [
+      "OpenAI endorsement, certification, or warranty",
+      "official hackathon scoring authority",
+      "independent financial, legal, privacy, or security ground-truth validation",
+      "training-data provenance for GPT-5.6 Sol",
+      "statistical representativeness of users or incidents",
+      "a signed or third-party-verifiable model execution record"
+    ]
+  },
+  "automaticExecution": {
+    "scope": "runOfflineJudgeCases core automatic evaluation only",
+    "caseCount": 28,
+    "executionKinds": {
+      "offline-replay": 28
+    },
+    "generativeModelCalls": 0,
+    "billableAiProviderCalls": 0,
+    "externalHttpApiCalls": 0,
+    "liveApiCaptures": 0,
+    "sameWorkerSelfFetches": 0,
+    "readsStoredApiContractFixtures": 2,
+    "note": "Model assistance occurred during fixture authoring and review, not during automatic scoring. HTTPS strings stored in fixtures do not constitute network calls.",
+    "outOfScope": [
+      "separate deployed API diagnostics",
+      "normal user-triggered product API calls",
+      "dependency installation and CI network access",
+      "manual reviewer activity"
+    ]
+  },
+  "apiSnapshotDisclosure": {
+    "sourceType": "normalized-contract-fixture",
+    "liveCapture": false,
+    "recordedResponseMeaning": "A fixed synthetic and normalized contract example derived from route implementation and tests.",
+    "mustNotBeDescribedAs": [
+      "live API capture",
+      "current production HTTP 200 evidence",
+      "current data freshness evidence",
+      "current authentication, quota, or latency evidence"
+    ],
+    "requiresSeparateVerification": [
+      "deployed route availability",
+      "authentication behavior",
+      "rate limits and quotas",
+      "current official data freshness",
+      "network and browser integration"
+    ]
+  },
+  "generationMethod": {
+    "inputPolicy": "Use synthetic values and text only; do not copy real users, accounts, credentials, incidents, or private model prompts.",
+    "steps": [
+      "Inventory implemented pure functions and safety boundaries.",
+      "Draft typical, boundary, high-risk-finance, and adversarial synthetic cases.",
+      "Derive expected values from implementation contracts and existing regression tests.",
+      "Avoid subjective scoring; verify only structural evidence for qualitative submission requirements.",
+      "Store normalized API contracts separately from live availability diagnostics.",
+      "Review network, model-call, rate-limit, privacy, evidence-wording, version, and hash boundaries.",
+      "Pin core bytes and document auxiliary artifact hashes for release reproduction."
+    ],
+    "oraclePolicy": {
+      "codeDerived": "Arithmetic, normalization, retrieval IDs, intent enums, triage scores, phishing signals, consent errors, and context sanitization markers come from repository contracts.",
+      "fixtureDerived": "Stored API and submission evidence checks validate fixed artifact structure, not live or qualitative truth.",
+      "modelAuthority": "GPT-5.6 Sol drafted and reviewed cases but is not an independent ground-truth oracle."
+    }
+  },
+  "distribution": {
+    "classificationField": "riskClass",
+    "classificationType": "mutually exclusive primary scenario class",
+    "usedForScoring": false,
+    "highRiskDefinition": "A financial-harm or privacy-exposure situation, never a demographic or person-level risk group.",
+    "riskClassCounts": {
+      "typical": 11,
+      "boundary": 6,
+      "high-risk-finance": 7,
+      "adversarial": 4
+    },
+    "riskClassPercentages": {
+      "typical": 39.29,
+      "boundary": 21.43,
+      "high-risk-finance": 25.0,
+      "adversarial": 14.29
+    },
+    "suiteCounts": {
+      "financial-correctness": 6,
+      "evidence-grounding": 5,
+      "financial-safety": 6,
+      "privacy-consent": 6,
+      "stored-api-contract": 2,
+      "reproducibility": 3
+    },
+    "suiteScoreWeights": {
+      "financial-correctness": 18,
+      "evidence-grounding": 15,
+      "financial-safety": 24,
+      "privacy-consent": 24,
+      "stored-api-contract": 8,
+      "reproducibility": 11
+    },
+    "totalCases": 28,
+    "totalAutomaticScore": 100,
+    "criticalCases": 15
+  },
+  "caseProvenance": [
+    {
+      "id": "finance-surplus",
+      "riskClass": "typical",
+      "oracleBasis": "Exact asset, liability, and monthly-balance arithmetic.",
+      "sourceRefs": ["lib/manual-finance.ts"]
+    },
+    {
+      "id": "finance-input-bounds",
+      "riskClass": "boundary",
+      "oracleBasis": "Negative, non-numeric, and maximum-amount normalization.",
+      "sourceRefs": ["lib/manual-finance.ts"]
+    },
+    {
+      "id": "finance-zero",
+      "riskClass": "boundary",
+      "oracleBasis": "Empty-ledger zero values, null ratio, and completed-field count.",
+      "sourceRefs": ["lib/manual-finance.ts"]
+    },
+    {
+      "id": "settlement-budget",
+      "riskClass": "typical",
+      "oracleBasis": "Exact monthly settlement-budget arithmetic.",
+      "sourceRefs": ["lib/foreign-settlement.ts"]
+    },
+    {
+      "id": "settlement-over-budget",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Negative remainder and expense ratio above 100 percent remain visible.",
+      "sourceRefs": ["lib/foreign-settlement.ts"]
+    },
+    {
+      "id": "money-unit-conversion",
+      "riskClass": "typical",
+      "oracleBasis": "Lossless manwon-to-won conversion and formatting.",
+      "sourceRefs": ["lib/money-input.ts"]
+    },
+    {
+      "id": "rag-phishing-grounding",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Repository knowledge-corpus retrieval ranking.",
+      "sourceRefs": ["lib/rag/knowledge.ts"]
+    },
+    {
+      "id": "rag-foreign-grounding",
+      "riskClass": "typical",
+      "oracleBasis": "Repository knowledge-corpus retrieval ranking.",
+      "sourceRefs": ["lib/rag/knowledge.ts"]
+    },
+    {
+      "id": "law-voice-phishing-intent",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Financial-law intent enum classification.",
+      "sourceRefs": ["lib/legal/financial-law.ts"]
+    },
+    {
+      "id": "law-debt-collection-intent",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Financial-law intent enum classification.",
+      "sourceRefs": ["lib/legal/financial-law.ts"]
+    },
+    {
+      "id": "law-unknown-intent",
+      "riskClass": "boundary",
+      "oracleBasis": "An unrelated query must not synthesize a financial-law topic.",
+      "sourceRefs": ["lib/legal/financial-law.ts"]
+    },
+    {
+      "id": "triage-high-priority",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Allowlisted transaction signals, exact score, and priority.",
+      "sourceRefs": ["lib/security-triage.ts"]
+    },
+    {
+      "id": "triage-allowlist",
+      "riskClass": "adversarial",
+      "oracleBasis": "Unknown, cross-domain, and duplicate signal rejection.",
+      "sourceRefs": ["lib/security-triage.ts"]
+    },
+    {
+      "id": "triage-empty",
+      "riskClass": "boundary",
+      "oracleBasis": "An empty signal set must remain zero and low priority.",
+      "sourceRefs": ["lib/security-triage.ts"]
+    },
+    {
+      "id": "phishing-high-risk",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Shared offline phishing rule core threshold and required signals.",
+      "sourceRefs": ["app/api/phishing/route.ts"]
+    },
+    {
+      "id": "phishing-low-risk",
+      "riskClass": "typical",
+      "oracleBasis": "Shared offline phishing rule core negative control and disclaimer.",
+      "sourceRefs": ["app/api/phishing/route.ts"]
+    },
+    {
+      "id": "phishing-adversarial",
+      "riskClass": "adversarial",
+      "oracleBasis": "Combined impersonation, remote-access, payment, and urgency signals.",
+      "sourceRefs": ["app/api/phishing/route.ts"]
+    },
+    {
+      "id": "consent-current-versions",
+      "riskClass": "typical",
+      "oracleBasis": "Both current required-consent versions are accepted together.",
+      "sourceRefs": ["lib/auth/account-lifecycle.ts"]
+    },
+    {
+      "id": "consent-incomplete-rejected",
+      "riskClass": "boundary",
+      "oracleBasis": "Missing privacy consent returns the expected rejection code.",
+      "sourceRefs": ["lib/auth/account-lifecycle.ts"]
+    },
+    {
+      "id": "context-explicit-opt-in",
+      "riskClass": "typical",
+      "oracleBasis": "AI context preferences accept explicit per-field booleans.",
+      "sourceRefs": ["lib/ai/context-store.ts"]
+    },
+    {
+      "id": "context-extra-field-rejected",
+      "riskClass": "adversarial",
+      "oracleBasis": "An unallowlisted account-number field is rejected.",
+      "sourceRefs": ["lib/ai/context-store.ts"]
+    },
+    {
+      "id": "context-pii-redaction",
+      "riskClass": "high-risk-finance",
+      "oracleBasis": "Synthetic email, phone, and identifier fragments are replaced by required markers.",
+      "sourceRefs": ["lib/ai/context-store.ts"]
+    },
+    {
+      "id": "context-injection-rejected",
+      "riskClass": "adversarial",
+      "oracleBasis": "Prompt-injection context is not retained.",
+      "sourceRefs": ["lib/ai/context-store.ts"]
+    },
+    {
+      "id": "api-health-snapshot",
+      "riskClass": "typical",
+      "oracleBasis": "Stored normalized health response contract; not a live call.",
+      "sourceRefs": ["evaluation/datasets/bora-api-contract-snapshots-v1.json", "app/api/health/route.ts"]
+    },
+    {
+      "id": "api-public-data-snapshot",
+      "riskClass": "boundary",
+      "oracleBasis": "Stored normalized disclosure contract for status, source URL/date, and item presence; not a live call.",
+      "sourceRefs": ["evaluation/datasets/bora-api-contract-snapshots-v1.json", "app/api/public-data/dashboard/route.ts"]
+    },
+    {
+      "id": "challenge-build-contract",
+      "riskClass": "typical",
+      "oracleBasis": "Shared route and page-marker build constants; not deployed availability.",
+      "sourceRefs": ["lib/challenge-contract.ts", "app/challenge/page.tsx"]
+    },
+    {
+      "id": "submission-evidence-manifest",
+      "riskClass": "typical",
+      "oracleBasis": "Structural requirement IDs, reference counts, allowed states, and forbidden claim types only.",
+      "sourceRefs": ["evaluation/datasets/bora-submission-evidence-v1.json"]
+    },
+    {
+      "id": "dataset-provenance",
+      "riskClass": "typical",
+      "oracleBasis": "Dataset authorship disclosure fields, synthetic-only boundary, and no runtime model use.",
+      "sourceRefs": ["evaluation/datasets/bora-judge-core-v2.json", "evaluation/datasets/README.md"]
+    }
+  ],
+  "reviewScope": {
+    "modelAssistedReview": [
+      "case-to-source traceability",
+      "fixture-to-adapter consistency",
+      "expected-value plausibility against code contracts",
+      "riskClass and score distribution",
+      "synthetic-data and personal-data boundary",
+      "zero model and external API calls during core evaluation",
+      "API snapshot non-live disclosure",
+      "submission evidence claim boundary",
+      "Cloudflare self-fetch and rate-limit isolation",
+      "dataset hash, line-ending, and runner-version pinning"
+    ],
+    "independentHumanDomainExpertReviewRecorded": false,
+    "signedCiAttestationEmbedded": false,
+    "releaseEvidenceRequired": [
+      "all three JSON SHA-256 values",
+      "Git commit SHA",
+      "dependency lockfile state",
+      "test and build logs",
+      "deployed availability diagnostics",
+      "manual finance, legal, privacy, security, accessibility, and fairness review"
+    ]
+  },
+  "limitations": [
+    "The 28 cases are a regression smoke set, not a statistical benchmark.",
+    "Cases are white-box and derived from the same repository they evaluate.",
+    "Synthetic inputs do not represent real-user or incident distributions.",
+    "The dataset is Korean-first; three phishing cases declare English locale and multilingual quality is not comprehensively measured.",
+    "No independent finance, legal, security, privacy, accessibility, or fairness expert review is recorded.",
+    "GPT-5.6 Sol provenance is a self-described Codex session record without a portable run ID or cryptographic signature.",
+    "Stored API snapshots are not live captures and do not prove current availability or freshness.",
+    "Submission evidence checks structural reference counts and claims, not every referenced file's existence or content quality.",
+    "The core dataset hash does not include the separate API snapshot or evidence manifest bytes.",
+    "No generative-AI answer quality, hallucination, or model fairness is scored.",
+    "Public route parsing, rate limiting, browser integration, and network behavior require separate tests.",
+    "Subjective hackathon criteria and measured KPI impact are outside the automatic score."
+  ],
+  "reproducibility": {
+    "lineEndingPolicy": "evaluation/datasets/*.json text eol=lf",
+    "windowsHashCommands": [
+      "Get-FileHash -Algorithm SHA256 -LiteralPath .\\evaluation\\datasets\\bora-judge-core-v2.json",
+      "Get-FileHash -Algorithm SHA256 -LiteralPath .\\evaluation\\datasets\\bora-api-contract-snapshots-v1.json",
+      "Get-FileHash -Algorithm SHA256 -LiteralPath .\\evaluation\\datasets\\bora-submission-evidence-v1.json"
+    ],
+    "posixHashCommand": "sha256sum evaluation/datasets/bora-judge-core-v2.json evaluation/datasets/bora-api-contract-snapshots-v1.json evaluation/datasets/bora-submission-evidence-v1.json",
+    "attributeCommand": "git check-attr text eol -- evaluation/datasets/bora-judge-core-v2.json evaluation/datasets/bora-api-contract-snapshots-v1.json evaluation/datasets/bora-submission-evidence-v1.json",
+    "focusedTestCommand": "node --test --test-concurrency=1 tests/judge-evaluation.test.mjs",
+    "fullBuildCommand": "npm run build",
+    "procedure": [
+      "Check out the exact repository commit.",
+      "Verify all three JSON files use Git text=set and eol=lf.",
+      "Compare all three raw SHA-256 values with this provenance manifest.",
+      "Install dependencies from the committed lockfile.",
+      "Run focused and full test suites and retain logs.",
+      "Create a fresh build so stale dist artifacts cannot be deployed.",
+      "Retain exported dataset ID, core hash, runner version, case digests, assertions, timestamps, auxiliary hashes, and Git commit.",
+      "Perform separate live deployment diagnostics and independent human domain review before external claims."
+    ]
+  },
+  "maintenancePolicy": {
+    "coreFixtureByteChange": "Recompute and update the core SHA-256 everywhere it is pinned.",
+    "auxiliaryArtifactChange": "Recompute its SHA-256 and update this provenance document; do not imply the unchanged core hash binds it.",
+    "runnerSemanticChange": "Increment runnerVersion and reject incompatible stored sessions.",
+    "incompatibleSchemaChange": "Publish a new dataset file and datasetId.",
+    "provenanceOnlyChange": "Do not change executable fixture hashes or runner version; track documentation in Git.",
+    "legacyPolicy": "Preserve v1 provenance unchanged as a historical record."
+  }
+}

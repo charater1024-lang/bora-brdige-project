@@ -1,0 +1,2 @@
+# Isolated backup/test environment only; not a Local LLM runtime dependency.
+cryptography>=46.0.5,<51

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "bora-api-contract-snapshots/v1",
+  "snapshotSetId": "bora-api-contracts-2026-08-11",
+  "createdAt": "2026-08-11T00:00:00+09:00",
+  "sourceType": "normalized-contract-fixture",
+  "liveCapture": false,
+  "externalCallsDuringEvaluation": false,
+  "description": "실제 운영 API를 반복 호출하지 않고도 응답 계약과 금융 데이터 고지 구조를 재현하기 위해, 라우트 구현과 테스트에서 개인정보를 제거해 정규화한 고정 스냅샷이다. 현재 가용성은 별도 API 진단에서만 확인한다.",
+  "snapshots": [
+    {
+      "id": "health-contract",
+      "request": {
+        "method": "GET",
+        "path": "/api/health"
+      },
+      "recordedResponse": {
+        "httpStatus": 200,
+        "body": {
+          "status": "ok"
+        }
+      },
+      "assertions": [
+        { "field": "httpStatus", "operator": "eq", "expected": 200 },
+        { "field": "body.status", "operator": "eq", "expected": "ok" }
+      ],
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "public-data-disclosure-contract",
+      "request": {
+        "method": "GET",
+        "path": "/api/public-data/dashboard?category=finance&pageSize=1"
+      },
+      "recordedResponse": {
+        "httpStatus": 200,
+        "body": {
+          "status": "partial",
+          "lastSuccessfulAt": "2026-08-10T00:00:00.000Z",
+          "sources": [
+            {
+              "id": "financial-supervisory-information",
+              "status": "live",
+              "sourceUrl": "https://www.fss.or.kr/",
+              "sourceDate": "2026-08-10"
+            }
+          ],
+          "categories": [
+            {
+              "id": "finance",
+              "items": [
+                {
+                  "id": "synthetic-contract-item",
+                  "title": "계약 검증용 합성 항목",
+                  "sourceUrl": "https://www.fss.or.kr/",
+                  "sourceDate": "2026-08-10",
+                  "synthetic": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "assertions": [
+        { "field": "httpStatus", "operator": "eq", "expected": 200 },
+        { "field": "body.status", "operator": "one-of", "expected": ["live", "partial"] },
+        { "field": "body.sources", "operator": "min-length", "expected": 1 },
+        { "field": "body.sources.*.sourceUrl", "operator": "https-only", "expected": true },
+        { "field": "body.sources.*.sourceDate", "operator": "present", "expected": true },
+        { "field": "body.categories.*.items", "operator": "min-total-length", "expected": 1 }
+      ],
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "lib/public-data/types.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    }
+  ],
+  "limitations": [
+    "이 파일은 라이브 API 응답을 인증하거나 현재 가용성을 증명하지 않는다.",
+    "공공데이터 항목은 응답 계약 검증용 합성 레코드이며 실제 금융상품이나 정책을 나타내지 않는다.",
+    "배포 환경, 인증, 쿼터, 최신성은 별도 API 진단 결과로만 판단한다."
+  ]
+}

@@ -1,0 +1,41 @@
+[Unit]
+Description=BORA Bridge Finance AI web service
+After=network-online.target bora-public-api-proxy.service bora-local-llm.service
+Wants=network-online.target bora-public-api-proxy.service bora-local-llm.service
+StartLimitIntervalSec=300
+StartLimitBurst=6
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Project/BORA-Bridge-Finance-AI
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+UMask=0077
+# Ubuntu's AppArmor userns policy prevents nesting Bubblewrap below systemd's
+# user-manager namespace directives. The wrapper provides the private tmp,
+# namespaces, capability drop, read-only root and credential masking instead.
+RuntimeDirectory=bora-bridge
+RuntimeDirectoryMode=0700
+ExecStartPre=/usr/bin/env node scripts/build-local-runtime-config.mjs .env.local dist/server/wrangler.json %t/bora-bridge/wrangler.runtime.json
+ExecStart=/usr/bin/bash deploy/run-bora-sandbox.sh
+ExecStop=/usr/bin/bash deploy/stop-local-worker.sh
+Restart=always
+RestartSec=5
+RestartSteps=5
+RestartMaxDelaySec=60
+TimeoutStopSec=30
+KillMode=mixed
+SuccessExitStatus=143 SIGTERM
+# Stay below the parent user slice's systemd-oomd pressure boundary. The
+# memory watchdog performs a health-verified restart before this hard guard.
+MemoryHigh=3750M
+MemoryMax=4G
+MemorySwapMax=256M
+OOMPolicy=stop
+TasksMax=512
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bora-bridge
+
+[Install]
+WantedBy=default.target

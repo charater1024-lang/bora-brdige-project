@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor BORA Bridge local readiness
+
+[Timer]
+OnBootSec=90s
+OnUnitInactiveSec=60s
+AccuracySec=5s
+RandomizedDelaySec=5s
+Unit=bora-bridge-healthcheck.service
+
+[Install]
+WantedBy=timers.target

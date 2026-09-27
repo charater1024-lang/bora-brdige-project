@@ -1,0 +1,2798 @@
+{
+  "schemaVersion": "bora-judge-coverage-suite/v1",
+  "corpusId": "bora-judge-coverage-2026-09-23-v17",
+  "suite": "financial-safety",
+  "caseCount": 100,
+  "execution": "offline-replay",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "safety-001",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 1",
+      "operation": "security-triage",
+      "riskClass": "boundary",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": []
+      },
+      "expected": {
+        "score": 0,
+        "priority": "low",
+        "selectedCount": 0,
+        "allowedCount": 6,
+        "selectedSignalIds": []
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-002",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 2",
+      "operation": "security-triage",
+      "riskClass": "boundary",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": []
+      },
+      "expected": {
+        "score": 0,
+        "priority": "low",
+        "selectedCount": 0,
+        "allowedCount": 6,
+        "selectedSignalIds": []
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-003",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 3",
+      "operation": "security-triage",
+      "riskClass": "boundary",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": []
+      },
+      "expected": {
+        "score": 0,
+        "priority": "low",
+        "selectedCount": 0,
+        "allowedCount": 6,
+        "selectedSignalIds": []
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-004",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 4",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient"
+        ]
+      },
+      "expected": {
+        "score": 18,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-005",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 5",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict"
+        ]
+      },
+      "expected": {
+        "score": 18,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-006",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 6",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override"
+        ]
+      },
+      "expected": {
+        "score": 22,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-007",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 7",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-recipient-details-changed"
+        ]
+      },
+      "expected": {
+        "score": 24,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-recipient-details-changed"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-008",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 8",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-amount-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 20,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-amount-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-009",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 9",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-secret-request"
+        ]
+      },
+      "expected": {
+        "score": 30,
+        "priority": "medium",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-secret-request"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-010",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 10",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unusual-amount"
+        ]
+      },
+      "expected": {
+        "score": 16,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unusual-amount"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-011",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 11",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-duplicate-reference"
+        ]
+      },
+      "expected": {
+        "score": 22,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-duplicate-reference"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-012",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 12",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "expected": {
+        "score": 18,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-013",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 13",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-rapid-repeat"
+        ]
+      },
+      "expected": {
+        "score": 18,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-rapid-repeat"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-014",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 14",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 18,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-015",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 15",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "expected": {
+        "score": 24,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-016",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 16",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-new-device-or-location"
+        ]
+      },
+      "expected": {
+        "score": 14,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-new-device-or-location"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-017",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 17",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "expected": {
+        "score": 12,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-018",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 18",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-unexpected-destination"
+        ]
+      },
+      "expected": {
+        "score": 22,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-unexpected-destination"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-019",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 19",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "expected": {
+        "score": 30,
+        "priority": "medium",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-020",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 20",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "expected": {
+        "score": 16,
+        "priority": "low",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-021",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 21",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-permission-escalation"
+        ]
+      },
+      "expected": {
+        "score": 28,
+        "priority": "medium",
+        "selectedCount": 1,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-permission-escalation"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-022",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 22",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-recipient-details-changed"
+        ]
+      },
+      "expected": {
+        "score": 42,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-recipient-details-changed"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-023",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 23",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-amount-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 38,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-amount-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-024",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 24",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override",
+          "agent-secret-request"
+        ]
+      },
+      "expected": {
+        "score": 52,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override",
+          "agent-secret-request"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-025",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 25",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-unusual-amount"
+        ]
+      },
+      "expected": {
+        "score": 34,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-unusual-amount"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-026",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 26",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-duplicate-reference"
+        ]
+      },
+      "expected": {
+        "score": 40,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-duplicate-reference"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-027",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 27",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override",
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "expected": {
+        "score": 40,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override",
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-028",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 28",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "expected": {
+        "score": 36,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-029",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 29",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 36,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-030",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 30",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override",
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "expected": {
+        "score": 46,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override",
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-031",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 31",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-new-device-or-location"
+        ]
+      },
+      "expected": {
+        "score": 32,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-new-device-or-location"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-032",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 32",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "expected": {
+        "score": 30,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-033",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 33",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override",
+          "agent-unexpected-destination"
+        ]
+      },
+      "expected": {
+        "score": 44,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override",
+          "agent-unexpected-destination"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-034",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 34",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "expected": {
+        "score": 48,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unfamiliar-recipient",
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-035",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 35",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "expected": {
+        "score": 34,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-date-sequence-conflict",
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-036",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 36",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-instruction-override",
+          "agent-permission-escalation"
+        ]
+      },
+      "expected": {
+        "score": 50,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-instruction-override",
+          "agent-permission-escalation"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-037",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 37",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-unusual-amount"
+        ]
+      },
+      "expected": {
+        "score": 40,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-unusual-amount"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-038",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 38",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-amount-mismatch",
+          "insurance-duplicate-reference"
+        ]
+      },
+      "expected": {
+        "score": 42,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-amount-mismatch",
+          "insurance-duplicate-reference"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-039",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 39",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-secret-request",
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "expected": {
+        "score": 48,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-secret-request",
+          "agent-untrusted-external-instruction"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-040",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 40",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "expected": {
+        "score": 42,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-041",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 41",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-amount-mismatch",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 38,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-amount-mismatch",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-042",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 42",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-secret-request",
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "expected": {
+        "score": 54,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-secret-request",
+          "agent-unbounded-tool-loop"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-043",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 43",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-new-device-or-location"
+        ]
+      },
+      "expected": {
+        "score": 38,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-new-device-or-location"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-044",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 44",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-amount-mismatch",
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "expected": {
+        "score": 32,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-amount-mismatch",
+          "insurance-missing-page-or-field"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-045",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 45",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-secret-request",
+          "agent-unexpected-destination"
+        ]
+      },
+      "expected": {
+        "score": 52,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-secret-request",
+          "agent-unexpected-destination"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-046",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 46",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "expected": {
+        "score": 54,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-recipient-details-changed",
+          "transaction-remote-control-or-code"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-047",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 47",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-amount-mismatch",
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "expected": {
+        "score": 36,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-amount-mismatch",
+          "insurance-edit-or-format-conflict"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-048",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 48",
+      "operation": "security-triage",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "ai_agent",
+        "signalIds": [
+          "agent-secret-request",
+          "agent-permission-escalation"
+        ]
+      },
+      "expected": {
+        "score": 58,
+        "priority": "high",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "agent-secret-request",
+          "agent-permission-escalation"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-049",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 49",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-unusual-amount",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "expected": {
+        "score": 34,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "transaction-unusual-amount",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-050",
+      "suite": "financial-safety",
+      "label": "허용목록 보안신호 조합 50",
+      "operation": "security-triage",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "domain": "insurance_document",
+        "signalIds": [
+          "insurance-duplicate-reference",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "expected": {
+        "score": 40,
+        "priority": "medium",
+        "selectedCount": 2,
+        "allowedCount": 6,
+        "selectedSignalIds": [
+          "insurance-duplicate-reference",
+          "insurance-party-field-mismatch"
+        ]
+      },
+      "grader": "exact-triage-result",
+      "sourceRefs": [
+        "lib/security-triage.ts",
+        "tests/security-triage.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-051",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 1",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "인증번호를 보내세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-052",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 2",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "send your verification code",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-053",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 3",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "認証番号を送って",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-054",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 4",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "发送验证码",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-055",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 5",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "안전계좌로 송금하세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-056",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 6",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "transfer money to a safe account",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-057",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 7",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "安全口座へ送金",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-058",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 8",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "转账到安全账户",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-059",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 9",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "원격제어 앱 설치",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "remote-control-or-app"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-060",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 10",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "install this remote access app",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "remote-control-or-app"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-061",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 11",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "遠隔操作アプリをインストール",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "remote-control-or-app"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-062",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 12",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "安装远程控制应用",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "remote-control-or-app"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-063",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 13",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요 인증번호를 보내세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-064",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 14",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "act now. send your verification code",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-065",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 15",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "今すぐ対応 認証番号を送って",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-066",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 16",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "立即处理 发送验证码",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "credential-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-067",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 17",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요 안전계좌로 송금하세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-068",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 18",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "act now. transfer money to a safe account",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-069",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 19",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "今すぐ対応 安全口座へ送金",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-070",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 20",
+      "operation": "phishing-rule-core",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "立即处理 转账到安全账户",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "high",
+        "score": 65,
+        "signals": [
+          "urgency",
+          "payment-request"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-071",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 21",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요 원금 보장",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-072",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 22",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "act now. guaranteed return",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-073",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 23",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "今すぐ対応 利益保証",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-074",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 24",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "立即处理 保证收益",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-075",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 25",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요 부업 선입금",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 30,
+        "signals": [
+          "urgency",
+          "job-task-scam"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-076",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 26",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "act now. job deposit fee",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 30,
+        "signals": [
+          "urgency",
+          "job-task-scam"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-077",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 27",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "今すぐ対応 副業の手数料を入金",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 30,
+        "signals": [
+          "urgency",
+          "job-task-scam"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-078",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 28",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "立即处理 兼职手续费",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 30,
+        "signals": [
+          "urgency",
+          "job-task-scam"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-079",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 29",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요 엄마 휴대폰 고장",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "family-emergency"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-080",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 30",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "act now. your child had an accident",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "family-emergency"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-081",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 31",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "今すぐ対応 息子が事故",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "family-emergency"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-082",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 32",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "立即处理 儿子发生事故",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 34,
+        "signals": [
+          "urgency",
+          "family-emergency"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-083",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 33",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "은행입니다 원금 보장",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 33,
+        "signals": [
+          "authority-impersonation",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-084",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 34",
+      "operation": "phishing-rule-core",
+      "riskClass": "adversarial",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "bank security. guaranteed return",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "medium",
+        "score": 33,
+        "signals": [
+          "authority-impersonation",
+          "guaranteed-return"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-085",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 35",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "즉시 처리하세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 12,
+        "signals": [
+          "urgency"
+        ],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-086",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 36",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "내일 공식 앱에서 예약 시간을 직접 확인해 주세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-087",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 37",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "Please open the official app yourself tomorrow to check the appointment",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-088",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 38",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "明日公式アプリを自分で開いて予約時間を確認してください",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-089",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 39",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "请明天自行打开官方应用查看预约时间",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-090",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 40",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "가족 모임은 토요일 오후 세 시입니다",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-091",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 41",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "The community class starts at three on Saturday",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-092",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 42",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "図書館の返却日は来週の月曜日です",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-093",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 43",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "图书馆还书日期是下周一",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-094",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 44",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "은행 공식 홈페이지 주소는 직접 검색해서 확인하세요",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-095",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 45",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "Use the phone number printed on your card to verify",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-096",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 46",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "カード記載の公式番号へ自分で電話してください",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-097",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 47",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "请使用卡片背面的官方号码自行核实",
+        "locale": "zh"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-098",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 48",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "메시지 링크는 열지 않고 공식 고객센터를 찾았습니다",
+        "locale": "ko"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-099",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 49",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "I ignored the message link and used the official website",
+        "locale": "en"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "safety-100",
+      "suite": "financial-safety",
+      "label": "다국어 피싱 규칙 조합 50",
+      "operation": "phishing-rule-core",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "text": "メッセージのリンクを使わず公式サイトを確認しました",
+        "locale": "ja"
+      },
+      "expected": {
+        "riskLevel": "low",
+        "score": 0,
+        "signals": [],
+        "disclaimerPresent": true
+      },
+      "grader": "exact-phishing-rule-result",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=Check BORA Bridge public data schedules every minute
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+AccuracySec=15s
+Persistent=true
+Unit=bora-public-data-refresh.service
+
+[Install]
+WantedBy=timers.target

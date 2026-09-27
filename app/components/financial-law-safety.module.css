@@ -1,0 +1,90 @@
+.shell { margin-top: 20px; padding: 24px; border: 1px solid #ded7ec; border-radius: 22px; color: #281f3e; background: linear-gradient(145deg, #fff, #fbf8ff); box-shadow: 0 16px 38px rgba(54,38,91,.07); }
+.shell > header > span { display: inline-flex; align-items: center; gap: 6px; color: #5945a5; font-size: 12px; font-weight: 950; letter-spacing: .1em; }
+.shell > header h2 { margin: 8px 0 5px; font-size: 23px; }
+.shell > header p { max-width: 760px; margin: 0; color: #746c7d; font-size: 13px; line-height: 1.65; }
+.topicGrid { margin-top: 17px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.topicGrid button { min-height: 45px; padding: 0 12px; border: 1px solid #e2dced; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; color: #55466f; background: #fff; cursor: pointer; font: inherit; font-size: 12px; font-weight: 850; }
+.topicGrid button:hover, .topicGrid button:focus-visible, .topicGrid button[aria-pressed="true"] { border-color: #9f8ad6; color: #4e3898; background: #f3effe; outline: 3px solid rgba(98,76,180,.11); }
+.topicGrid button:disabled { cursor: wait; opacity: .65; }
+.result { margin-top: 14px; }
+.message { min-height: 94px; padding: 18px; border: 1px dashed #d8d0e7; border-radius: 14px; display: flex; align-items: center; justify-content: center; gap: 10px; color: #6858aa; background: #fbfafe; text-align: center; }
+.message[data-tone="warning"] { color: #915030; border-color: #ecd1bf; background: #fff9f4; }
+.message p { max-width: 740px; margin: 0; color: inherit; font-size: 14px; line-height: 1.65; }
+.spin { animation: lawSpin .85s linear infinite; }
+.verification { min-height: 44px; padding: 8px 11px; border-radius: 11px; display: flex; align-items: center; gap: 7px; color: #176f58; background: #e9f7f1; font-size: 12px; }
+.verification[data-status="stale"] { color: #8b5b16; background: #fff6df; }
+.verification time { margin-left: auto; }
+.aiSummary { margin-top: 10px; padding: 16px; border: 1px solid #d9cef4; border-radius: 15px; background: linear-gradient(135deg, #f8f5ff, #fff); }
+.aiSummaryHeading { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: 10px; }
+.aiSummaryHeading > span { width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(145deg, #7658ce, #5235a6); }
+.aiSummaryHeading h3 { margin: 1px 0 3px; color: #3e2d72; font-size: 14px; }
+.aiSummaryHeading p { margin: 0; color: #625b6c; font-size: 12px; line-height: 1.55; }
+.aiSummaryHeading small { padding: 5px 8px; border-radius: 999px; color: #513d94; background: #eee8ff; font-size: 11px; font-weight: 850; white-space: nowrap; }
+.summaryDisclosure { margin-top: 12px; border: 1px solid #e1d9f3; border-radius: 11px; background: rgba(255,255,255,.78); overflow: hidden; }
+.summaryDisclosure > summary { min-height: 44px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #513d94; cursor: pointer; font-size: 12px; font-weight: 850; list-style: none; }
+.summaryDisclosure > summary::-webkit-details-marker { display: none; }
+.summaryDisclosure > summary:hover { background: #f6f2ff; }
+.summaryText { margin: 0; padding: 13px; border-top: 1px solid #e8e2f3; color: #4f475b; background: #fff; font-size: 12px; line-height: 1.75; white-space: pre-line; }
+.summaryStatus { margin: 13px 0 0; display: flex; align-items: center; gap: 7px; color: #756b83; font-size: 11px; line-height: 1.6; }
+.summaryApproval { margin-top: 13px; padding: 12px; border: 1px solid #ead5ad; border-radius: 11px; background: #fff9ec; }
+.summaryApproval p { margin: 0; color: #785b26; font-size: 11px; line-height: 1.6; }
+.summaryApproval button { margin-top: 9px; min-height: 36px; padding: 0 12px; border: 0; border-radius: 9px; color: #fff; background: #6045b5; cursor: pointer; font: inherit; font-size: 10px; font-weight: 850; }
+.summaryApproval button:focus-visible { outline: 3px solid rgba(96,69,181,.25); outline-offset: 2px; }
+.lawList { margin-top: 10px; display: grid; gap: 9px; }
+.lawCard { border: 1px solid #e3ddec; border-radius: 15px; background: #fff; overflow: hidden; }
+.lawCard > summary { min-height: 86px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px; cursor: pointer; list-style: none; }
+.lawCard > summary::-webkit-details-marker { display: none; }
+.lawCard > summary:hover { background: #fbfafe; }
+.lawCard > summary > div:first-child { min-width: 0; }
+.lawCard > summary span { color: #6e5db1; font-size: 10px; font-weight: 900; }
+.lawList h3 { margin: 5px 0; font-size: 16px; }
+.lawCard > summary small { color: #625b6c; font-size: 12px; }
+.lawDisclosureMeta { flex: 0 0 auto; display: flex; align-items: center; gap: 9px; }
+.lawDisclosureMeta > small { padding: 5px 8px; border-radius: 999px; color: #6754aa; background: #f0ecfb; font-weight: 850; }
+.disclosureState { display: inline-flex; align-items: center; gap: 5px; color: #5945a5; font-size: 11px; font-weight: 850; }
+.disclosureState i { font-style: normal; }
+.disclosureState i:nth-child(2) { display: none; }
+details[open] > summary .disclosureState i:first-child { display: none; }
+details[open] > summary .disclosureState i:nth-child(2) { display: inline; }
+.disclosureState svg { transition: transform .18s ease; }
+details[open] > summary .disclosureState svg { transform: rotate(180deg); }
+.lawContent { padding: 15px 16px 16px; border-top: 1px solid #e9e4f0; background: linear-gradient(180deg, #fdfcff, #faf8fe); }
+.lawContent > a { width: fit-content; min-height: 44px; padding: 0 11px; border-radius: 9px; display: inline-flex; align-items: center; gap: 5px; color: #513d94; background: #f1edfb; font-size: 12px; font-weight: 900; text-decoration: none; }
+.lawContent > strong { margin-top: 14px; display: block; color: #514568; font-size: 11px; }
+.articleList { margin-top: 8px; display: grid; gap: 7px; }
+.articleDisclosure { border-left: 3px solid #8e78d4; border-radius: 0 10px 10px 0; background: #fff; overflow: hidden; }
+.articleDisclosure > summary { min-height: 44px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; list-style: none; }
+.articleDisclosure > summary::-webkit-details-marker { display: none; }
+.articleDisclosure > summary:hover { background: #f7f3ff; }
+.articleDisclosure b { color: #4f3e84; font-size: 12px; }
+.articleDisclosure p { margin: 0; padding: 11px 12px; border-top: 1px dashed #e3ddec; color: #655d6f; background: #faf8fe; font-size: 11px; line-height: 1.65; white-space: pre-line; }
+.checklist { margin-top: 14px; border-radius: 14px; background: #f3f0f9; overflow: hidden; }
+.checklist > summary { min-height: 48px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; list-style: none; }
+.checklist > summary::-webkit-details-marker { display: none; }
+.checklist > summary:hover { background: #ece7f6; }
+.checklist > summary strong { color: #4d4262; font-size: 12px; }
+.checklist ol { margin: 0; padding: 0 15px 14px 35px; color: #675f70; font-size: 11px; line-height: 1.7; }
+.shell > footer { margin-top: 13px; padding-top: 12px; border-top: 1px solid #e9e4ef; display: flex; align-items: flex-start; gap: 7px; color: #8a5260; }
+.shell > footer svg { flex: 0 0 auto; margin-top: 2px; }
+.shell > footer p { margin: 0; font-size: 10px; line-height: 1.6; }
+@keyframes lawSpin { to { transform: rotate(360deg); } }
+@media (max-width: 760px) {
+  .shell { padding: 18px; }
+  .shell > header p { font-size: 14px; }
+  .topicGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topicGrid button { min-height: 48px; font-size: 14px; }
+  .message p, .verification, .aiSummaryHeading p, .summaryStatus, .summaryApproval p, .summaryText, .articleDisclosure p, .checklist ol, .shell > footer p { font-size: 14px; }
+  .aiSummaryHeading h3, .lawList h3 { font-size: 17px; }
+  .aiSummaryHeading small, .lawCard > summary span, .lawCard > summary small, .disclosureState, .articleDisclosure b, .lawContent > strong { font-size: 12px; }
+  .summaryDisclosure > summary, .articleDisclosure > summary, .checklist > summary { min-height: 48px; font-size: 14px; }
+  .summaryApproval button, .lawContent > a { min-height: 44px; font-size: 13px; }
+  .lawCard > summary { align-items: flex-start; flex-direction: column; }
+  .lawDisclosureMeta { width: 100%; justify-content: space-between; }
+  .lawContent > a { width: 100%; justify-content: center; }
+  .verification { align-items: flex-start; flex-wrap: wrap; }
+  .verification time { width: 100%; margin-left: 24px; }
+  .aiSummaryHeading { grid-template-columns: auto minmax(0, 1fr); }
+  .aiSummaryHeading small { grid-column: 2; justify-self: start; }
+}
+@media (max-width: 480px) { .topicGrid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .spin { animation-duration: 1.8s; } }

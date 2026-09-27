@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh BORA Bridge Seoul commercial-area official file daily
+
+[Timer]
+OnBootSec=10min
+OnCalendar=*-*-* 05:30:00
+AccuracySec=10min
+Persistent=true
+Unit=bora-seoul-commercial-import.service
+
+[Install]
+WantedBy=timers.target

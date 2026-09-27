@@ -1,0 +1,607 @@
+.explorer {
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid #ded7f1;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(55, 38, 96, .07);
+}
+
+.heading {
+  min-height: 104px;
+  padding: 19px 20px;
+  border-bottom: 1px solid #e9e4f2;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #fbf9ff, #f1edff);
+}
+
+.headingIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(145deg, #5b46ad, #826ddd);
+  box-shadow: 0 9px 22px rgba(84, 62, 167, .22);
+}
+
+.heading small {
+  color: #6752b4;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .13em;
+}
+
+.heading h2 {
+  margin: 5px 0;
+  color: #2d2348;
+  font-size: 19px;
+}
+
+.heading p {
+  margin: 0;
+  color: #756d80;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.catalogScope {
+  width: fit-content;
+  margin-top: 7px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  display: block;
+  color: #59469f;
+  background: rgba(255, 255, 255, .82);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.scopeSwitch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.scopeSwitch button {
+  min-height: 42px;
+  padding: 0 11px;
+  border: 1px solid #d7cfee;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #625673;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.scopeSwitch button small {
+  min-width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #5b46a7;
+  background: #eee9fa;
+  font-size: 9px;
+  letter-spacing: 0;
+}
+
+.scopeSwitch button[aria-pressed="true"] {
+  border-color: #5b46aa;
+  color: #fff;
+  background: #624eb5;
+}
+
+.scopeSwitch button[aria-pressed="true"] small {
+  color: #523e9b;
+  background: #fff;
+}
+
+.scopeSwitch button:focus-visible,
+.koreaMap > button:focus-visible,
+.regionList button:focus-visible,
+.resultHeader > button:focus-visible {
+  outline: 3px solid rgba(104, 82, 192, .27);
+  outline-offset: 2px;
+}
+
+.mapLayout {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(330px, 1.15fr) minmax(270px, .85fr);
+  gap: 18px;
+  background: linear-gradient(180deg, #fff, #fbf9ff);
+}
+
+.koreaMap {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 800 / 759;
+  justify-self: center;
+  overflow: hidden;
+  border: 1px solid #e4ddf1;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 48% 42%, #fff 0, #f5f1ff 68%, #eee7fb 100%);
+}
+
+.koreaMap > img {
+  position: absolute;
+  inset: 4%;
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  opacity: .27;
+  filter: brightness(0) saturate(100%) invert(36%) sepia(18%) saturate(2284%)
+    hue-rotate(215deg) brightness(90%);
+}
+.mapFallback { position: absolute; inset: 20% 12%; margin: 0; padding: 16px; border: 1px dashed #cfc4ed; border-radius: 16px; display: grid; place-items: center; align-content: center; gap: 8px; color: #625b6c; background: rgba(255,255,255,.82); font-size: 12px; line-height: 1.55; text-align: center; pointer-events: none; }
+
+.koreaMap > button {
+  position: absolute;
+  z-index: 1;
+  left: var(--region-x);
+  top: var(--region-y);
+  min-width: 40px;
+  min-height: 34px;
+  padding: 3px 6px;
+  border: 1px solid #cfc4ed;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #49368f;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 4px 12px rgba(66, 45, 126, .14);
+  cursor: pointer;
+  font: inherit;
+  transform: translate(-50%, -50%);
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.koreaMap > button span {
+  font-size: 11px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.koreaMap > button small {
+  color: #867b97;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.koreaMap > button:hover {
+  z-index: 2;
+  border-color: #765fc4;
+  transform: translate(-50%, -50%) scale(1.09);
+}
+
+.koreaMap > button.selectedRegion {
+  z-index: 3;
+  border-color: #513a9f;
+  color: #fff;
+  background: #624bb5;
+}
+
+.koreaMap > button.selectedRegion small {
+  color: #e9e2ff;
+}
+
+.regionControls {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 11px;
+}
+
+.regionControls > label {
+  display: grid;
+  gap: 6px;
+  color: #55476d;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.regionControls select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 38px 0 12px;
+  border: 1px solid #d9d0ec;
+  border-radius: 11px;
+  color: #34274f;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.regionControls select:focus-visible,
+.search input:focus-visible {
+  outline: 3px solid rgba(104, 82, 192, .22);
+  outline-offset: 2px;
+}
+
+.regionList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.regionList button {
+  min-width: 0;
+  min-height: 36px;
+  padding: 5px 8px;
+  border: 1px solid #e1daec;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  color: #63586f;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.regionList button span {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.regionList button small {
+  min-width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #5e4ca0;
+  background: #eee9f8;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.regionList button[aria-pressed="true"] {
+  border-color: #7963c7;
+  color: #463489;
+  background: #eee8ff;
+}
+
+.regionControls > p {
+  margin: 0;
+  padding: 10px 11px;
+  border-radius: 10px;
+  color: #705f2c;
+  background: #fff8e8;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.regionControls > a {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #81758e;
+  font-size: 9px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.regionControls > a:hover {
+  color: #5c47aa;
+  text-decoration: underline;
+}
+
+.resultHeader {
+  padding: 15px 18px;
+  border-top: 1px solid #e8e2f0;
+  border-bottom: 1px solid #e8e2f0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(230px, .7fr);
+  align-items: center;
+  gap: 13px;
+  background: #faf8fd;
+}
+
+.resultHeader > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.resultHeader > div strong {
+  color: #3b2e63;
+  font-size: 14px;
+}
+
+.resultHeader > div span,
+.resultHeader > div small {
+  color: #7d7489;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.resultHeader > button {
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid #e2a8b1;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #913546;
+  background: #fff2f4;
+  cursor: pointer;
+  font: inherit;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.search {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  color: #6f647e;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.search > span:last-child {
+  min-height: 42px;
+  padding: 0 11px;
+  border: 1px solid #dcd4ed;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7568a4;
+  background: #fff;
+}
+
+.search input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #2d2348;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+}
+
+.empty {
+  min-height: 176px;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  color: #6955b6;
+  text-align: center;
+}
+
+.empty strong {
+  color: #4d4262;
+  font-size: 13px;
+}
+
+.empty p {
+  max-width: 580px;
+  margin: 0;
+  color: #837b8d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.more {
+  padding: 4px 18px 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.more button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d8cfec;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #59469f;
+  background: #f7f4ff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.more button:hover {
+  border-color: #7963c7;
+  background: #eee8ff;
+}
+
+.more button:focus-visible {
+  outline: 3px solid rgba(104, 82, 192, .27);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1040px) {
+  .heading {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .scopeSwitch {
+    grid-column: 1 / -1;
+  }
+
+  .scopeSwitch button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .resultHeader {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .mapLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .koreaMap {
+    width: min(100%, 520px);
+  }
+}
+
+@media (max-width: 680px) {
+  .heading {
+    padding: 16px;
+    align-items: start;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .scopeSwitch {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .scopeSwitch button {
+    flex: 1 0 auto;
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .scopeSwitch button small {
+    font-size: 11px;
+  }
+
+  .mapLayout {
+    padding: 13px;
+  }
+
+  .koreaMap {
+    min-height: 390px;
+    padding: 10px;
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(48px, auto);
+    align-content: center;
+    gap: 12px;
+  }
+
+  .koreaMap > button {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 4px 2px;
+    transform: none;
+  }
+
+  .koreaMap > button:hover {
+    transform: none;
+  }
+
+  .koreaMap > button span {
+    font-size: 12px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+
+  .koreaMap > button small {
+    font-size: 11px;
+  }
+
+  .regionControls > label {
+    font-size: 14px;
+  }
+
+  .regionControls select {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .regionList {
+    display: none;
+  }
+
+  .regionList button {
+    min-height: 44px;
+  }
+
+  .regionList button span,
+  .regionControls > p,
+  .regionControls > a {
+    font-size: 13px;
+  }
+
+  .regionList button small {
+    min-width: 27px;
+    height: 27px;
+    font-size: 11px;
+  }
+
+  .regionControls > a {
+    min-height: 44px;
+  }
+
+  .resultHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .resultHeader > div strong {
+    font-size: 15px;
+  }
+
+  .resultHeader > div span,
+  .resultHeader > div small,
+  .search,
+  .empty p {
+    font-size: 13px;
+  }
+
+  .resultHeader > button,
+  .search > span:last-child {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .search input {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .koreaMap > button {
+    transition: none;
+  }
+}

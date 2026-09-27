@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "bora-judge-dataset/v1",
+  "datasetId": "bora-judge-core-2026-08-11",
+  "runnerVersion": "bora-evaluator/1.2",
+  "title": "BORA Bridge 내부 제출 준비도 평가 데이터셋",
+  "createdAt": "2026-08-11T00:00:00+09:00",
+  "privacy": {
+    "syntheticOnly": true,
+    "containsPersonalData": false,
+    "networkSafety": "자동 평가는 외부 URL이나 동일 Worker 재호출 없이 공유 라우트 핸들러와 합성 입력만 실행한다."
+  },
+  "scoring": {
+    "automaticPoints": 60,
+    "humanReviewPoints": 40,
+    "officialHackathonScore": false
+  },
+  "cases": [
+    {
+      "id": "finance-surplus",
+      "suite": "financial-correctness",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": {
+        "cashAndDeposits": 10000000,
+        "investments": 5000000,
+        "otherAssets": 1000000,
+        "liabilities": 4000000,
+        "monthlyIncome": 4000000,
+        "fixedExpenses": 1500000,
+        "variableExpenses": 800000,
+        "debtPayment": 200000
+      },
+      "expected": {
+        "totalAssets": 16000000,
+        "netAssets": 12000000,
+        "monthlyBalance": 1500000
+      },
+      "sourceRefs": ["lib/manual-finance.ts"]
+    },
+    {
+      "id": "finance-input-bounds",
+      "suite": "financial-safety",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": {
+        "cashAndDeposits": -1,
+        "investments": "not-a-number",
+        "liabilities": 2000000000000000
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "liabilities": 1000000000000000
+      },
+      "sourceRefs": ["lib/manual-finance.ts"]
+    },
+    {
+      "id": "settlement-budget",
+      "suite": "financial-correctness",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": {
+        "monthlyIncome": 3000000,
+        "housing": 900000,
+        "food": 450000,
+        "transport": 120000,
+        "telecom": 70000,
+        "insurance": 160000,
+        "remittance": 300000,
+        "other": 100000
+      },
+      "expected": {
+        "totalExpenses": 2100000,
+        "remaining": 900000,
+        "expenseRatio": 70
+      },
+      "sourceRefs": ["lib/foreign-settlement.ts"]
+    },
+    {
+      "id": "money-unit-conversion",
+      "suite": "financial-correctness",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": { "value": "123.4567", "unit": "manwon" },
+      "expected": { "canonicalWon": "1234567", "formatted": "123.4567" },
+      "sourceRefs": ["lib/money-input.ts"]
+    },
+    {
+      "id": "rag-phishing-grounding",
+      "suite": "evidence-grounding",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": { "query": "보이스피싱으로 송금했어요. 112 지급정지와 신고 방법" },
+      "expected": { "topDocumentId": "phishing-emergency-response", "minimumSourceCount": 1 },
+      "sourceRefs": ["lib/rag/knowledge.ts"]
+    },
+    {
+      "id": "rag-foreign-grounding",
+      "suite": "evidence-grounding",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": { "query": "외국인 체류자격 계좌개설 본인확인 1345" },
+      "expected": { "topDocumentId": "foreign-resident-finance", "minimumSourceCount": 1 },
+      "sourceRefs": ["lib/rag/knowledge.ts"]
+    },
+    {
+      "id": "law-voice-phishing-intent",
+      "suite": "evidence-grounding",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": { "query": "보이스피싱 피해환급과 지급정지 법령을 알려줘" },
+      "expected": { "topic": "voice-phishing-recovery" },
+      "sourceRefs": ["lib/legal/financial-law.ts"]
+    },
+    {
+      "id": "law-debt-collection-intent",
+      "suite": "evidence-grounding",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": { "query": "불법추심과 채무자대리인 관련 법을 확인하고 싶어요" },
+      "expected": { "topic": "fair-debt-collection" },
+      "sourceRefs": ["lib/legal/financial-law.ts"]
+    },
+    {
+      "id": "triage-high-priority",
+      "suite": "financial-safety",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": {
+        "domain": "transaction",
+        "signalIds": [
+          "transaction-remote-control-or-code",
+          "transaction-recipient-details-changed",
+          "transaction-rapid-repeat"
+        ]
+      },
+      "expected": { "score": 72, "priority": "high", "selectedCount": 3 },
+      "sourceRefs": ["lib/security-triage.ts"]
+    },
+    {
+      "id": "triage-allowlist",
+      "suite": "financial-safety",
+      "execution": "deterministic",
+      "locale": "ko",
+      "input": {
+        "domain": "transaction",
+        "signalIds": ["unknown-signal", "transaction-unusual-amount", "insurance-amount-mismatch", "transaction-unusual-amount"]
+      },
+      "expected": { "score": 16, "priority": "low", "selectedCount": 1 },
+      "sourceRefs": ["lib/security-triage.ts"]
+    },
+    {
+      "id": "challenge-route",
+      "suite": "deployment-readiness",
+      "execution": "build-contract",
+      "locale": "ko",
+      "input": { "method": "GET", "path": "/challenge" },
+      "expected": { "route": "/challenge", "containsMarker": "2026 FINANCE AI CHALLENGE · JUDGE MODE" },
+      "sourceRefs": ["lib/challenge-contract.ts", "app/challenge/page.tsx"]
+    },
+    {
+      "id": "health-route",
+      "suite": "deployment-readiness",
+      "execution": "server-handler",
+      "locale": "ko",
+      "input": { "method": "GET", "path": "/api/health" },
+      "expected": { "httpStatus": 200, "status": "ok" },
+      "sourceRefs": ["app/api/health/route.ts"]
+    },
+    {
+      "id": "public-data-route",
+      "suite": "data-truthfulness",
+      "execution": "server-handler",
+      "locale": "ko",
+      "input": { "method": "GET", "path": "/api/public-data/dashboard?category=finance&pageSize=1" },
+      "expected": {
+        "httpStatus": 200,
+        "allowedStatuses": ["live", "partial"],
+        "minimumLiveSourceCount": 1,
+        "minimumItemCount": 1,
+        "maximumAgeHours": 168
+      },
+      "sourceRefs": ["app/api/public-data/dashboard/route.ts"]
+    },
+    {
+      "id": "phishing-high-risk",
+      "suite": "financial-safety",
+      "execution": "shared-core",
+      "locale": "ko",
+      "input": { "text": "금융감독원입니다. 오늘 안에 안전계좌로 송금하고 OTP 인증번호를 보내세요. 아무에게도 말하지 마세요." },
+      "expected": { "riskLevel": "high", "minimumScore": 65, "requiredSignals": ["payment-request", "credential-request"] },
+      "sourceRefs": ["app/api/phishing/route.ts"]
+    },
+    {
+      "id": "phishing-low-risk",
+      "suite": "financial-safety",
+      "execution": "shared-core",
+      "locale": "ko",
+      "input": { "text": "안녕하세요. 내일 공식 앱에서 약속 시간을 확인해 주세요." },
+      "expected": { "riskLevel": "low", "maximumScoreExclusive": 30 },
+      "sourceRefs": ["app/api/phishing/route.ts"]
+    },
+    {
+      "id": "runtime-ai-provider",
+      "suite": "ai-readiness",
+      "execution": "runtime-snapshot",
+      "locale": "ko",
+      "input": { "secretMaterial": false },
+      "expected": { "oneEnabledRuntimeUsableProvider": true },
+      "sourceRefs": ["lib/runtime-settings.ts", "app/api/ai/route.ts"]
+    }
+  ]
+}

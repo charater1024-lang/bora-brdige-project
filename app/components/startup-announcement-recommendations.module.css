@@ -1,0 +1,56 @@
+.shell { margin-top: 18px; padding: 22px; border: 1px solid #d9cff0; border-radius: 23px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 18px; background: linear-gradient(135deg, #f2edff, #fff 52%, #faf8ff); box-shadow: 0 15px 36px rgba(59, 42, 104, .08); overflow: hidden; }
+.shell[data-state="attention"] { border-color: #e2d7bd; background: linear-gradient(135deg, #fff9ec, #fff 52%, #faf8ff); }
+.mascot { min-height: 150px; display: grid; place-items: center; align-self: start; border-radius: 20px; background: radial-gradient(circle, rgba(255,255,255,.95), rgba(229,220,255,.62) 68%, transparent 69%); }
+.mascot img { width: 138px; height: 138px; object-fit: contain; }
+.content { min-width: 0; }
+.content > header > span { display: inline-flex; align-items: center; gap: 6px; color: #5945a5; font-size: 11px; font-weight: 950; letter-spacing: .13em; }
+.content h2 { margin: 7px 0 5px; color: #312352; font-size: 20px; }
+.content > header > p { margin: 0; color: #625b6c; font-size: 13px; line-height: 1.6; }
+.empty { min-height: 76px; margin-top: 14px; padding: 13px; border: 1px solid #e4dced; border-radius: 14px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 11px; color: #755f24; background: rgba(255,255,255,.82); }
+.empty > svg { color: #aa7221; }
+.empty strong { color: #4d4260; font-size: 12px; }
+.empty p { margin: 4px 0 0; color: #625b6c; font-size: 12px; line-height: 1.55; }
+.empty a { min-height: 44px; padding: 0 11px; border-radius: 9px; display: inline-flex; align-items: center; gap: 5px; color: #fff; background: #624cb4; font-size: 12px; font-weight: 900; text-decoration: none; }
+.cards { margin: 15px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; list-style: none; }
+.cards > li { min-width: 0; padding: 13px; border: 1px solid #e3dcf0; border-radius: 15px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 11px; background: rgba(255,255,255,.92); }
+.rank { width: 39px; height: 47px; border-radius: 11px; display: grid; place-items: center; align-content: center; color: #5b45a8; background: #eee9ff; }
+.rank small { font-size: 6px; font-weight: 900; }
+.rank strong { margin-top: 1px; font-size: 17px; }
+.cardBody { min-width: 0; }
+.cardBody > small { color: #65549f; font-size: 11px; font-weight: 850; }
+.cardBody h3 { margin: 4px 0 7px; overflow: hidden; display: -webkit-box; color: #3c3150; font-size: 12px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.signals { display: flex; flex-wrap: wrap; gap: 4px; }
+.signals span { padding: 4px 6px; border-radius: 999px; color: #513d94; background: #f1edfc; font-size: 11px; font-weight: 850; }
+.cardBody > p { margin: 8px 0 0; display: flex; align-items: center; gap: 4px; color: #625b6c; font-size: 11px; }
+.actions { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 6px; }
+.actions a { min-height: 44px; padding: 0 11px; border: 1px solid #dbd3ea; border-radius: 8px; display: inline-flex; align-items: center; gap: 4px; color: #513d94; background: #fbfafe; font-size: 11px; font-weight: 900; text-decoration: none; }
+.actions a:last-child { color: #fff; border-color: #6049ad; background: #6049ad; }
+.missing { margin: 11px 0 0; display: flex; flex-wrap: wrap; gap: 7px; color: #625b6c; font-size: 11px; }
+.missing strong { color: #4d4260; }
+.content > footer { margin-top: 13px; padding-top: 11px; border-top: 1px solid #e5deef; display: grid; gap: 4px; }
+.content > footer p, .content > footer small { margin: 0; color: #625b6c; font-size: 11px; line-height: 1.55; }
+.content > footer small { color: #827a8c; }
+@media (max-width: 820px) {
+  .shell { grid-template-columns: 108px minmax(0, 1fr); }
+  .mascot { min-height: 112px; }
+  .mascot img { width: 104px; height: 104px; }
+  .cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .shell { padding: 17px; grid-template-columns: 1fr; }
+  .mascot { width: 108px; min-height: 100px; justify-self: center; }
+  .content > header > span { font-size: 11px; }
+  .content h2 { font-size: 22px; }
+  .content > header > p { font-size: 14px; }
+  .empty { grid-template-columns: auto 1fr; }
+  .empty strong { font-size: 14px; }
+  .empty p { font-size: 13px; }
+  .empty a { grid-column: 1 / -1; min-height: 44px; justify-content: center; font-size: 13px; }
+  .rank small { font-size: 9px; }
+  .cardBody > small { font-size: 12px; }
+  .cardBody h3 { font-size: 15px; }
+  .signals span { font-size: 11px; }
+  .cardBody > p, .missing { font-size: 12px; }
+  .actions a { min-height: 44px; padding-inline: 11px; font-size: 12px; }
+  .content > footer p, .content > footer small { font-size: 12px; }
+}

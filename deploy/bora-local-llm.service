@@ -1,0 +1,26 @@
+[Unit]
+Description=BORA Bridge local LLM API
+After=network-online.target bora-ollama.service
+Wants=network-online.target bora-ollama.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Project/BORA-Bridge-Finance-AI/local-llm-server
+EnvironmentFile=%h/Project/BORA-Bridge-Finance-AI/local-llm-server/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=LOCAL_LLM_STATE_PATH=%h/.local/share/bora-bridge/local-llm-state.json
+ExecStartPre=/usr/bin/test -x %h/.local/share/bora-bridge/local-llm-venv/bin/python
+ExecStart=%h/.local/share/bora-bridge/local-llm-venv/bin/python -m uvicorn app:app --host 127.0.0.1 --port 11435
+Restart=always
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+LockPersonality=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=default.target

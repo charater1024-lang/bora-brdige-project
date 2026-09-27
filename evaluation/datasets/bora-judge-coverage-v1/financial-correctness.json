@@ -1,0 +1,2841 @@
+{
+  "schemaVersion": "bora-judge-coverage-suite/v1",
+  "corpusId": "bora-judge-coverage-2026-08-11-v1",
+  "suite": "financial-correctness",
+  "caseCount": 100,
+  "execution": "offline-replay",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "fin-001",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 1",
+      "operation": "manual-finance-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {},
+      "expected": {
+        "totalAssets": 0,
+        "netAssets": 0,
+        "monthlyOutflow": 0,
+        "monthlyBalance": 0,
+        "debtPaymentRatio": null,
+        "completedFields": 0
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-002",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 2",
+      "operation": "manual-finance-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": -1,
+        "investments": "invalid",
+        "liabilities": 2000000000000000
+      },
+      "expected": {
+        "totalAssets": 0,
+        "netAssets": -1000000000000000,
+        "monthlyOutflow": 0,
+        "monthlyBalance": 0,
+        "debtPaymentRatio": null,
+        "completedFields": 1
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-003",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 3",
+      "operation": "manual-finance-summary",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 1000000,
+        "liabilities": 3000000,
+        "monthlyIncome": 0,
+        "debtPayment": 100000
+      },
+      "expected": {
+        "totalAssets": 1000000,
+        "netAssets": -2000000,
+        "monthlyOutflow": 100000,
+        "monthlyBalance": -100000,
+        "debtPaymentRatio": null,
+        "completedFields": 3
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-004",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 4",
+      "operation": "manual-finance-summary",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 1.6,
+        "investments": "2.4",
+        "otherAssets": 3.5,
+        "monthlyIncome": 10.4,
+        "fixedExpenses": 4.6
+      },
+      "expected": {
+        "totalAssets": 8,
+        "netAssets": 8,
+        "monthlyOutflow": 5,
+        "monthlyBalance": 5,
+        "debtPaymentRatio": 0,
+        "completedFields": 5
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-005",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 5",
+      "operation": "manual-finance-summary",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 1,
+        "debtPayment": 50,
+        "fixedExpenses": 50,
+        "variableExpenses": 50
+      },
+      "expected": {
+        "totalAssets": 0,
+        "netAssets": 0,
+        "monthlyOutflow": 150,
+        "monthlyBalance": -149,
+        "debtPaymentRatio": 999,
+        "completedFields": 4
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-006",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 6",
+      "operation": "manual-finance-summary",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 1000000000000000,
+        "investments": 1000000000000000,
+        "otherAssets": 1000000000000000
+      },
+      "expected": {
+        "totalAssets": 3000000000000000,
+        "netAssets": 3000000000000000,
+        "monthlyOutflow": 0,
+        "monthlyBalance": 0,
+        "debtPaymentRatio": null,
+        "completedFields": 3
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-007",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 7",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 1070000,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 2100000,
+        "fixedExpenses": 620000,
+        "variableExpenses": 240000,
+        "debtPayment": 0
+      },
+      "expected": {
+        "totalAssets": 1070000,
+        "netAssets": 1070000,
+        "monthlyOutflow": 860000,
+        "monthlyBalance": 1240000,
+        "debtPaymentRatio": 0,
+        "completedFields": 4
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-008",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 8",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 2140000,
+        "investments": 430000,
+        "otherAssets": 170000,
+        "liabilities": 380000,
+        "monthlyIncome": 2237000,
+        "fixedExpenses": 711000,
+        "variableExpenses": 287000,
+        "debtPayment": 113000
+      },
+      "expected": {
+        "totalAssets": 2740000,
+        "netAssets": 2360000,
+        "monthlyOutflow": 1111000,
+        "monthlyBalance": 1126000,
+        "debtPaymentRatio": 5.051408,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-009",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 9",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 3210000,
+        "investments": 860000,
+        "otherAssets": 340000,
+        "liabilities": 760000,
+        "monthlyIncome": 2374000,
+        "fixedExpenses": 802000,
+        "variableExpenses": 334000,
+        "debtPayment": 226000
+      },
+      "expected": {
+        "totalAssets": 4410000,
+        "netAssets": 3650000,
+        "monthlyOutflow": 1362000,
+        "monthlyBalance": 1012000,
+        "debtPaymentRatio": 9.519798,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-010",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 10",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 4280000,
+        "investments": 1290000,
+        "otherAssets": 510000,
+        "liabilities": 1140000,
+        "monthlyIncome": 2511000,
+        "fixedExpenses": 893000,
+        "variableExpenses": 381000,
+        "debtPayment": 339000
+      },
+      "expected": {
+        "totalAssets": 6080000,
+        "netAssets": 4940000,
+        "monthlyOutflow": 1613000,
+        "monthlyBalance": 898000,
+        "debtPaymentRatio": 13.500597,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-011",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 11",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 5350000,
+        "investments": 1720000,
+        "otherAssets": 680000,
+        "liabilities": 1520000,
+        "monthlyIncome": 2648000,
+        "fixedExpenses": 984000,
+        "variableExpenses": 428000,
+        "debtPayment": 452000
+      },
+      "expected": {
+        "totalAssets": 7750000,
+        "netAssets": 6230000,
+        "monthlyOutflow": 1864000,
+        "monthlyBalance": 784000,
+        "debtPaymentRatio": 17.069486,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-012",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 12",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 6420000,
+        "investments": 2150000,
+        "otherAssets": 0,
+        "liabilities": 1900000,
+        "monthlyIncome": 2785000,
+        "fixedExpenses": 1075000,
+        "variableExpenses": 475000,
+        "debtPayment": 0
+      },
+      "expected": {
+        "totalAssets": 8570000,
+        "netAssets": 6670000,
+        "monthlyOutflow": 1550000,
+        "monthlyBalance": 1235000,
+        "debtPaymentRatio": 0,
+        "completedFields": 6
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-013",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 13",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 7490000,
+        "investments": 2580000,
+        "otherAssets": 170000,
+        "liabilities": 2280000,
+        "monthlyIncome": 2922000,
+        "fixedExpenses": 620000,
+        "variableExpenses": 522000,
+        "debtPayment": 113000
+      },
+      "expected": {
+        "totalAssets": 10240000,
+        "netAssets": 7960000,
+        "monthlyOutflow": 1255000,
+        "monthlyBalance": 1667000,
+        "debtPaymentRatio": 3.867214,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-014",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 14",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 8560000,
+        "investments": 0,
+        "otherAssets": 340000,
+        "liabilities": 2660000,
+        "monthlyIncome": 3059000,
+        "fixedExpenses": 711000,
+        "variableExpenses": 569000,
+        "debtPayment": 226000
+      },
+      "expected": {
+        "totalAssets": 8900000,
+        "netAssets": 6240000,
+        "monthlyOutflow": 1506000,
+        "monthlyBalance": 1553000,
+        "debtPaymentRatio": 7.388035,
+        "completedFields": 7
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-015",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 15",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 9630000,
+        "investments": 430000,
+        "otherAssets": 510000,
+        "liabilities": 3040000,
+        "monthlyIncome": 3196000,
+        "fixedExpenses": 802000,
+        "variableExpenses": 240000,
+        "debtPayment": 339000
+      },
+      "expected": {
+        "totalAssets": 10570000,
+        "netAssets": 7530000,
+        "monthlyOutflow": 1381000,
+        "monthlyBalance": 1815000,
+        "debtPaymentRatio": 10.607009,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-016",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 16",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 10700000,
+        "investments": 860000,
+        "otherAssets": 680000,
+        "liabilities": 0,
+        "monthlyIncome": 3333000,
+        "fixedExpenses": 893000,
+        "variableExpenses": 287000,
+        "debtPayment": 452000
+      },
+      "expected": {
+        "totalAssets": 12240000,
+        "netAssets": 12240000,
+        "monthlyOutflow": 1632000,
+        "monthlyBalance": 1701000,
+        "debtPaymentRatio": 13.561356,
+        "completedFields": 7
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-017",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 17",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 11770000,
+        "investments": 1290000,
+        "otherAssets": 0,
+        "liabilities": 380000,
+        "monthlyIncome": 3470000,
+        "fixedExpenses": 984000,
+        "variableExpenses": 334000,
+        "debtPayment": 0
+      },
+      "expected": {
+        "totalAssets": 13060000,
+        "netAssets": 12680000,
+        "monthlyOutflow": 1318000,
+        "monthlyBalance": 2152000,
+        "debtPaymentRatio": 0,
+        "completedFields": 6
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-018",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 18",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 12840000,
+        "investments": 1720000,
+        "otherAssets": 170000,
+        "liabilities": 760000,
+        "monthlyIncome": 3607000,
+        "fixedExpenses": 1075000,
+        "variableExpenses": 381000,
+        "debtPayment": 113000
+      },
+      "expected": {
+        "totalAssets": 14730000,
+        "netAssets": 13970000,
+        "monthlyOutflow": 1569000,
+        "monthlyBalance": 2038000,
+        "debtPaymentRatio": 3.132797,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-019",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 19",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 13910000,
+        "investments": 2150000,
+        "otherAssets": 340000,
+        "liabilities": 1140000,
+        "monthlyIncome": 3744000,
+        "fixedExpenses": 620000,
+        "variableExpenses": 428000,
+        "debtPayment": 226000
+      },
+      "expected": {
+        "totalAssets": 16400000,
+        "netAssets": 15260000,
+        "monthlyOutflow": 1274000,
+        "monthlyBalance": 2470000,
+        "debtPaymentRatio": 6.036325,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-020",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 20",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 14980000,
+        "investments": 2580000,
+        "otherAssets": 510000,
+        "liabilities": 1520000,
+        "monthlyIncome": 3881000,
+        "fixedExpenses": 711000,
+        "variableExpenses": 475000,
+        "debtPayment": 339000
+      },
+      "expected": {
+        "totalAssets": 18070000,
+        "netAssets": 16550000,
+        "monthlyOutflow": 1525000,
+        "monthlyBalance": 2356000,
+        "debtPaymentRatio": 8.734862,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-021",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 21",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 16050000,
+        "investments": 0,
+        "otherAssets": 680000,
+        "liabilities": 1900000,
+        "monthlyIncome": 4018000,
+        "fixedExpenses": 802000,
+        "variableExpenses": 522000,
+        "debtPayment": 452000
+      },
+      "expected": {
+        "totalAssets": 16730000,
+        "netAssets": 14830000,
+        "monthlyOutflow": 1776000,
+        "monthlyBalance": 2242000,
+        "debtPaymentRatio": 11.249378,
+        "completedFields": 7
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-022",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 22",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 17120000,
+        "investments": 430000,
+        "otherAssets": 0,
+        "liabilities": 2280000,
+        "monthlyIncome": 4155000,
+        "fixedExpenses": 893000,
+        "variableExpenses": 569000,
+        "debtPayment": 0
+      },
+      "expected": {
+        "totalAssets": 17550000,
+        "netAssets": 15270000,
+        "monthlyOutflow": 1462000,
+        "monthlyBalance": 2693000,
+        "debtPaymentRatio": 0,
+        "completedFields": 6
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-023",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 23",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 18190000,
+        "investments": 860000,
+        "otherAssets": 170000,
+        "liabilities": 2660000,
+        "monthlyIncome": 4292000,
+        "fixedExpenses": 984000,
+        "variableExpenses": 240000,
+        "debtPayment": 113000
+      },
+      "expected": {
+        "totalAssets": 19220000,
+        "netAssets": 16560000,
+        "monthlyOutflow": 1337000,
+        "monthlyBalance": 2955000,
+        "debtPaymentRatio": 2.632805,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-024",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 24",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 19260000,
+        "investments": 1290000,
+        "otherAssets": 340000,
+        "liabilities": 3040000,
+        "monthlyIncome": 4429000,
+        "fixedExpenses": 1075000,
+        "variableExpenses": 287000,
+        "debtPayment": 226000
+      },
+      "expected": {
+        "totalAssets": 20890000,
+        "netAssets": 17850000,
+        "monthlyOutflow": 1588000,
+        "monthlyBalance": 2841000,
+        "debtPaymentRatio": 5.102732,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-025",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 25",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 20330000,
+        "investments": 1720000,
+        "otherAssets": 510000,
+        "liabilities": 0,
+        "monthlyIncome": 4566000,
+        "fixedExpenses": 620000,
+        "variableExpenses": 334000,
+        "debtPayment": 339000
+      },
+      "expected": {
+        "totalAssets": 22560000,
+        "netAssets": 22560000,
+        "monthlyOutflow": 1293000,
+        "monthlyBalance": 3273000,
+        "debtPaymentRatio": 7.424442,
+        "completedFields": 7
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-026",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 26",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 21400000,
+        "investments": 2150000,
+        "otherAssets": 680000,
+        "liabilities": 380000,
+        "monthlyIncome": 4703000,
+        "fixedExpenses": 711000,
+        "variableExpenses": 381000,
+        "debtPayment": 452000
+      },
+      "expected": {
+        "totalAssets": 24230000,
+        "netAssets": 23850000,
+        "monthlyOutflow": 1544000,
+        "monthlyBalance": 3159000,
+        "debtPaymentRatio": 9.610887,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-027",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 27",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 22470000,
+        "investments": 2580000,
+        "otherAssets": 0,
+        "liabilities": 760000,
+        "monthlyIncome": 4840000,
+        "fixedExpenses": 802000,
+        "variableExpenses": 428000,
+        "debtPayment": 0
+      },
+      "expected": {
+        "totalAssets": 25050000,
+        "netAssets": 24290000,
+        "monthlyOutflow": 1230000,
+        "monthlyBalance": 3610000,
+        "debtPaymentRatio": 0,
+        "completedFields": 6
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-028",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 28",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 23540000,
+        "investments": 0,
+        "otherAssets": 170000,
+        "liabilities": 1140000,
+        "monthlyIncome": 4977000,
+        "fixedExpenses": 893000,
+        "variableExpenses": 475000,
+        "debtPayment": 113000
+      },
+      "expected": {
+        "totalAssets": 23710000,
+        "netAssets": 22570000,
+        "monthlyOutflow": 1481000,
+        "monthlyBalance": 3496000,
+        "debtPaymentRatio": 2.270444,
+        "completedFields": 7
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-029",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 29",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 24610000,
+        "investments": 430000,
+        "otherAssets": 340000,
+        "liabilities": 1520000,
+        "monthlyIncome": 5114000,
+        "fixedExpenses": 984000,
+        "variableExpenses": 522000,
+        "debtPayment": 226000
+      },
+      "expected": {
+        "totalAssets": 25380000,
+        "netAssets": 23860000,
+        "monthlyOutflow": 1732000,
+        "monthlyBalance": 3382000,
+        "debtPaymentRatio": 4.419241,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-030",
+      "suite": "financial-correctness",
+      "label": "자산·현금흐름 요약 경계 30",
+      "operation": "manual-finance-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "cashAndDeposits": 25680000,
+        "investments": 860000,
+        "otherAssets": 510000,
+        "liabilities": 1900000,
+        "monthlyIncome": 5251000,
+        "fixedExpenses": 1075000,
+        "variableExpenses": 569000,
+        "debtPayment": 339000
+      },
+      "expected": {
+        "totalAssets": 27050000,
+        "netAssets": 25150000,
+        "monthlyOutflow": 1983000,
+        "monthlyBalance": 3268000,
+        "debtPaymentRatio": 6.455913,
+        "completedFields": 8
+      },
+      "grader": "exact-financial-summary",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-031",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 1",
+      "operation": "manual-finance-normalize",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "cashAndDeposits": -1,
+        "liabilities": 10000
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 10000,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-032",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 2",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "investments": "not-a-number",
+        "monthlyIncome": 10777
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 10777,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-033",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 3",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "otherAssets": null,
+        "fixedExpenses": 11554
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 11554,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-034",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 4",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "liabilities": false,
+        "variableExpenses": 12331
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 12331,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-035",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 5",
+      "operation": "manual-finance-normalize",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "monthlyIncome": " 125000 ",
+        "debtPayment": 13108
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 125000,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 13108
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-036",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 6",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "fixedExpenses": 125000.6,
+        "cashAndDeposits": 13885
+      },
+      "expected": {
+        "cashAndDeposits": 13885,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 125001,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-037",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 7",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "variableExpenses": 2000000000000000,
+        "investments": 14662
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 14662,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 1000000000000000,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-038",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 8",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "debtPayment": "1e3",
+        "otherAssets": 15439
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 15439,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 1000
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-039",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 9",
+      "operation": "manual-finance-normalize",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "cashAndDeposits": 0,
+        "liabilities": 16216
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 16216,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-040",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 10",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "investments": "",
+        "monthlyIncome": 16993
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 16993,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-041",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 11",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "otherAssets": -1,
+        "fixedExpenses": 17770
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 17770,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-042",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 12",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "liabilities": "not-a-number",
+        "variableExpenses": 18547
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 18547,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-043",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 13",
+      "operation": "manual-finance-normalize",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "monthlyIncome": null,
+        "debtPayment": 19324
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 19324
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-044",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 14",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "fixedExpenses": false,
+        "cashAndDeposits": 20101
+      },
+      "expected": {
+        "cashAndDeposits": 20101,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-045",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 15",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "variableExpenses": " 125000 ",
+        "investments": 20878
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 20878,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 125000,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-046",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 16",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "debtPayment": 125000.6,
+        "otherAssets": 21655
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 21655,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 125001
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-047",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 17",
+      "operation": "manual-finance-normalize",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "cashAndDeposits": 2000000000000000,
+        "liabilities": 22432
+      },
+      "expected": {
+        "cashAndDeposits": 1000000000000000,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 22432,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-048",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 18",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "investments": "1e3",
+        "monthlyIncome": 23209
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 1000,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 23209,
+        "fixedExpenses": 0,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-049",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 19",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "otherAssets": 0,
+        "fixedExpenses": 23986
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 23986,
+        "variableExpenses": 0,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-050",
+      "suite": "financial-correctness",
+      "label": "금액 정규화 허용범위 20",
+      "operation": "manual-finance-normalize",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "liabilities": "",
+        "variableExpenses": 24763
+      },
+      "expected": {
+        "cashAndDeposits": 0,
+        "investments": 0,
+        "otherAssets": 0,
+        "liabilities": 0,
+        "monthlyIncome": 0,
+        "fixedExpenses": 0,
+        "variableExpenses": 24763,
+        "debtPayment": 0
+      },
+      "grader": "exact-normalized-fields",
+      "sourceRefs": [
+        "lib/manual-finance.ts",
+        "tests/manual-finance.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-051",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 1",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {},
+      "expected": {
+        "totalExpenses": 0,
+        "remaining": 0,
+        "expenseRatio": null,
+        "completedFields": 0,
+        "hasExpenseInput": false
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-052",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 2",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 1000000,
+        "housing": 800000,
+        "food": 400000,
+        "transport": 100000
+      },
+      "expected": {
+        "totalExpenses": 1300000,
+        "remaining": -300000,
+        "expenseRatio": 130,
+        "completedFields": 4,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-053",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 3",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 0,
+        "housing": 1000000
+      },
+      "expected": {
+        "totalExpenses": 1000000,
+        "remaining": -1000000,
+        "expenseRatio": null,
+        "completedFields": 1,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-054",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 4",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": "3,000,000",
+        "housing": "900,000",
+        "food": "450,000"
+      },
+      "expected": {
+        "totalExpenses": 1350000,
+        "remaining": 1650000,
+        "expenseRatio": 45,
+        "completedFields": 3,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-055",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 5",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": -1,
+        "housing": "bad",
+        "food": 1500.7
+      },
+      "expected": {
+        "totalExpenses": 1501,
+        "remaining": -1501,
+        "expenseRatio": null,
+        "completedFields": 1,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-056",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 6",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 1800000,
+        "housing": 420000,
+        "food": 210000,
+        "transport": 55000,
+        "telecom": 31000,
+        "insurance": 0,
+        "remittance": 0,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 716000,
+        "remaining": 1084000,
+        "expenseRatio": 39.777778,
+        "completedFields": 5,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-057",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 7",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 1929000,
+        "housing": 503000,
+        "food": 261000,
+        "transport": 72000,
+        "telecom": 38000,
+        "insurance": 63000,
+        "remittance": 91000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1071000,
+        "remaining": 858000,
+        "expenseRatio": 55.520995,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-058",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 8",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2058000,
+        "housing": 586000,
+        "food": 312000,
+        "transport": 89000,
+        "telecom": 45000,
+        "insurance": 126000,
+        "remittance": 182000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1426000,
+        "remaining": 632000,
+        "expenseRatio": 69.290573,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-059",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 9",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2187000,
+        "housing": 669000,
+        "food": 363000,
+        "transport": 106000,
+        "telecom": 52000,
+        "insurance": 189000,
+        "remittance": 273000,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1652000,
+        "remaining": 535000,
+        "expenseRatio": 75.537266,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-060",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 10",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2316000,
+        "housing": 752000,
+        "food": 414000,
+        "transport": 55000,
+        "telecom": 59000,
+        "insurance": 0,
+        "remittance": 364000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1687000,
+        "remaining": 629000,
+        "expenseRatio": 72.841105,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-061",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 11",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2445000,
+        "housing": 835000,
+        "food": 210000,
+        "transport": 72000,
+        "telecom": 66000,
+        "insurance": 63000,
+        "remittance": 455000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1787000,
+        "remaining": 658000,
+        "expenseRatio": 73.087935,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-062",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 12",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2574000,
+        "housing": 918000,
+        "food": 261000,
+        "transport": 89000,
+        "telecom": 31000,
+        "insurance": 126000,
+        "remittance": 0,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1425000,
+        "remaining": 1149000,
+        "expenseRatio": 55.361305,
+        "completedFields": 6,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-063",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 13",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2703000,
+        "housing": 420000,
+        "food": 312000,
+        "transport": 106000,
+        "telecom": 38000,
+        "insurance": 189000,
+        "remittance": 91000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1199000,
+        "remaining": 1504000,
+        "expenseRatio": 44.358121,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-064",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 14",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2832000,
+        "housing": 503000,
+        "food": 363000,
+        "transport": 55000,
+        "telecom": 45000,
+        "insurance": 0,
+        "remittance": 182000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1234000,
+        "remaining": 1598000,
+        "expenseRatio": 43.573446,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-065",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 15",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 2961000,
+        "housing": 586000,
+        "food": 414000,
+        "transport": 72000,
+        "telecom": 52000,
+        "insurance": 63000,
+        "remittance": 273000,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1460000,
+        "remaining": 1501000,
+        "expenseRatio": 49.307666,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-066",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 16",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3090000,
+        "housing": 669000,
+        "food": 210000,
+        "transport": 89000,
+        "telecom": 59000,
+        "insurance": 126000,
+        "remittance": 364000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1560000,
+        "remaining": 1530000,
+        "expenseRatio": 50.485437,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-067",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 17",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3219000,
+        "housing": 752000,
+        "food": 261000,
+        "transport": 106000,
+        "telecom": 66000,
+        "insurance": 189000,
+        "remittance": 455000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1915000,
+        "remaining": 1304000,
+        "expenseRatio": 59.490525,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-068",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 18",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3348000,
+        "housing": 835000,
+        "food": 312000,
+        "transport": 55000,
+        "telecom": 31000,
+        "insurance": 0,
+        "remittance": 0,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1233000,
+        "remaining": 2115000,
+        "expenseRatio": 36.827957,
+        "completedFields": 5,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-069",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 19",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3477000,
+        "housing": 918000,
+        "food": 363000,
+        "transport": 72000,
+        "telecom": 38000,
+        "insurance": 63000,
+        "remittance": 91000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1588000,
+        "remaining": 1889000,
+        "expenseRatio": 45.671556,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-070",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 20",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3606000,
+        "housing": 420000,
+        "food": 414000,
+        "transport": 89000,
+        "telecom": 45000,
+        "insurance": 126000,
+        "remittance": 182000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1362000,
+        "remaining": 2244000,
+        "expenseRatio": 37.770383,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-071",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 21",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3735000,
+        "housing": 503000,
+        "food": 210000,
+        "transport": 106000,
+        "telecom": 52000,
+        "insurance": 189000,
+        "remittance": 273000,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1333000,
+        "remaining": 2402000,
+        "expenseRatio": 35.689424,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-072",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 22",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3864000,
+        "housing": 586000,
+        "food": 261000,
+        "transport": 55000,
+        "telecom": 59000,
+        "insurance": 0,
+        "remittance": 364000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1368000,
+        "remaining": 2496000,
+        "expenseRatio": 35.403727,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-073",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 23",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 3993000,
+        "housing": 669000,
+        "food": 312000,
+        "transport": 72000,
+        "telecom": 66000,
+        "insurance": 63000,
+        "remittance": 455000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1723000,
+        "remaining": 2270000,
+        "expenseRatio": 43.150513,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-074",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 24",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4122000,
+        "housing": 752000,
+        "food": 363000,
+        "transport": 89000,
+        "telecom": 31000,
+        "insurance": 126000,
+        "remittance": 0,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1361000,
+        "remaining": 2761000,
+        "expenseRatio": 33.017952,
+        "completedFields": 6,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-075",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 25",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4251000,
+        "housing": 835000,
+        "food": 414000,
+        "transport": 106000,
+        "telecom": 38000,
+        "insurance": 189000,
+        "remittance": 91000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1716000,
+        "remaining": 2535000,
+        "expenseRatio": 40.366972,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-076",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 26",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4380000,
+        "housing": 918000,
+        "food": 210000,
+        "transport": 55000,
+        "telecom": 45000,
+        "insurance": 0,
+        "remittance": 182000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1496000,
+        "remaining": 2884000,
+        "expenseRatio": 34.155251,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-077",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 27",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4509000,
+        "housing": 420000,
+        "food": 261000,
+        "transport": 72000,
+        "telecom": 52000,
+        "insurance": 63000,
+        "remittance": 273000,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1141000,
+        "remaining": 3368000,
+        "expenseRatio": 25.304946,
+        "completedFields": 7,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-078",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 28",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4638000,
+        "housing": 503000,
+        "food": 312000,
+        "transport": 89000,
+        "telecom": 59000,
+        "insurance": 126000,
+        "remittance": 364000,
+        "other": 43000
+      },
+      "expected": {
+        "totalExpenses": 1496000,
+        "remaining": 3142000,
+        "expenseRatio": 32.255282,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-079",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 29",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4767000,
+        "housing": 586000,
+        "food": 363000,
+        "transport": 106000,
+        "telecom": 66000,
+        "insurance": 189000,
+        "remittance": 455000,
+        "other": 86000
+      },
+      "expected": {
+        "totalExpenses": 1851000,
+        "remaining": 2916000,
+        "expenseRatio": 38.829452,
+        "completedFields": 8,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-080",
+      "suite": "financial-correctness",
+      "label": "정착예산 잔액·비율 30",
+      "operation": "foreign-settlement-summary",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "code-grounded-arithmetic-snapshot",
+      "input": {
+        "monthlyIncome": 4896000,
+        "housing": 669000,
+        "food": 414000,
+        "transport": 55000,
+        "telecom": 31000,
+        "insurance": 0,
+        "remittance": 0,
+        "other": 0
+      },
+      "expected": {
+        "totalExpenses": 1169000,
+        "remaining": 3727000,
+        "expenseRatio": 23.876634,
+        "completedFields": 5,
+        "hasExpenseInput": true
+      },
+      "grader": "exact-settlement-summary",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts",
+        "tests/foreign-settlement.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-081",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 1",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "0",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "0",
+        "formatted": "0"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-082",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 2",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "1",
+        "formatted": "1"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-083",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 3",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "001234",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "1234",
+        "formatted": "1,234"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-084",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 4",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1,234,567",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "1234567",
+        "formatted": "1,234,567"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-085",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 5",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "１２３４",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "1234",
+        "formatted": "1,234"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-086",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 6",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "-100",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "100",
+        "formatted": "100"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-087",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 7",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "abc500원",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "500",
+        "formatted": "500"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-088",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 8",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1000000000000001",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "1000000000000000",
+        "formatted": "1,000,000,000,000,000"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-089",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 9",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "42.9",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "42",
+        "formatted": "42"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-090",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 10",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "",
+        "unit": "won"
+      },
+      "expected": {
+        "canonicalWon": "",
+        "formatted": ""
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-091",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 11",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "0",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "0",
+        "formatted": "0"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-092",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 12",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "10000",
+        "formatted": "1"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-093",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 13",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1.0001",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "10001",
+        "formatted": "1.0001"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-094",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 14",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "123.4567",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "1234567",
+        "formatted": "123.4567"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-095",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 15",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "1,234.5",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "12345000",
+        "formatted": "1,234.5"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-096",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 16",
+      "operation": "money-unit-conversion",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "１２.３４",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "123400",
+        "formatted": "12.34"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-097",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 17",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "-7.5",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "75000",
+        "formatted": "7.5"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-098",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 18",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": false,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "abc9.87654",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "98765",
+        "formatted": "9.8765"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-099",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 19",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": "100000000000.0001",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "1000000000000000",
+        "formatted": "100,000,000,000"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    },
+    {
+      "id": "fin-100",
+      "suite": "financial-correctness",
+      "label": "원·만원 무손실 변환 20",
+      "operation": "money-unit-conversion",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "policy-contract",
+      "input": {
+        "value": ".5",
+        "unit": "manwon"
+      },
+      "expected": {
+        "canonicalWon": "5000",
+        "formatted": "0.5"
+      },
+      "grader": "exact-money-roundtrip",
+      "sourceRefs": [
+        "lib/money-input.ts",
+        "tests/money-input.test.mjs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3222 @@
+{
+  "schemaVersion": "bora-judge-coverage-suite/v1",
+  "corpusId": "bora-judge-coverage-2026-08-11-v1",
+  "suite": "reproducibility",
+  "caseCount": 100,
+  "execution": "offline-replay",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "repro-001",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 1",
+      "operation": "reproducibility-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-002",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 2",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-003",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 3",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-004",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 4",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-005",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 5",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "suite-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-006",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 6",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "suite-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-007",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 7",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids",
+          "suite-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-008",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 8",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids",
+          "suite-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-009",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 9",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-010",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 10",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-011",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 11",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-012",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 12",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-013",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 13",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "suite-count",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-014",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 14",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "suite-count",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-015",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 15",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids",
+          "suite-count",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-016",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 16",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 99,
+        "totalCases": 600,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids",
+          "suite-count",
+          "cases-per-suite"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-017",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 17",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-018",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 18",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-019",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 19",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-020",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 20",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 6,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-021",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 21",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "suite-count",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-022",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 22",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": true,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "suite-count",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-023",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 23",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-ids",
+          "suite-count",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-024",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 24",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": false,
+        "uniqueCaseIds": false,
+        "suiteCount": 5,
+        "casesPerSuite": 100,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "sha256",
+          "unique-ids",
+          "suite-count",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-025",
+      "suite": "reproducibility",
+      "label": "artifact-integrity 재현 계약 25",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "artifact-integrity",
+        "sha256Valid": true,
+        "uniqueCaseIds": true,
+        "suiteCount": 6,
+        "casesPerSuite": 99,
+        "totalCases": 599,
+        "sourceRefsResolved": true,
+        "provenancePresent": true,
+        "immutableDatasetId": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "cases-per-suite",
+          "total-cases"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/README.md",
+        "scripts/replay-judge-dataset.mjs"
+      ]
+    },
+    {
+      "id": "repro-026",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 1",
+      "operation": "reproducibility-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-027",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 2",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-028",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 3",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-029",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 4",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-030",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 5",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "wall-clock-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-031",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 6",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "wall-clock-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-032",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 7",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls",
+          "wall-clock-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-033",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 8",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls",
+          "wall-clock-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-034",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 9",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-035",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 10",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-036",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 11",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-037",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 12",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-038",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 13",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "wall-clock-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-039",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 14",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "wall-clock-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-040",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 15",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls",
+          "wall-clock-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-041",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 16",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 1,
+        "repeatByteIdentical": true,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls",
+          "wall-clock-calls",
+          "random-calls"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-042",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 17",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-043",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 18",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-044",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 19",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-045",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 20",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 0,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-046",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 21",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "wall-clock-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-047",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 22",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 0,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "wall-clock-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-048",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 23",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "model-calls",
+          "wall-clock-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-049",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 24",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 1,
+        "modelCalls": 1,
+        "wallClockCalls": 1,
+        "randomCalls": 0,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "network-calls",
+          "model-calls",
+          "wall-clock-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-050",
+      "suite": "reproducibility",
+      "label": "runner-boundary 재현 계약 25",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "runner-boundary",
+        "networkCalls": 0,
+        "modelCalls": 0,
+        "wallClockCalls": 0,
+        "randomCalls": 1,
+        "repeatByteIdentical": false,
+        "observedCases": 600,
+        "failureDetailLimit": 24,
+        "sessionBudgetChars": 81920
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "random-calls",
+          "repeatability"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "scripts/replay-judge-dataset.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "repro-051",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 1",
+      "operation": "reproducibility-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-052",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 2",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-053",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 3",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-054",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 4",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-055",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 5",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secrets-redacted"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-056",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 6",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "secrets-redacted"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-057",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 7",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe",
+          "secrets-redacted"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-058",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 8",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe",
+          "secrets-redacted"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-059",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 9",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-060",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 10",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-061",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 11",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-062",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 12",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-063",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 13",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secrets-redacted",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-064",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 14",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "secrets-redacted",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-065",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 15",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe",
+          "secrets-redacted",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-066",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 16",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 599,
+        "uniqueCaseRows": 600,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe",
+          "secrets-redacted",
+          "case-count"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-067",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 17",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-068",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 18",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-069",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 19",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-070",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 20",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": true,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-071",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 21",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secrets-redacted",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-072",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 22",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": true,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "secrets-redacted",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-073",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 23",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-safe",
+          "secrets-redacted",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-074",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 24",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "v0",
+        "formulaSafe": false,
+        "secretsRedacted": false,
+        "caseCount": 600,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "schema-version",
+          "formula-safe",
+          "secrets-redacted",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-075",
+      "suite": "reproducibility",
+      "label": "export-contract 재현 계약 25",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "export-contract",
+        "schemaVersion": "bora-judge-coverage-export/v1",
+        "formulaSafe": true,
+        "secretsRedacted": true,
+        "caseCount": 599,
+        "uniqueCaseRows": 599,
+        "aggregateMatches": true,
+        "limitationsPresent": true,
+        "diagnosticsScored": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "case-count",
+          "unique-case-rows"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/judge-export.ts",
+        "tests/judge-evaluation.test.mjs"
+      ]
+    },
+    {
+      "id": "repro-076",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 1",
+      "operation": "reproducibility-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-077",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 2",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-078",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 3",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-079",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 4",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-080",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 5",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "quality-claim"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-081",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 6",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "quality-claim"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-082",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 7",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review",
+          "quality-claim"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-083",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 8",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review",
+          "quality-claim"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-084",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 9",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-085",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 10",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-086",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 11",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-087",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 12",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-088",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 13",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "quality-claim",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-089",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 14",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "quality-claim",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-090",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 15",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review",
+          "quality-claim",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-091",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 16",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": false,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review",
+          "quality-claim",
+          "personal-data"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-092",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 17",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-093",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 18",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-094",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 19",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-095",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 20",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-096",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 21",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "quality-claim",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-097",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 22",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "quality-claim",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-098",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 23",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "expert-review",
+          "quality-claim",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-099",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 24",
+      "operation": "reproducibility-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": true,
+        "independentExpertReview": "certified",
+        "qualityClaim": "official-benchmark",
+        "containsRealPersonalData": false,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "official-score",
+          "expert-review",
+          "quality-claim",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    },
+    {
+      "id": "repro-100",
+      "suite": "reproducibility",
+      "label": "evidence-boundary 재현 계약 25",
+      "operation": "reproducibility-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "structure-contract",
+      "input": {
+        "kind": "evidence-boundary",
+        "officialHackathonScore": false,
+        "independentExpertReview": "not_performed",
+        "qualityClaim": "coverage-regression-only",
+        "containsRealPersonalData": true,
+        "containsLiveMaliciousUrls": true,
+        "runtimeModelUse": false,
+        "diagnosticsScored": false,
+        "limitationsPresent": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "personal-data",
+          "malicious-url"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "evaluation/datasets/bora-submission-evidence-v1.json",
+        "evaluation/datasets/bora-judge-core-v2.provenance.json"
+      ]
+    }
+  ]
+}

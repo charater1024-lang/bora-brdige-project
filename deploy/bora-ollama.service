@@ -1,0 +1,24 @@
+[Unit]
+Description=BORA Bridge Ollama runtime
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Environment=OLLAMA_HOST=127.0.0.1:11434
+Environment=OLLAMA_KEEP_ALIVE=10m
+Environment=OLLAMA_NOHISTORY=1
+ExecStartPre=/usr/bin/test -x /usr/local/bin/ollama
+ExecStart=/usr/local/bin/ollama serve
+Restart=always
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+LockPersonality=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=default.target

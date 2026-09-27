@@ -1,0 +1,11 @@
+[Unit]
+Description=BORA Bridge Seoul commercial-area official HTTPS file import
+After=network-online.target bora-bridge.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Project/BORA-Bridge-Finance-AI
+EnvironmentFile=%h/Project/BORA-Bridge-Finance-AI/.env.scheduler
+TimeoutStartSec=600
+ExecStart=/usr/bin/python3 scripts/import-seoul-commercial-sales.py --endpoint http://127.0.0.1:3000/api/public-data/import/seoul-commercial

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "bora-submission-evidence/v1",
+  "manifestId": "bora-submission-evidence-2026-08-11",
+  "description": "주관적 서비스 품질을 자동으로 단정하지 않고, 공모전 기획 항목과 구현 증거가 추적 가능한지만 자동 검사하기 위한 제출 증거 매니페스트다.",
+  "qualityClaim": "evidence-completeness-only",
+  "officialHackathonScore": false,
+  "requirements": [
+    {
+      "id": "problem-customer-channel",
+      "label": "문제·고객·채널 정의",
+      "claimType": "implemented-evidence",
+      "measurementState": "documented",
+      "evidenceRefs": [
+        "app/challenge/page.tsx",
+        "deliverables/working/proposal_content.md"
+      ]
+    },
+    {
+      "id": "ai-data-grounding",
+      "label": "AI·공식 데이터·근거 역할",
+      "claimType": "implemented-evidence",
+      "measurementState": "documented",
+      "evidenceRefs": [
+        "app/api/ai/route.ts",
+        "lib/rag/knowledge.ts",
+        "app/challenge/page.tsx"
+      ]
+    },
+    {
+      "id": "financial-safety-privacy",
+      "label": "금융안전·개인정보 경계",
+      "claimType": "implemented-evidence",
+      "measurementState": "tested",
+      "evidenceRefs": [
+        "app/api/phishing/route.ts",
+        "lib/ai/context-store.ts",
+        "tests/ai-context-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "judge-reproducibility",
+      "label": "평가 재현성과 버전 고정",
+      "claimType": "implemented-evidence",
+      "measurementState": "tested",
+      "evidenceRefs": [
+        "evaluation/datasets/bora-judge-core-v2.json",
+        "tests/judge-evaluation.test.mjs",
+        "lib/judge-evaluation.ts"
+      ]
+    },
+    {
+      "id": "impact-kpi-boundary",
+      "label": "효과 KPI의 가설·실측 구분",
+      "claimType": "validation-plan",
+      "measurementState": "hypothesis-not-measured",
+      "evidenceRefs": [
+        "app/challenge/page.tsx",
+        "deliverables/working/proposal_content.md"
+      ]
+    }
+  ],
+  "automaticChecks": {
+    "requiredRequirementIds": [
+      "problem-customer-channel",
+      "ai-data-grounding",
+      "financial-safety-privacy",
+      "judge-reproducibility",
+      "impact-kpi-boundary"
+    ],
+    "minimumEvidenceRefsPerRequirement": 2,
+    "allowedMeasurementStates": [
+      "documented",
+      "tested",
+      "hypothesis-not-measured"
+    ],
+    "forbiddenClaimTypes": [
+      "official-score",
+      "guaranteed-outcome",
+      "measured-without-baseline"
+    ]
+  },
+  "limitations": [
+    "증거 경로의 존재와 구조적 완결성만 검사하며, 심사위원의 정성 판단을 대신하지 않는다.",
+    "hypothesis-not-measured 항목은 실측 성과로 환산하지 않는다."
+  ]
+}

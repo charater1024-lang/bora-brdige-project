@@ -1,0 +1,23 @@
+.card { margin: 18px 0; padding: 20px; border: 1px solid #d9d1ef; border-radius: 20px; background: linear-gradient(145deg,#fff,#f8f5ff); box-shadow: 0 12px 32px rgba(66,46,126,.06); }
+.card > header { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 13px; }
+.card > header > span { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg,#5b46b2,#8c78dc); }
+.card header small { color: #705bc4; font-size: 9px; font-weight: 950; letter-spacing: .12em; }
+.card h2 { margin: 4px 0; color: #2a2044; font-size: 20px; letter-spacing: -.03em; }
+.card header p { margin: 0; color: #766e82; font-size: 10px; line-height: 1.55; }
+.card header a { min-height: 39px; padding: 0 12px; border: 1px solid #d5caf3; border-radius: 10px; display: inline-flex; align-items: center; gap: 7px; color: #5845a8; background: #fff; font-size: 10px; font-weight: 900; text-decoration: none; }
+.controls { margin: 15px 0 12px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.controls label { display: grid; gap: 5px; color: #776d83; font-size: 9px; font-weight: 850; }
+.controls select { min-width: 150px; min-height: 42px; padding: 0 11px; border: 1px solid #d8cfee; border-radius: 10px; color: #2b2145; background: #fff; font: inherit; font-size: 12px; font-weight: 900; }
+.controls > small { display: inline-flex; align-items: center; gap: 6px; color: #786e86; font-size: 9px; }
+.spin { animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 760px) {
+  .card { padding: 16px; }
+  .card > header { grid-template-columns: auto minmax(0,1fr); align-items: flex-start; }
+  .card header a { grid-column: 1 / -1; width: 100%; min-height: 44px; justify-content: center; font-size: 13px; }
+  .card header small, .card header p, .controls label, .controls > small { font-size: 13px; }
+  .card h2 { font-size: 21px; }
+  .controls { align-items: stretch; flex-direction: column; }
+  .controls select { width: 100%; min-height: 48px; font-size: 16px; }
+}

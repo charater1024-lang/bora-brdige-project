@@ -1,0 +1,10 @@
+tunnel: YOUR_TUNNEL_UUID
+credentials-file: /absolute/path/to/private/YOUR_TUNNEL_UUID.json
+
+originRequest:
+  connectTimeout: 10s
+
+ingress:
+  - hostname: YOUR_DOMAIN
+    service: http://127.0.0.1:3000
+  - service: http_status:404

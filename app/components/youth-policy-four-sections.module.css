@@ -1,0 +1,165 @@
+.shell { margin-top: 18px; }
+.heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.heading span { color: #6852c0; font-size: 11px; font-weight: 950; letter-spacing: .12em; }
+.heading h2 { margin: 7px 0 5px; color: #261d40; font-size: 24px; }
+.heading p { max-width: 720px; margin: 0; color: #746c80; font-size: 14px; line-height: 1.65; }
+.viewSwitch { flex: 0 0 auto; padding: 4px; border: 1px solid #ddd5ef; border-radius: 13px; display: flex; gap: 4px; background: #f8f6fc; }
+.viewSwitch button { min-height: 36px; padding: 7px 11px; border: 0; border-radius: 9px; color: #6f667d; background: transparent; cursor: pointer; font-size: 12px; font-weight: 900; }
+.viewSwitch button[aria-pressed="true"] { color: #fff; background: #634db7; box-shadow: 0 5px 14px rgba(89,67,174,.2); }
+.viewSwitch button:focus-visible { outline: 3px solid rgba(104,82,192,.25); outline-offset: 2px; }
+.allViewNotice { margin: 13px 0 0; padding: 12px 14px; border: 1px solid #eadcb7; border-radius: 13px; color: #715d2f; background: #fffaf0; font-size: 12px; line-height: 1.65; }
+.regionExplorer { margin-top: 15px; padding: 17px; border: 1px solid #ded5f1; border-radius: 20px; background: linear-gradient(145deg, #fff, #f8f5ff); box-shadow: 0 12px 30px rgba(76,54,139,.07); }
+.regionExplorerHeader { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.regionExplorerIcon { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; color: #5f48b3; background: #eee8ff; }
+.regionExplorerHeader h3 { margin: 0; color: #2d2348; font-size: 17px; }
+.regionExplorerHeader p { margin: 4px 0 0; color: #786e85; font-size: 12px; line-height: 1.55; }
+.scopeSwitch { padding: 4px; border: 1px solid #ded7ec; border-radius: 13px; display: flex; gap: 4px; background: #f5f2fa; }
+.scopeSwitch button { min-height: 38px; padding: 6px 10px; border: 0; border-radius: 9px; display: inline-flex; align-items: center; gap: 6px; color: #6c6378; background: transparent; cursor: pointer; font: inherit; font-size: 11px; font-weight: 900; }
+.scopeSwitch button small { min-width: 22px; height: 22px; padding: 0 5px; border-radius: 999px; display: grid; place-items: center; color: #5c49a3; background: #e9e4f4; font-size: 9px; }
+.scopeSwitch button[aria-pressed="true"] { color: #fff; background: #614bb4; box-shadow: 0 5px 14px rgba(83,61,164,.22); }
+.scopeSwitch button[aria-pressed="true"] small { color: #4d398f; background: #fff; }
+.scopeSwitch button:focus-visible { outline: 3px solid rgba(104,82,192,.24); outline-offset: 2px; }
+.regionMapLayout { margin-top: 15px; padding-top: 15px; border-top: 1px solid #e9e3f2; display: grid; grid-template-columns: minmax(300px, .9fr) minmax(280px, 1.1fr); gap: 18px; }
+.koreaMap { position: relative; width: min(100%, 510px); aspect-ratio: 800 / 759; justify-self: center; overflow: hidden; border: 1px solid #e5def2; border-radius: 22px; background: radial-gradient(circle at 48% 42%, #fff 0, #f5f1ff 68%, #eee7fb 100%); }
+.koreaMap > img { position: absolute; inset: 4%; width: 92%; height: 92%; object-fit: contain; opacity: .25; filter: brightness(0) saturate(100%) invert(36%) sepia(18%) saturate(2284%) hue-rotate(215deg) brightness(90%); }
+.mapFallback { position: absolute; inset: 20% 12%; margin: 0; padding: 16px; border: 1px dashed #cfc4ed; border-radius: 16px; display: grid; place-items: center; align-content: center; gap: 8px; color: #625b6c; background: rgba(255,255,255,.8); font-size: 12px; line-height: 1.55; text-align: center; pointer-events: none; }
+.koreaMap > button { position: absolute; left: var(--region-x); top: var(--region-y); min-width: 38px; min-height: 32px; padding: 3px 6px; border: 1px solid #cfc4ed; border-radius: 10px; display: grid; place-items: center; color: #49368f; background: rgba(255,255,255,.94); box-shadow: 0 4px 12px rgba(66,45,126,.14); cursor: pointer; font: inherit; transform: translate(-50%, -50%); transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+.koreaMap > button span { font-size: 11px; font-weight: 950; line-height: 1; }
+.koreaMap > button small { color: #867b97; font-size: 10px; line-height: 1; }
+.koreaMap > button:hover { z-index: 2; border-color: #765fc4; transform: translate(-50%, -50%) scale(1.09); }
+.koreaMap > button:focus-visible { z-index: 3; outline: 3px solid rgba(104,82,192,.28); outline-offset: 2px; }
+.koreaMap > button.mapRegionSelected { z-index: 1; border-color: #513a9f; color: #fff; background: #624bb5; }
+.koreaMap > button.mapRegionSelected small { color: #e9e2ff; }
+.regionChooser { min-width: 0; display: grid; align-content: start; gap: 12px; }
+.regionChooser > label:first-child { display: grid; gap: 6px; color: #55476d; font-size: 11px; font-weight: 900; }
+.regionChooser select { width: 100%; min-height: 44px; padding: 0 38px 0 12px; border: 1px solid #d9d0ec; border-radius: 11px; color: #34274f; background: #fff; font: inherit; font-size: 13px; font-weight: 800; }
+.regionChooser select:focus-visible { outline: 3px solid rgba(104,82,192,.22); outline-offset: 2px; }
+.regionButtonGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.regionButtonGrid button { min-width: 0; min-height: 36px; padding: 5px 8px; border: 1px solid #e1daec; border-radius: 9px; display: flex; align-items: center; justify-content: space-between; gap: 6px; color: #63586f; background: #fff; cursor: pointer; font: inherit; text-align: left; }
+.regionButtonGrid button span { overflow: hidden; font-size: 12px; font-weight: 850; text-overflow: ellipsis; white-space: nowrap; }
+.regionButtonGrid button small { min-width: 21px; height: 21px; border-radius: 999px; display: grid; place-items: center; color: #5e4ca0; background: #eee9f8; font-size: 11px; font-weight: 900; }
+.regionButtonGrid button[aria-pressed="true"] { border-color: #7963c7; color: #463489; background: #eee8ff; }
+.regionButtonGrid button:focus-visible { outline: 3px solid rgba(104,82,192,.2); outline-offset: 1px; }
+.includeNationwide { min-height: 42px; padding: 9px 11px; border: 1px solid #ded6eb; border-radius: 11px; display: flex; align-items: center; gap: 9px; color: #5d526b; background: #fff; cursor: pointer; font-size: 11px; font-weight: 800; }
+.includeNationwide input { width: 17px; height: 17px; accent-color: #624bb5; }
+.regionExplorerFooter { margin-top: 13px; padding-top: 12px; border-top: 1px solid #e9e3f2; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 5px 13px; }
+.regionExplorerFooter strong { color: #4c3997; font-size: 12px; }
+.regionExplorerFooter span { color: #7f7589; font-size: 10px; line-height: 1.55; }
+.regionExplorerFooter a { grid-column: 1 / -1; width: fit-content; display: inline-flex; align-items: center; gap: 4px; color: #82758f; font-size: 9px; text-decoration: none; }
+.regionExplorerFooter a:hover { color: #5c47aa; text-decoration: underline; }
+.sectionGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 15px; }
+.sectionGrid > button { min-width: 0; padding: 15px; border: 1px solid #e0daf0; border-radius: 17px; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 11px; color: #2e2548; background: #fff; cursor: pointer; text-align: left; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.sectionGrid > button:hover { border-color: #b9aae7; transform: translateY(-1px); }
+.sectionGrid > button:focus-visible { outline: 3px solid rgba(104,82,192,.25); outline-offset: 2px; }
+.sectionGrid > button[data-featured="true"] { background: linear-gradient(145deg, #fbf9ff, #f3efff); }
+.sectionGrid > button.selected { border-color: #705bc3; box-shadow: 0 10px 24px rgba(91,70,178,.13); }
+.sectionIcon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #5d47b3; background: #eee9ff; }
+.sectionText { min-width: 0; display: grid; gap: 4px; }
+.sectionText strong { font-size: 15px; }
+.sectionText small { overflow: hidden; color: #7a7187; font-size: 12px; line-height: 1.45; text-overflow: ellipsis; white-space: nowrap; }
+.sectionCount { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 5px; color: #8a8195; font-size: 11px; }
+.sectionCount b { color: #473594; font-size: 20px; }
+.sectionCount em { margin-right: auto; padding: 4px 7px; border-radius: 999px; color: #684fab; background: #e9e1ff; font-size: 11px; font-style: normal; font-weight: 900; }
+.panel { margin-top: 11px; padding: 18px; border: 1px solid #ded7ee; border-radius: 21px; background: #fff; box-shadow: 0 13px 35px rgba(57,40,98,.06); }
+.panelHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.panelHeading > div > strong { color: #281f43; font-size: 18px; }
+.panelHeading p { margin: 4px 0 0; color: #7b7287; font-size: 12px; }
+.panelHeading > span { padding: 6px 9px; border-radius: 999px; color: #5e49b0; background: #eee9ff; font-size: 12px; font-weight: 900; }
+.integrationNotice { margin: 13px 0 0; padding: 11px 13px; border: 1px solid #e6dff3; border-radius: 12px; color: #675f72; background: #faf8fd; font-size: 12px; line-height: 1.65; }
+.sourceStatuses { margin: 11px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; list-style: none; }
+.sourceStatuses li { min-height: 30px; padding: 5px 8px; border: 1px solid #e5dff0; border-radius: 9px; display: inline-flex; align-items: center; gap: 6px; color: #6d6478; background: #fbfafd; font-size: 10px; }
+.sourceStatuses li strong { color: #8b5e16; font-size: 10px; }
+.sourceStatuses li[data-status="live"] strong { color: #137359; }
+.sourceStatuses li[data-status="unavailable"] strong { color: #a13d4b; }
+.sourceStatuses li small { min-width: 20px; height: 20px; border-radius: 999px; display: grid; place-items: center; color: #5946a1; background: #eee9fb; font-size: 9px; font-weight: 900; }
+.items { display: grid; gap: 10px; margin-top: 14px; }
+.empty { margin-top: 14px; padding: 24px; border: 1px dashed #d8d0e9; border-radius: 15px; text-align: center; background: #fbfafd; }
+.empty strong { color: #51466a; font-size: 14px; }
+.empty p { margin: 6px auto 0; max-width: 600px; color: #837b8d; font-size: 12px; line-height: 1.6; }
+.policyCard { padding: 17px; border: 1px solid #e4deef; border-radius: 15px; background: #fff; }
+.policyCard > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #776d86; font-size: 11px; }
+.policyCard > header > span { color: #5c49aa; font-weight: 900; }
+.policyCard h3 { margin: 10px 0 6px; color: #2b2245; font-size: 16px; }
+.policyCard > p { margin: 0; color: #716979; font-size: 13px; line-height: 1.65; }
+.policyCard > footer { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.policyCard > footer small { color: #8a8193; font-size: 11px; }
+.policyCard > footer a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px; color: #5c47ad; font-size: 12px; font-weight: 900; text-decoration: none; }
+.resources { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ede8f4; display: grid; grid-template-columns: minmax(180px, .65fr) minmax(0, 1.35fr); gap: 18px; }
+.resources > div > strong { color: #3b3153; font-size: 13px; }
+.resources > div > p { margin: 5px 0 0; color: #857d8f; font-size: 11px; line-height: 1.6; }
+.resources ul { margin: 0; padding: 0; display: grid; gap: 7px; list-style: none; }
+.resourcePreviewCard { padding: 13px; border: 1px solid #e2dbea; border-radius: 14px; background: linear-gradient(145deg, #fff, #faf8ff); }
+.resourcePreviewCard > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.resourcePreviewCard > header > span { min-width: 0; display: grid; gap: 3px; }
+.resourcePreviewCard strong { color: #362a54; font-size: 13px; }
+.resourcePreviewCard small { overflow: hidden; color: #8b8295; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.resourcePreviewCard em { flex: 0 0 auto; padding: 4px 6px; border-radius: 999px; color: #65518f; background: #f0ebfa; font-size: 10px; font-style: normal; font-weight: 850; }
+.resourcePreviewCard dl { margin: 12px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.resourcePreviewCard dl > div { padding: 10px; border-radius: 10px; background: #f6f3fb; }
+.resourcePreviewCard dt { color: #68569d; font-size: 10px; font-weight: 900; }
+.resourcePreviewCard dd { margin: 5px 0 0; color: #6c6477; font-size: 12px; line-height: 1.55; }
+.resourcePreviewCard > a { width: fit-content; min-height: 44px; margin-top: 11px; padding: 0 12px; border: 1px solid #d7ccf0; border-radius: 10px; display: inline-flex; align-items: center; gap: 7px; color: #5b45ab; background: #eee9ff; font-size: 12px; font-weight: 900; text-decoration: none; }
+.resourcePreviewCard > a:hover { border-color: #a996db; background: #e7dfff; }
+.resourcePreviewCard > a:focus-visible { outline: 3px solid rgba(104,82,192,.22); outline-offset: 2px; }
+@media (max-width: 1020px) {
+  .regionExplorerHeader { grid-template-columns: auto minmax(0, 1fr); }
+  .scopeSwitch { grid-column: 1 / -1; }
+  .scopeSwitch button { flex: 1; justify-content: center; }
+}
+@media (max-width: 920px) {
+  .sectionGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .regionMapLayout { grid-template-columns: 1fr; }
+  .koreaMap { width: min(100%, 520px); }
+}
+@media (max-width: 680px) {
+  .heading { align-items: stretch; flex-direction: column; }
+  .viewSwitch { width: 100%; }
+  .viewSwitch button { flex: 1; min-height: 44px; font-size: 14px; }
+  .allViewNotice { font-size: 14px; }
+  .regionExplorer { padding: 14px; }
+  .regionExplorerHeader { grid-template-columns: auto minmax(0, 1fr); }
+  .scopeSwitch { overflow-x: auto; justify-content: flex-start; }
+  .scopeSwitch button { flex: 0 0 auto; min-height: 44px; font-size: 13px; }
+  .scopeSwitch button small { font-size: 12px; }
+  .regionExplorerHeader p { font-size: 14px; }
+  .regionMapLayout { grid-template-columns: minmax(0, 1fr); }
+  .koreaMap { min-height: 390px; padding: 10px; aspect-ratio: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(48px, auto); align-content: center; gap: 12px; }
+  .koreaMap > button { position: relative; left: auto; top: auto; width: 100%; min-width: 0; min-height: 48px; padding: 4px 2px; transform: none; }
+  .koreaMap > button:hover { transform: none; }
+  .koreaMap > button span { font-size: 12px; max-width: 100%; overflow-wrap: anywhere; line-height: 1.15; letter-spacing: 0; }
+  .koreaMap > button small { font-size: 11px; }
+  .regionChooser > label:first-child { font-size: 14px; }
+  .regionChooser select { min-height: 48px; font-size: 16px; }
+  .regionButtonGrid { display: none; }
+  .includeNationwide { min-height: 48px; font-size: 14px; }
+  .regionExplorerFooter { grid-template-columns: 1fr; }
+  .regionExplorerFooter a { grid-column: 1; }
+  .regionExplorerFooter strong { font-size: 14px; }
+  .regionExplorerFooter span, .regionExplorerFooter a { min-height: 44px; font-size: 13px; }
+  .sectionGrid { grid-template-columns: 1fr; }
+  .sectionGrid > button { min-height: 92px; }
+  .heading span,
+  .sectionCount,
+  .sectionCount em,
+  .resourcePreviewCard small,
+  .resourcePreviewCard em,
+  .resourcePreviewCard dt {
+    font-size: 12px;
+  }
+  .sectionText small { white-space: normal; }
+  .panel { padding: 15px; }
+  .panelHeading p, .integrationNotice, .policyCard > p, .resources > div > p, .resourcePreviewCard dd { font-size: 14px; }
+  .sourceStatuses li { min-height: 44px; font-size: 12px; }
+  .sourceStatuses li strong { font-size: 12px; }
+  .sourceStatuses li small { min-width: 26px; height: 26px; font-size: 12px; }
+  .policyCard > header, .policyCard > footer small { font-size: 12px; }
+  .policyCard > footer a { min-height: 44px; font-size: 13px; }
+  .resources { grid-template-columns: 1fr; }
+  .resourcePreviewCard dl { grid-template-columns: 1fr; }
+  .resourcePreviewCard > a { width: 100%; justify-content: center; }
+  .policyCard > header, .policyCard > footer { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sectionGrid > button,
+  .koreaMap > button { transition: none; }
+}

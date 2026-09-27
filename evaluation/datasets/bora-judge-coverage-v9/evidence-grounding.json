@@ -1,0 +1,2066 @@
+{
+  "schemaVersion": "bora-judge-coverage-suite/v1",
+  "corpusId": "bora-judge-coverage-2026-09-01-v9",
+  "suite": "evidence-grounding",
+  "caseCount": 100,
+  "execution": "offline-replay",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "evidence-001",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "보이스피싱 피해 지급정지 112"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-002",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "스미싱 송금 후 1394"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-003",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "phishing emergency response 112"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-004",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "fraud transfer stop official channel"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-005",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "フィッシング 詐欺 112"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-006",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "诈骗 汇款 1394"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-007",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "악성앱 인증정보 노출"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-008",
+      "suite": "evidence-grounding",
+      "label": "phishing-emergency-response 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "피싱 피해구제 신고"
+      },
+      "expected": {
+        "topDocumentId": "phishing-emergency-response",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-009",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "기관 사칭 문자 링크 확인"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-010",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "발신번호 조작 고객센터"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-011",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "suspicious link spoofing verification"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-012",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "impersonation message official website"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-013",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "なりすまし 不審なリンク"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-014",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "冒充 可疑链接"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-015",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "문자 속 URL 대신 공식 앱"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-016",
+      "suite": "evidence-grounding",
+      "label": "smishing-safe-verification 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "금융감독원 파인 사칭문자"
+      },
+      "expected": {
+        "topDocumentId": "smishing-safe-verification",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-017",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "청년 자산형성 정부기여"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-018",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "청년도약 정책저축 조건"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-019",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "youth savings asset building"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-020",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "youth savings asset building government contribution"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-021",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "若者 資産形成"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-022",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "青年 资产形成"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-023",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "청년 미래적금 신청기간"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-024",
+      "suite": "evidence-grounding",
+      "label": "youth-asset-building 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "정책형 저축 중도해지"
+      },
+      "expected": {
+        "topDocumentId": "youth-asset-building",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-025",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "K-Startup 예비창업 지원사업"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-026",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "스타트업 사업계획 모집 일정"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-027",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "startup support program eligibility"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-028",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "entrepreneur government program deadline"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-029",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "起業 スタートアップ 支援"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-030",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "创业 支持项目"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-031",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "초기창업 중복수혜 제한"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-032",
+      "suite": "evidence-grounding",
+      "label": "startup-support-discovery 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "창업진흥원 공고 원문"
+      },
+      "expected": {
+        "topDocumentId": "startup-support-discovery",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-033",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "외국인 체류자격 계좌개설 1345"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-034",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "금융정착 본인확인 다국어"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-035",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "foreigner resident identity verification"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-036",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "foreign resident bank account 1345"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-037",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "外国人 本人確認 1345"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-038",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "外国人 身份验证"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-039",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "국내거소 금융회사 서류"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-040",
+      "suite": "evidence-grounding",
+      "label": "foreign-resident-finance 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "출입국 다국어 상담 금융"
+      },
+      "expected": {
+        "topDocumentId": "foreign-resident-finance",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-041",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "투자 공시 DART KIND"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-042",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "주식 투자경고 위험종목"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-043",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "investment disclosure stock warning"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-044",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "investment disclosure stock market alert"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-045",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "投資 株式 開示"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-046",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "投资 股票 披露"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-047",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "수익보장보다 기업공시"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-048",
+      "suite": "evidence-grounding",
+      "label": "investment-disclosure-check 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "한국거래소 투자주의 확인"
+      },
+      "expected": {
+        "topDocumentId": "investment-disclosure-check",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-049",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 1",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금 적금 금리 비교"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-050",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 2",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "금융상품 한눈에 예금자보호"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-051",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 3",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "deposit savings interest rate"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-052",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 4",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "deposit savings interest rate financial product comparison"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-053",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 5",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "預金 金利 比較"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-054",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 6",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "存款 利率 比较"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-055",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 7",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "우대금리 중도해지이율"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-056",
+      "suite": "evidence-grounding",
+      "label": "financial-product-comparison 근거 검색 8",
+      "operation": "knowledge-top-document",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금자보호 가입대상 기간"
+      },
+      "expected": {
+        "topDocumentId": "financial-product-comparison",
+        "minimumSourceCount": 1
+      },
+      "grader": "top-id-and-minimum-source-count",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts",
+        "tests/public-statistics-rag.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-057",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "금융소비자보호법 설명"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-058",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "금소법 청약철회"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-059",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "위법계약해지 절차"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-060",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "부당권유 신고"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-061",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "설명의무 위반"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-062",
+      "suite": "evidence-grounding",
+      "label": "financial-consumer-protection 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "적합성원칙 확인"
+      },
+      "expected": {
+        "topic": "financial-consumer-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-063",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "전자금융거래법 사고"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-064",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "전자금융사고 배상"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-065",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "무권한이체 대응"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-066",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "전자지급 오류"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-067",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "접근매체 분실"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-068",
+      "suite": "evidence-grounding",
+      "label": "electronic-finance 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "해킹이체 책임"
+      },
+      "expected": {
+        "topic": "electronic-finance"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-069",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "신용정보법 열람"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-070",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "개인신용정보 삭제"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-071",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "신용정보회사 의무"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-072",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "마이데이터 전송요구"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-073",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "신용점수 정정"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-074",
+      "suite": "evidence-grounding",
+      "label": "credit-information 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "정보제공동의 철회"
+      },
+      "expected": {
+        "topic": "credit-information"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-075",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "보이스피싱 피해환급"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-076",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "전기통신금융사기 법"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-077",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "피해환급 신청"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-078",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "사기이용계좌 지급정지"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-079",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "피해구제 절차"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-080",
+      "suite": "evidence-grounding",
+      "label": "voice-phishing-recovery 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "채권소멸 환급금"
+      },
+      "expected": {
+        "topic": "voice-phishing-recovery"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-081",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금자보호법 한도"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-082",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금보험공사 지급"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-083",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금보험금 신청"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-084",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "예금자보호 대상"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-085",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "부보금융회사 확인"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-086",
+      "suite": "evidence-grounding",
+      "label": "depositor-protection 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "보험사고 예금"
+      },
+      "expected": {
+        "topic": "depositor-protection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-087",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 1",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "채권추심법 연락"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-088",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 2",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "불법추심 신고"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-089",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 3",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "채무자대리인 제도"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-090",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 4",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "빚독촉 제한"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-091",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 5",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "추심전화 시간"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-092",
+      "suite": "evidence-grounding",
+      "label": "fair-debt-collection 법령 의도 6",
+      "operation": "financial-law-intent",
+      "riskClass": "high-risk-finance",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "채무독촉 협박"
+      },
+      "expected": {
+        "topic": "fair-debt-collection"
+      },
+      "grader": "exact-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-093",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 1",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "오늘 서울 날씨"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-094",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 2",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "저녁 메뉴 추천"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-095",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 3",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "도서관 운영시간"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-096",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 4",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "운동 계획 만들기"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-097",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 5",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "여행 가방 목록"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-098",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 6",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "사진 파일 정리"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-099",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 7",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "음악 재생목록"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    },
+    {
+      "id": "evidence-100",
+      "suite": "evidence-grounding",
+      "label": "비금융 질문 법령 의도 보류 8",
+      "operation": "financial-law-intent",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "reviewed-label",
+      "input": {
+        "query": "회의실 예약 방법"
+      },
+      "expected": {
+        "topic": null
+      },
+      "grader": "exact-null-topic",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts",
+        "tests/financial-law.test.mjs"
+      ]
+    }
+  ]
+}

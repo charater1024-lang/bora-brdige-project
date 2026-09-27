@@ -1,0 +1,291 @@
+{
+  "schemaVersion": "bora-judge-provenance/v1",
+  "documentedAt": "2026-08-11",
+  "artifactRole": "non-runtime documentation",
+  "dataset": {
+    "path": "evaluation/datasets/bora-judge-core-v1.json",
+    "datasetId": "bora-judge-core-2026-08-11",
+    "datasetSchemaVersion": "bora-judge-dataset/v1",
+    "runnerVersion": "bora-evaluator/1.2",
+    "datasetSha256": "98780ea523d2fa26ffa617a087c3713e0b5cb3524d619e936e9836493044dd44",
+    "hashScope": "raw file bytes with LF line endings",
+    "caseCount": 16,
+    "localeCounts": {
+      "ko": 16
+    },
+    "syntheticOnly": true,
+    "containsPersonalData": false,
+    "officialHackathonScore": false
+  },
+  "provenanceClaim": {
+    "statementKo": "2026-08-11 Codex 협업 작업에서 OpenAI GPT-5.6 Sol로 구성된 코딩 에이전트가 저장소 소스코드에 근거한 합성 평가 케이스의 작성과 반복 검토를 지원했다.",
+    "model": {
+      "provider": "OpenAI",
+      "declaredModel": "GPT-5.6 Sol",
+      "interface": "Codex desktop collaborative coding session",
+      "role": [
+        "repository source inspection",
+        "synthetic case drafting",
+        "expected-result and source-reference review",
+        "runtime, security, and reproducibility review",
+        "provenance documentation"
+      ],
+      "attestationLevel": "self-declared session provenance",
+      "portableRunIdStored": false,
+      "signedInferenceLogStored": false
+    },
+    "doesNotClaim": [
+      "OpenAI endorsement or certification",
+      "independent financial, legal, or security expert validation",
+      "official hackathon scoring authority",
+      "training-data provenance for GPT-5.6 Sol",
+      "a model-generated answer as the ground truth by itself",
+      "statistical representativeness of real users or incidents"
+    ]
+  },
+  "generationMethod": {
+    "inputPolicy": "Use synthetic Korean text and numeric values only; do not copy real user records, account identifiers, credentials, or incident reports.",
+    "steps": [
+      "Identify stable, testable product contracts in the repository.",
+      "Draft minimal synthetic positive, negative, boundary, high-risk, and adversarial inputs.",
+      "Derive expected values from source-code behavior or an explicit readiness policy.",
+      "Attach repository-relative sourceRefs to every case.",
+      "Run iterative consistency, security, runtime, version, and hash reviews.",
+      "Keep runtime evaluation free of external URL calls, same-Worker self-fetch, and billable AI generation."
+    ],
+    "oraclePolicy": {
+      "codeDerived": "Exact calculations, normalized values, document IDs, intent enums, rule signals, and triage scores are derived from repository code contracts.",
+      "policyDerived": "Health, freshness, and runtime-provider expectations are submission-readiness thresholds and may vary by environment and time.",
+      "modelAuthority": "The language model proposes and reviews cases but is not the independent oracle."
+    }
+  },
+  "distribution": {
+    "classificationType": "mutually exclusive primary scenario class for documentation only",
+    "usedForScoring": false,
+    "highRiskDefinition": "A high-risk financial-harm situation such as phishing or suspicious transactions; never a demographic or person-level risk group.",
+    "counts": {
+      "general": 8,
+      "boundary": 3,
+      "high-risk-financial-harm": 4,
+      "adversarial": 1
+    },
+    "percentages": {
+      "general": 50.0,
+      "boundary": 18.75,
+      "high-risk-financial-harm": 25.0,
+      "adversarial": 6.25
+    },
+    "executionCounts": {
+      "deterministic": 10,
+      "build-contract": 1,
+      "server-handler": 2,
+      "shared-core": 2,
+      "runtime-snapshot": 1
+    },
+    "suiteCounts": {
+      "financial-correctness": 3,
+      "financial-safety": 5,
+      "evidence-grounding": 4,
+      "deployment-readiness": 2,
+      "data-truthfulness": 1,
+      "ai-readiness": 1
+    }
+  },
+  "caseProvenance": [
+    {
+      "id": "finance-surplus",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "exact financial arithmetic and normalization contract",
+      "sourceRefs": [
+        "lib/manual-finance.ts"
+      ]
+    },
+    {
+      "id": "finance-input-bounds",
+      "primaryScenarioClass": "boundary",
+      "oracleBasis": "negative, non-numeric, and maximum-value normalization contract",
+      "sourceRefs": [
+        "lib/manual-finance.ts"
+      ]
+    },
+    {
+      "id": "settlement-budget",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "exact settlement-budget arithmetic contract",
+      "sourceRefs": [
+        "lib/foreign-settlement.ts"
+      ]
+    },
+    {
+      "id": "money-unit-conversion",
+      "primaryScenarioClass": "boundary",
+      "oracleBasis": "exact decimal-to-won precision and formatting contract",
+      "sourceRefs": [
+        "lib/money-input.ts"
+      ]
+    },
+    {
+      "id": "rag-phishing-grounding",
+      "primaryScenarioClass": "high-risk-financial-harm",
+      "oracleBasis": "repository knowledge-corpus retrieval ranking contract",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts"
+      ]
+    },
+    {
+      "id": "rag-foreign-grounding",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "repository knowledge-corpus retrieval ranking contract",
+      "sourceRefs": [
+        "lib/rag/knowledge.ts"
+      ]
+    },
+    {
+      "id": "law-voice-phishing-intent",
+      "primaryScenarioClass": "high-risk-financial-harm",
+      "oracleBasis": "financial-law intent classification enum contract",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts"
+      ]
+    },
+    {
+      "id": "law-debt-collection-intent",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "financial-law intent classification enum contract",
+      "sourceRefs": [
+        "lib/legal/financial-law.ts"
+      ]
+    },
+    {
+      "id": "triage-high-priority",
+      "primaryScenarioClass": "high-risk-financial-harm",
+      "oracleBasis": "allowlisted signal scoring and priority contract",
+      "sourceRefs": [
+        "lib/security-triage.ts"
+      ]
+    },
+    {
+      "id": "triage-allowlist",
+      "primaryScenarioClass": "adversarial",
+      "oracleBasis": "unknown, cross-domain, and duplicate signal rejection contract",
+      "sourceRefs": [
+        "lib/security-triage.ts"
+      ]
+    },
+    {
+      "id": "challenge-route",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "shared build-contract constants; not a public availability probe",
+      "sourceRefs": [
+        "lib/challenge-contract.ts",
+        "app/challenge/page.tsx"
+      ]
+    },
+    {
+      "id": "health-route",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "internal health-handler response and readiness policy",
+      "sourceRefs": [
+        "app/api/health/route.ts"
+      ]
+    },
+    {
+      "id": "public-data-route",
+      "primaryScenarioClass": "boundary",
+      "oracleBasis": "internal dashboard handler plus live-source, item-count, and freshness thresholds",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts"
+      ]
+    },
+    {
+      "id": "phishing-high-risk",
+      "primaryScenarioClass": "high-risk-financial-harm",
+      "oracleBasis": "shared text-only phishing rule core; not an HTTP-route assertion",
+      "sourceRefs": [
+        "app/api/phishing/route.ts"
+      ]
+    },
+    {
+      "id": "phishing-low-risk",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "shared text-only phishing rule core negative control; not an HTTP-route assertion",
+      "sourceRefs": [
+        "app/api/phishing/route.ts"
+      ]
+    },
+    {
+      "id": "runtime-ai-provider",
+      "primaryScenarioClass": "general",
+      "oracleBasis": "runtime provider configuration readiness policy; no generated response is scored",
+      "sourceRefs": [
+        "lib/runtime-settings.ts",
+        "app/api/ai/route.ts"
+      ]
+    }
+  ],
+  "reviewScope": {
+    "modelAssistedReview": [
+      "case-to-source traceability",
+      "fixture-to-runner consistency",
+      "expected-value plausibility against code contracts",
+      "synthetic-data and personal-data boundary",
+      "external-network and billable-AI avoidance",
+      "Cloudflare runtime and self-fetch risk",
+      "rate-limit isolation",
+      "execution-kind and evidence wording accuracy",
+      "dataset hash, line-ending, and runner-version pinning"
+    ],
+    "repositoryVerificationHooks": [
+      "tests/judge-evaluation.test.mjs",
+      "lib/judge-evaluation.ts",
+      ".gitattributes"
+    ],
+    "releaseEvidenceRequired": [
+      "Git commit SHA",
+      "dependency lockfile state",
+      "test and build logs",
+      "deployed availability checks",
+      "manual financial, legal, accessibility, and fairness review"
+    ],
+    "independentHumanDomainExpertReviewRecorded": false,
+    "signedCiAttestationEmbedded": false
+  },
+  "limitations": [
+    "The dataset has only 16 cases and is a regression smoke set, not a statistical benchmark.",
+    "All cases are Korean and do not measure multilingual quality.",
+    "Cases are white-box and derived from the same repository they evaluate.",
+    "Synthetic inputs do not represent real-user prevalence, severity, or demographic distributions.",
+    "Only one case has adversarial as its primary class.",
+    "No independent financial, legal, security, or fairness expert labels are recorded.",
+    "Health, public-data freshness, and runtime-provider results vary by environment and time.",
+    "The phishing shared-core cases do not prove HTTP parsing, rate limiting, routing, or deployed availability.",
+    "The challenge build-contract case does not prove that the public route is reachable.",
+    "No billable generative-AI response quality, hallucination, or safety behavior is scored.",
+    "The model provenance is a self-described session record without a portable run ID or cryptographic signature."
+  ],
+  "reproducibility": {
+    "lineEndingPolicy": "evaluation/datasets/*.json text eol=lf",
+    "windowsHashCommand": "Get-FileHash -Algorithm SHA256 -LiteralPath .\\evaluation\\datasets\\bora-judge-core-v1.json",
+    "posixHashCommand": "sha256sum evaluation/datasets/bora-judge-core-v1.json",
+    "attributeCommand": "git check-attr text eol -- evaluation/datasets/bora-judge-core-v1.json",
+    "focusedTestCommand": "node --test --test-concurrency=1 tests/judge-evaluation.test.mjs",
+    "fullBuildCommand": "npm run build",
+    "procedure": [
+      "Check out the exact repository commit to be reproduced.",
+      "Verify Git attributes report text=set and eol=lf for the fixture.",
+      "Compute the raw SHA-256 and compare it with this manifest and lib/judge-evaluation.ts.",
+      "Install dependencies from the committed lockfile.",
+      "Run the focused dataset test and the project test suite.",
+      "Create a fresh build so that stale dist artifacts cannot be deployed.",
+      "Retain the exported dataset ID, hash, runner version, timestamps, runtime snapshot, Git commit, and test logs.",
+      "Perform separate deployed-URL and human domain review before making external claims."
+    ]
+  },
+  "maintenancePolicy": {
+    "fixtureByteChange": "Recompute and update the dataset SHA-256 everywhere it is pinned.",
+    "runnerSemanticChange": "Increment runnerVersion and reject incompatible stored sessions.",
+    "incompatibleSchemaChange": "Publish a new dataset file and datasetId.",
+    "provenanceOnlyChange": "Do not change the fixture hash or runner version; track the documentation change in Git.",
+    "singleRuntimeSource": "bora-judge-core-v1.json remains the only fixture source imported by the runner."
+  }
+}

@@ -1,0 +1,3080 @@
+{
+  "schemaVersion": "bora-judge-coverage-suite/v1",
+  "corpusId": "bora-judge-coverage-2026-09-01-v5",
+  "suite": "stored-api-contract",
+  "caseCount": 100,
+  "execution": "offline-replay",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "api-001",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 1",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-002",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 2",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "POST",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-003",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 3",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "path"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-004",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 4",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 503,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "http-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-005",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 5",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "down",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-006",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 6",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "text/html",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-007",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 7",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public, max-age=3600",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "no-store"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-008",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 8",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "personal-data-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-009",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 9",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "POST",
+        "path": "/api/health",
+        "httpStatus": 503,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method",
+          "http-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-010",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 10",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health?verbose=1",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "path"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-011",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 11",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "OK",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-012",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 12",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-013",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 13",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "NO-STORE",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-014",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 14",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "public",
+        "containsPersonalData": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "no-store",
+          "personal-data-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-015",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 15",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 204,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "http-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-016",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 16",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "HEAD",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-017",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 17",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "path"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-018",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 18",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/problem+json",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-019",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 19",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": null,
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "no-store, max-age=0",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-020",
+      "suite": "stored-api-contract",
+      "label": "health 저장형 계약 20",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "health",
+        "method": "GET",
+        "path": "/api/health",
+        "httpStatus": 200,
+        "bodyStatus": "ok",
+        "contentType": "application/json; charset=utf-8",
+        "cacheControl": "private, no-store",
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/health/route.ts",
+        "tests/health-privacy.test.mjs"
+      ]
+    },
+    {
+      "id": "api-021",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 1",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-022",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 2",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "POST",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-023",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 3",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/other",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "path"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-024",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 4",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 500,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "http-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-025",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 5",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "stale",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "status-disclosure"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-026",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 6",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 0,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "source-present"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-027",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 7",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": false,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "https-sources"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-028",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 8",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": false,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "source-dates"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-029",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 9",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 0,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "item-present"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-030",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 10",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": false,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "synthetic-fixture"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-031",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 11",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "personal-data-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-032",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 12",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "live",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-033",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 13",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 3,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-034",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 14",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 25,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-035",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 15",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/read",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-036",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 16",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": -1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "source-present"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-037",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 17",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 204,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "http-status"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-038",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 18",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "DELETE",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-039",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 19",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": false,
+        "allSourceDatesPresent": false,
+        "itemCount": 1,
+        "syntheticFixture": true,
+        "containsPersonalData": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "https-sources",
+          "source-dates"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-040",
+      "suite": "stored-api-contract",
+      "label": "public-data 저장형 계약 20",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "public-data",
+        "method": "GET",
+        "path": "/api/public-data/dashboard",
+        "httpStatus": 200,
+        "bodyStatus": "partial",
+        "sourceCount": 1,
+        "allSourcesHttps": true,
+        "allSourceDatesPresent": true,
+        "itemCount": 1,
+        "syntheticFixture": false,
+        "containsPersonalData": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "synthetic-fixture",
+          "personal-data-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/public-data/dashboard/route.ts",
+        "tests/public-dashboard-access.test.mjs"
+      ]
+    },
+    {
+      "id": "api-041",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 1",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-042",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 2",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "GET",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-043",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 3",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phish",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "path"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-044",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 4",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": false,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "same-origin"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-045",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 5",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "text/plain",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-046",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 6",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 0,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-047",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 7",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 60001,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-048",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 8",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 0,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "input-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-049",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 9",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 20001,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "input-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-050",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 10",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "fr",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "locale"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-051",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 11",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": true,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "client-score-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-052",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 12",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "live-url-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-053",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 13",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "en",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-054",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 14",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ja",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-055",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 15",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "zh",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-056",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 16",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json; charset=utf-8",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-057",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 17",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 60000,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-058",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 18",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 20000,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-059",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 19",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "POST",
+        "path": "/api/phishing",
+        "sameOrigin": false,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": true,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "same-origin",
+          "client-score-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-060",
+      "suite": "stored-api-contract",
+      "label": "phishing 저장형 계약 20",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "phishing",
+        "method": "PUT",
+        "path": "/api/phishing",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyChars": 120,
+        "inputChars": 80,
+        "locale": "ko",
+        "clientSuppliedScore": false,
+        "containsLiveUrl": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/phishing/route.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-061",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 1",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-062",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 2",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": false,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "developer-auth"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-063",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 3",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": false,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "same-origin"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-064",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 4",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "PATCH",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method",
+          "action"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-065",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 5",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "score",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "action"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-066",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 6",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "text/plain",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-067",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 7",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 1,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-068",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 8",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 65537,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-069",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 9",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": true,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "client-results-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-070",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 10",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "client-score-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-071",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 11",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "GET",
+        "action": "list",
+        "contentType": "",
+        "bodyBytes": 0,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-072",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 12",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "GET",
+        "action": "read",
+        "contentType": "",
+        "bodyBytes": 0,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-073",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 13",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "create",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-074",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 14",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "diagnostics",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-075",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 15",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "PUT",
+        "action": "review",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-076",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 16",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "PUT",
+        "action": "seal",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-077",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 17",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "PUT",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "action"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-078",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 18",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "GET",
+        "action": "seal",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "action"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-079",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 19",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": false,
+        "sameOrigin": false,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": false,
+        "clientSuppliedScore": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "developer-auth",
+          "same-origin"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-080",
+      "suite": "stored-api-contract",
+      "label": "judge-session 저장형 계약 20",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "judge-session",
+        "authenticatedDeveloper": true,
+        "sameOrigin": true,
+        "method": "POST",
+        "action": "run",
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "clientSuppliedResults": true,
+        "clientSuppliedScore": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "client-results-absent",
+          "client-score-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "app/api/developer/judge-sessions/route.ts",
+        "lib/judge-session-store.ts"
+      ]
+    },
+    {
+      "id": "api-081",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 1",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-082",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 2",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "TRACE",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-083",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 3",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": false,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "same-origin"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-084",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 4",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "text/plain",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-085",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 5",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 1,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-086",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 6",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 65537,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "body-size"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-087",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 7",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": true,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secret-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-088",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 8",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": true,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "url-userinfo-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-089",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 9",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-prefix-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-090",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 10",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "GET",
+        "sameOrigin": false,
+        "contentType": "",
+        "bodyBytes": 0,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-091",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 11",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "HEAD",
+        "sameOrigin": false,
+        "contentType": "",
+        "bodyBytes": 0,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-092",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 12",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "PUT",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-093",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 13",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "DELETE",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-094",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 14",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json; charset=utf-8",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-095",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 15",
+      "operation": "stored-api-policy",
+      "riskClass": "typical",
+      "critical": false,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 65536,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": true,
+        "violations": []
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-096",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 16",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "GET",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": true,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secret-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-097",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 17",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": false,
+        "contentType": "text/plain",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "same-origin",
+          "content-type"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-098",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 18",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": true,
+        "containsUrlUserInfo": true,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "secret-absent",
+          "url-userinfo-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-099",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 19",
+      "operation": "stored-api-policy",
+      "riskClass": "adversarial",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "POST",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 2,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": true
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "formula-prefix-absent"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    },
+    {
+      "id": "api-100",
+      "suite": "stored-api-contract",
+      "label": "request-security 저장형 계약 20",
+      "operation": "stored-api-policy",
+      "riskClass": "boundary",
+      "critical": true,
+      "oracleStrategy": "snapshot-assertion",
+      "input": {
+        "kind": "request-security",
+        "method": "OPTIONS",
+        "sameOrigin": true,
+        "contentType": "application/json",
+        "bodyBytes": 128,
+        "containsSecret": false,
+        "containsUrlUserInfo": false,
+        "containsFormulaPrefix": false
+      },
+      "expected": {
+        "accepted": false,
+        "violations": [
+          "method"
+        ]
+      },
+      "grader": "exact-policy-decision",
+      "sourceRefs": [
+        "lib/auth/http.ts",
+        "tests/request-security.test.mjs"
+      ]
+    }
+  ]
+}

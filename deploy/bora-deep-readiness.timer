@@ -1,0 +1,11 @@
+[Unit]
+Description=Observe BORA dependencies without creating a restart loop
+
+[Timer]
+OnBootSec=3min
+OnUnitInactiveSec=5min
+RandomizedDelaySec=20
+Unit=bora-deep-readiness.service
+
+[Install]
+WantedBy=timers.target

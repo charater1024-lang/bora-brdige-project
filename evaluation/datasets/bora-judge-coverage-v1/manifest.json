@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "bora-judge-coverage-manifest/v1",
+  "corpusId": "bora-judge-coverage-2026-08-11-v1",
+  "createdAt": "2026-08-11T00:00:00+09:00",
+  "generatorVersion": "bora-coverage-generator/1.0",
+  "execution": {
+    "mode": "offline-replay",
+    "networkCalls": 0,
+    "modelCalls": 0,
+    "wallClockInputs": 0,
+    "randomInputs": 0
+  },
+  "relationshipToDeepScore": {
+    "deepDatasetId": "bora-judge-core-2026-08-11-v2",
+    "deepCasesPreserved": 28,
+    "deepAutomaticMaxScorePreserved": 100,
+    "coverageScoreContribution": 0
+  },
+  "suiteOrder": [
+    "financial-correctness",
+    "evidence-grounding",
+    "financial-safety",
+    "privacy-consent",
+    "stored-api-contract",
+    "reproducibility"
+  ],
+  "suiteCount": 6,
+  "casesPerSuite": 100,
+  "totalCases": 600,
+  "caseOrderSha256": "6fde18dfe289e3ad02c856a92a0cce50c09b3f8b0d5aaaebcaf51d39edc0b680",
+  "definitionSha256": "2a41d94462a252f68a3c188e98b54f09bb41c101f45372d4436c3f469ba41ca7",
+  "artifacts": {
+    "suites": [
+      {
+        "suite": "financial-correctness",
+        "filename": "financial-correctness.json",
+        "caseCount": 100,
+        "sha256": "08ec072b506c3e8aaadcf87a2fdd013eb42c891cc91c179ac813145270ff0e5c"
+      },
+      {
+        "suite": "evidence-grounding",
+        "filename": "evidence-grounding.json",
+        "caseCount": 100,
+        "sha256": "d9a6d327715e84af5cc31f52a7eddb6e19eac818a2c589fa6816cecbe44faadf"
+      },
+      {
+        "suite": "financial-safety",
+        "filename": "financial-safety.json",
+        "caseCount": 100,
+        "sha256": "301d30019c7a0ce644c2e6ca445b173cff2caed24188f561fba4ee420c51e872"
+      },
+      {
+        "suite": "privacy-consent",
+        "filename": "privacy-consent.json",
+        "caseCount": 100,
+        "sha256": "4b42068a8f54362bb5401d05bbeced515aec0f4efc8923440a09abe78041c2af"
+      },
+      {
+        "suite": "stored-api-contract",
+        "filename": "stored-api-contract.json",
+        "caseCount": 100,
+        "sha256": "02788dde19d36c2889066ba6e1c1671263ba1a3e26534c705fbc0cf04d07320e"
+      },
+      {
+        "suite": "reproducibility",
+        "filename": "reproducibility.json",
+        "caseCount": 100,
+        "sha256": "76ab8335757f3aadfcb564d1efda783f174dd120612e1a5baa6b6f44bedf8032"
+      }
+    ],
+    "provenance": {
+      "filename": "provenance.json",
+      "sha256": "2b1798271bd6209c37dd509f1ee903cbbb2a5afcb194422599b59835ced16ebe"
+    },
+    "generator": {
+      "path": "scripts/generate-judge-coverage-corpus.mjs",
+      "sha256": "21effaf96867a59004ff81e39ca81d4522604ced1d35829963539c4c8a93da0a"
+    }
+  },
+  "resultStorage": {
+    "schemaVersion": "bora-judge-coverage-compact/v1",
+    "maximumSessionCharacters": 81920,
+    "failureDetailLimit": 24,
+    "storedFields": [
+      "suiteSummaries",
+      "statusBits",
+      "resultSha256",
+      "boundedFailureDetails"
+    ],
+    "fullCaseResultsStoredInSession": false
+  }
+}

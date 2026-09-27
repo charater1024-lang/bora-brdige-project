@@ -1,0 +1,413 @@
+.shell {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  color: #241b3f;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero small {
+  color: #7058cc;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.hero h3 {
+  margin: 6px 0 7px;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -.04em;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0;
+  color: #6f667f;
+  line-height: 1.65;
+}
+
+.hero > a,
+.detailLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6047bf;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.limitNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 15px 17px;
+  border: 1px solid #ded5f2;
+  border-radius: 16px;
+  background: #f7f4ff;
+  color: #5f5571;
+}
+
+.limitNotice svg { flex: 0 0 auto; color: #6650c5; }
+.limitNotice p { margin: 0; font-size: 13px; line-height: 1.65; }
+
+.modeTabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  padding: 6px;
+  border-radius: 15px;
+  background: #efebf8;
+}
+
+.modeTabs button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #726784;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.modeTabs button[aria-pressed="true"] {
+  color: #5139ad;
+  background: #fff;
+  box-shadow: 0 7px 18px rgba(69, 48, 129, .11);
+}
+
+.modeTabs button,
+.searchForm button,
+.areaResults li button,
+.pagination button,
+.activeScope button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.searchForm {
+  display: grid;
+  grid-template-columns: minmax(180px, .75fr) minmax(240px, 1.4fr) auto;
+  align-items: end;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #e1daf0;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.searchForm label,
+.localFilter {
+  display: grid;
+  gap: 7px;
+  color: #62586f;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.searchForm select,
+.searchForm input,
+.localFilter div {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #d9d0ed;
+  border-radius: 12px;
+  outline: none;
+  background: #fbfaff;
+  color: #251b43;
+  font: inherit;
+}
+
+.searchForm select,
+.searchForm input { padding: 0 13px; }
+.searchForm select:disabled { color: #746b80; background: #f2eff7; cursor: not-allowed; }
+.searchForm select:disabled[aria-busy="true"] { cursor: wait; }
+.searchForm select:focus,
+.searchForm input:focus,
+.localFilter div:focus-within { border-color: #745bd0; box-shadow: 0 0 0 3px rgba(116, 91, 208, .12); }
+
+.fieldHint {
+  min-height: 16px;
+  color: #7d7389;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.fieldHint[data-state="error"] { color: #9f2f49; }
+
+.searchForm > button {
+  min-height: 48px;
+  padding: 0 19px;
+  border: 0;
+  border-radius: 12px;
+  background: #5d43b9;
+  color: #fff;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.searchForm button:disabled,
+.pagination button:disabled { opacity: .45; cursor: not-allowed; }
+
+.error,
+.loading,
+.partial,
+.scopeNote {
+  margin: 0;
+  padding: 13px 15px;
+  border-radius: 13px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.error { color: #9f2f49; background: #fff0f3; }
+.loading { color: #59469b; background: #f3efff; }
+.partial { color: #8b5b16; background: #fff5df; }
+.scopeNote { color: #625878; background: #f5f1fa; }
+
+.areaResults,
+.storeListPanel,
+.chartCard,
+.detailCard {
+  border: 1px solid #e0d8ee;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.areaResults { padding: 18px; }
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.resultHeader > div { display: grid; gap: 2px; }
+.resultHeader strong { font-size: 13px; }
+.resultHeader span { color: #5942b3; font-size: 23px; font-weight: 950; }
+.resultHeader small { color: #82788f; font-size: 11px; }
+
+.areaResults > ul,
+.storeList,
+.chartWrap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.areaResults > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 13px;
+}
+
+.areaResults > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #ece6f5;
+  border-radius: 14px;
+  background: #fdfcff;
+}
+
+.areaResults li > div { display: grid; min-width: 0; gap: 4px; }
+.areaResults li strong,
+.areaResults li span,
+.areaResults li small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.areaResults li span { color: #6f657c; font-size: 12px; }
+.areaResults li small { color: #958c9f; font-size: 11px; }
+
+.areaResults li button,
+.activeScope button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid #d8cef0;
+  border-radius: 10px;
+  background: #fff;
+  color: #5d43b9;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid #eee9f5;
+}
+
+.pagination button {
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid #ddd4ed;
+  border-radius: 10px;
+  background: #fff;
+  color: #5942ae;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.pagination span { color: #70677b; font-size: 12px; font-weight: 800; }
+
+.activeScope {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 14px;
+  border-radius: 13px;
+  color: #554673;
+  background: #f3effc;
+  font-size: 13px;
+}
+
+.activeScope > span { flex: 1; }
+
+.storeWorkspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.storeListPanel,
+.chartCard,
+.detailCard { padding: 17px; }
+.insights { display: grid; gap: 14px; position: sticky; top: 18px; }
+
+.localFilter { margin-bottom: 13px; }
+.localFilter div { display: flex; align-items: center; gap: 8px; padding: 0 12px; }
+.localFilter svg { color: #75698a; }
+.localFilter input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: #2d2344; font: inherit; }
+
+.storeList { display: grid; gap: 8px; }
+.storeList li button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  min-height: 88px;
+  padding: 12px;
+  border: 1px solid #ece6f4;
+  border-radius: 13px;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.storeList li button[aria-pressed="true"] {
+  border-color: #8067d6;
+  background: #f7f4ff;
+  box-shadow: 0 6px 16px rgba(75, 50, 145, .09);
+}
+
+.storeIcon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #6048bc;
+  background: #eee9fb;
+}
+
+.storeList button > span:last-child { display: grid; min-width: 0; gap: 4px; }
+.storeList strong,
+.storeList em,
+.storeList small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.storeList strong { color: #2b2045; font-size: 14px; }
+.storeList em { color: #655777; font-size: 11px; font-style: normal; }
+.storeList small { color: #8c8495; font-size: 11px; }
+
+.chartCard > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.chartCard header small { color: #786b8c; font-size: 10px; font-weight: 850; letter-spacing: .08em; }
+.chartCard h4,
+.detailCard h4 { margin: 4px 0; font-size: 18px; }
+.chartCard header p { margin: 0; color: #7b7187; font-size: 11px; line-height: 1.5; }
+.chartCard header > strong { color: #5e45ba; font-size: 30px; }
+
+.chartWrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(135px, .9fr);
+  align-items: center;
+}
+
+.chartWrap ul { display: grid; gap: 7px; }
+.chartWrap li { display: grid; grid-template-columns: 8px 1fr auto; align-items: center; gap: 7px; color: #6c6277; font-size: 11px; }
+.chartWrap i { width: 8px; height: 8px; border-radius: 50%; }
+.chartWrap li strong { color: #3e2f65; }
+
+.detailCard > header { display: flex; align-items: center; gap: 10px; }
+.detailCard > header > span { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; color: #5f45ba; background: #ede8fa; }
+.detailCard header small { color: #80758c; font-size: 10px; font-weight: 850; }
+.detailCard dl { display: grid; gap: 8px; margin: 15px 0; }
+.detailCard dl > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 10px; font-size: 12px; }
+.detailCard dt { color: #81778d; }
+.detailCard dd { margin: 0; color: #3a2e54; overflow-wrap: anywhere; }
+.detailCard iframe { width: 100%; height: 250px; border: 1px solid #ded8e8; border-radius: 12px; background: #eeeaf3; }
+.detailLinks { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 11px; }
+.detailLinks a { min-height: 44px; padding: 0 4px; }
+.empty { margin: 0; padding: 28px 10px; color: #83798d; text-align: center; font-size: 13px; }
+
+@media (max-width: 960px) {
+  .storeWorkspace { grid-template-columns: 1fr; }
+  .insights { position: static; grid-row: 1; }
+}
+
+@media (max-width: 680px) {
+  .shell { padding: 14px; }
+  .hero { flex-direction: column; gap: 12px; }
+  .hero > a { min-height: 44px; }
+  .modeTabs,
+  .searchForm,
+  .areaResults > ul,
+  .chartWrap { grid-template-columns: 1fr; }
+  .modeTabs { gap: 5px; }
+  .searchForm { padding: 14px; }
+  .searchForm select,
+  .searchForm input,
+  .localFilter input { font-size: 16px; }
+  .searchForm > button { width: 100%; }
+  .resultHeader { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .areaResults > ul > li { align-items: stretch; flex-direction: column; }
+  .areaResults li button { width: 100%; min-height: 44px; }
+  .activeScope { align-items: flex-start; flex-wrap: wrap; }
+  .activeScope > span { width: calc(100% - 28px); }
+  .activeScope button { width: 100%; min-height: 44px; }
+  .chartCard { order: -1; }
+  .detailCard iframe { height: 240px; }
+  .pagination button { min-height: 44px; }
+  .storeList li button { min-height: 96px; }
+}

@@ -1,0 +1,2 @@
+export const CHALLENGE_ROUTE_PATH = "/challenge";
+export const CHALLENGE_PAGE_MARKER = "2026 FINANCE AI CHALLENGE · JUDGE MODE";

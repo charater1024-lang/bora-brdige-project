@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "bora-judge-coverage-release/v1",
+  "corpusId": "bora-judge-coverage-2026-09-23-v16",
+  "releaseDeclaredAt": "2026-09-23T00:00:00+09:00",
+  "state": "sealed",
+  "manifestFilename": "manifest.json",
+  "manifestSha256": "29a563dc22dd7e6b5f3b8db89853f71cb4d331fe8126ee121db80d851daef322",
+  "integrityFilename": "integrity.json",
+  "integritySha256": "3089848bde976f95008dacc92b3d58bb585d4fd1671e7f533163804f0e4c601f",
+  "definitionSha256": "b55787f2a5463c6a304ea6b03286be2b6b40d929a7cab3c221e1889ebb371d84",
+  "caseOrderSha256": "6fde18dfe289e3ad02c856a92a0cce50c09b3f8b0d5aaaebcaf51d39edc0b680",
+  "dependencyLockSha256": "25a73031c14a1a0f51cfcfcf9e199045003ff3f12e05eb8d0497892fdd40329a",
+  "evaluatorSourceBundleSha256": "55b7209f9464fd10b37a568942d7719f89a51f5fa39c627c00756fd35d286ac4",
+  "acceptance": {
+    "validator": {
+      "status": "pass",
+      "totalCases": 600,
+      "manifestSha256": "29a563dc22dd7e6b5f3b8db89853f71cb4d331fe8126ee121db80d851daef322",
+      "dependencyLockSha256": "25a73031c14a1a0f51cfcfcf9e199045003ff3f12e05eb8d0497892fdd40329a",
+      "evaluatorSourceBundleSha256": "55b7209f9464fd10b37a568942d7719f89a51f5fa39c627c00756fd35d286ac4"
+    },
+    "replay": {
+      "status": "pass",
+      "passedCases": 600,
+      "failedCases": 0,
+      "errorCases": 0,
+      "resultSha256": "5f16ac42e4ddfaaab0902cfc0b228201f4cda4332cc3e2c839a245b713b0f819",
+      "manifestSha256": "29a563dc22dd7e6b5f3b8db89853f71cb4d331fe8126ee121db80d851daef322",
+      "dependencyLockSha256": "25a73031c14a1a0f51cfcfcf9e199045003ff3f12e05eb8d0497892fdd40329a",
+      "evaluatorSourceBundleSha256": "55b7209f9464fd10b37a568942d7719f89a51f5fa39c627c00756fd35d286ac4"
+    }
+  },
+  "overwritePolicy": "new-corpus-id-and-directory-required"
+}

@@ -1,0 +1,18 @@
+[Unit]
+Description=BORA private online DB backup and isolated restore verification
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.config/bora-bridge/ops.env
+ExecStart=/usr/bin/bash %h/Project/BORA-Bridge-Finance-AI/deploy/run-bora-ops-sandbox.sh backup
+TimeoutStartSec=20min
+UMask=0077
+Nice=10
+IOSchedulingClass=idle
+MemoryMax=256M
+# Direct Bubblewrap supplies namespaces, read-only root/DB, private tmp,
+# network isolation, capability drop and credential masking. Do not nest
+# systemd user-manager namespace directives on AppArmor-restricted hosts.
+TasksMax=64
+StandardOutput=journal
+StandardError=journal

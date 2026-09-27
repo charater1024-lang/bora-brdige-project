@@ -1,0 +1,1 @@
+CREATE INDEX `phishing_reputation_lookup_quotas_updated_idx` ON `phishing_reputation_lookup_quotas` (`updated_at`);

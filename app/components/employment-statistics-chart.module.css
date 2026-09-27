@@ -1,0 +1,78 @@
+.panel {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid #ded7ee;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fcfbff, #f7f3ff);
+}
+
+.panel > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.panel > header > div { min-width: 0; }
+.panel > header > svg { flex: 0 0 auto; color: #6652c2; }
+.panel > header span { color: #6a56bd; font-size: 10px; font-weight: 950; letter-spacing: .13em; }
+.panel > header h3 { margin: 6px 0; color: #251c3c; font-size: 20px; }
+.panel > header p { margin: 0; color: #706779; font-size: 13px; line-height: 1.6; }
+
+.metricSelector { margin: 15px 0 0; padding: 0; border: 0; }
+.metricSelector legend { color: #5a4d70; font-size: 12px; font-weight: 900; }
+.metricSelector > div { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 7px; }
+.metricSelector button {
+  min-width: 112px;
+  min-height: 47px;
+  padding: 7px 11px;
+  border: 1px solid #ded7ec;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  color: #625872;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+.metricSelector button:hover { border-color: #a998d7; background: #faf8ff; }
+.metricSelector button:focus-visible { outline: 3px solid rgba(101,81,195,.24); outline-offset: 2px; }
+.metricSelector button[aria-pressed="true"] { border-color: #6652c2; color: #fff; background: #6652c2; box-shadow: 0 7px 17px rgba(77,58,156,.18); }
+.metricSelector button strong { font-size: 13px; }
+.metricSelector button small { color: #7d7489; font-size: 10px; }
+.metricSelector button[aria-pressed="true"] small { color: #e7e1ff; }
+
+.chart { width: 100%; height: 310px; margin-top: 16px; }
+.empty { min-height: 220px; display: grid; place-items: center; align-content: center; gap: 8px; color: #7562c6; }
+.empty p { margin: 0; color: #766f80; font-size: 13px; }
+.empty strong { font-size: 21px; }
+
+.evidenceGrid { margin-top: 8px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.evidenceGrid article { min-width: 0; padding: 11px; border: 1px solid #e5dff0; border-radius: 11px; background: #fff; }
+.evidenceGrid strong, .evidenceGrid span, .evidenceGrid small, .evidenceGrid code { display: block; }
+.evidenceGrid strong { color: #534668; font-size: 12px; }
+.evidenceGrid span { margin-top: 5px; color: #2b2141; font-size: 18px; font-weight: 950; }
+.evidenceGrid small { margin-top: 6px; display: flex; align-items: center; gap: 4px; color: #736a7e; font-size: 11px; }
+.evidenceGrid code { margin-top: 5px; overflow: hidden; color: #807788; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+
+.caution { margin: 13px 0 0; padding: 10px 12px; border-radius: 10px; color: #745700; background: #fff6df; font-size: 12px; line-height: 1.65; }
+
+@media (max-width: 680px) {
+  .panel { padding: 14px; }
+  .panel > header p, .empty p, .caution { font-size: 14px; }
+  .metricSelector legend { font-size: 14px; }
+  .metricSelector > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metricSelector button { min-width: 0; width: 100%; min-height: 52px; }
+  .metricSelector button strong { font-size: 14px; }
+  .metricSelector button small { font-size: 12px; }
+  .chart { height: 280px; }
+  .evidenceGrid { grid-template-columns: 1fr; }
+  .evidenceGrid strong, .evidenceGrid small, .evidenceGrid code { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metricSelector button { transition: none; }
+}

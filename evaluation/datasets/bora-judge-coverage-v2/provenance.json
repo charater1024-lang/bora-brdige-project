@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "bora-judge-coverage-provenance/v2",
+  "corpusId": "bora-judge-coverage-2026-08-11-v2",
+  "createdAt": "2026-08-11T00:00:00+09:00",
+  "authorship": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-sol",
+    "officialModelReference": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+    "environment": "Codex desktop agent",
+    "role": "synthetic-coverage-authoring-and-code-grounded-review",
+    "codexSessionAuthorshipUsedModel": true,
+    "runtimeModelUse": false,
+    "independentExpertReview": "not_performed",
+    "confidence": "self-declared-codex-session-record"
+  },
+  "generation": {
+    "generatorPath": "scripts/generate-judge-coverage-corpus.mjs",
+    "generatorVersion": "bora-coverage-generator/2.1",
+    "generatorSha256": "9cf1fd2bc012be0e2ed57a7b47ce9f9af105ebd362347b213c231b1c145bf42a",
+    "deterministicSeed": "bora-coverage-v2-fixed-enumeration",
+    "dependencyLock": {
+      "path": "package-lock.json",
+      "algorithm": "sha256-canonical-utf8-lf/v1",
+      "sha256": "c93bbcaa83a589c055b8d01d42fbcc571f05ce55b09b5064ea44ddc1628040c1"
+    },
+    "evaluatorSourceBundle": {
+      "algorithm": "sha256-over-canonical-file-descriptors/v1",
+      "fileHashAlgorithm": "sha256-canonical-utf8-lf/v1",
+      "fileCount": 102,
+      "sha256": "932071500686d4dc2fdce14da8cb2d1ce3c28be8289676e94655cc76a2b7e258"
+    },
+    "releaseSeal": {
+      "filename": "release.json",
+      "generationRefusesSealedDirectory": true,
+      "replacementRequiresNewCorpusId": true
+    },
+    "runtimeGeneratorReplayCalls": {
+      "networkCalls": 0,
+      "modelCalls": 0,
+      "wallClockInputs": 0,
+      "randomInputs": 0
+    },
+    "measurementBoundary": {
+      "fetchTrapScope": "evaluator-module-load-and-case-execution",
+      "timeRandomTrapScope": "case-execution-after-module-load",
+      "trappedTimeApis": [
+        "Date-constructor-no-args",
+        "Date.now",
+        "performance.now"
+      ],
+      "trappedRandomApis": [
+        "Math.random",
+        "crypto.getRandomValues",
+        "crypto.randomUUID"
+      ],
+      "moduleInitializationTimeRandomInstrumented": false,
+      "nativeHttpClientInstrumentation": false
+    },
+    "methodology": [
+      "GPT-5.6 Sol authored deterministic synthetic input families in the current Codex workflow.",
+      "The model was used for Codex-session authorship; the checked-in generator and runtime replay invoke no model or model API.",
+      "Expected values were frozen from versioned pure production functions or explicit stored policy contracts.",
+      "The corpus includes typical, boundary, high-risk finance, and adversarial cases without real personal data or live malicious URLs.",
+      "Replay blocks fetch from evaluator module load through execution and traps the declared time/random APIs during case execution; it does not claim instrumentation of module-initialization time/randomness or native HTTP clients."
+    ]
+  },
+  "privacy": {
+    "syntheticOnly": true,
+    "containsRealPersonalData": false,
+    "containsLiveMaliciousUrls": false,
+    "reservedSyntheticDomainsOnly": true
+  },
+  "claimBoundary": {
+    "qualityClaim": "coverage-regression-only",
+    "officialHackathonScore": false,
+    "deepScoreContribution": 0,
+    "disclosure": "This 600-case corpus extends deterministic implementation coverage. It does not replace the v2 28-case deep score, certify financial correctness, or constitute independent expert validation."
+  },
+  "limitations": [
+    "Code-grounded labels can share assumptions with the implementation under test.",
+    "No independent finance, legal, privacy, or security expert has reviewed every label.",
+    "Stored API contract cases do not prove public deployment availability or current upstream data quality.",
+    "Subjective innovation, business value, and presentation quality remain outside this automatic corpus."
+  ]
+}

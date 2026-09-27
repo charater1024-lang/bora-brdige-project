@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BORA Bridge">
+  <rect width="64" height="64" rx="18" fill="#6d5bd0"/>
+  <path d="M19 14h15c9 0 14 4 14 11 0 4-2 7-6 9 5 2 8 6 8 12 0 8-6 13-16 13H19V14Zm14 17c5 0 7-2 7-5s-2-5-7-5h-6v10h6Zm1 20c5 0 8-2 8-6 0-4-3-6-8-6h-7v12h7Z" fill="#fff"/>
+  <circle cx="51" cy="13" r="6" fill="#c9f4df"/>
+</svg>

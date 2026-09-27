@@ -1,0 +1,16 @@
+[Unit]
+Description=BORA Bridge public data scheduler tick
+After=bora-bridge.service
+
+[Service]
+Type=oneshot
+TimeoutStartSec=270
+Environment=PUBLIC_DATA_REFRESH_URL=http://127.0.0.1:3000
+EnvironmentFile=%h/Project/BORA-Bridge-Finance-AI/.env.scheduler
+ExecStart=/bin/sh -c 'printf "header = \\"Authorization: Bearer %%s\\"\\n" "$${SCHEDULER_SECRET}" | /usr/bin/curl --config - --fail --silent --show-error --output /dev/null --max-time 240 --request POST "$${PUBLIC_DATA_REFRESH_URL}/api/public-data/scheduled"'
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_INET AF_INET6
+UMask=0077
